@@ -1,13 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&display=swap");
+
 body,
 html {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-size: 10px;
 }
 
-.full-screen {
-  position: relative;
+.background-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  background: radial-gradient(#0020b188, #000000ee 80%);
 }
 
 .bg {
@@ -16,34 +25,77 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center;
   object-fit: cover;
   z-index: -1;
+  background: radial-gradient(#e66465, #9198e5);
+  filter: grayscale(100%) brightness(75%);
 }
 
-.centered-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.party {
+  width: 175px;
+  padding: 0px 50px;
+  fill: #8dcfff;
+  filter: drop-shadow(0px 0px 2px #0095ff) drop-shadow(0px 0px 4px #0095ff)
+    drop-shadow(0px 0px 8px #0095ff);
+}
+
+.party-container {
+  display: flex;
+  justify-content: left;
+  height: 100%;
+}
+
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  height: 100%;
+}
+
+.title {
   color: white;
-  z-index: 1;
+  font-size: 12vw;
+  padding: 50px 0px;
+  font-family: "Courgette", cursive;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #fff;
 }
 
-.centered-text h1 {
-  font-size: 8vw;
-  text-shadow: -1px 1px 0 #000,
-    1px 1px 0 #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
+.title-container {
+  display: flex;
+  justify-content: center;
 }
 
-.centered-text p {
-  font-size: 3vw;
-  padding-bottom: 20px;
-  text-shadow: -1px 1px 0 #000,
-    1px 1px 0 #000,
-    1px -1px 0 #000,
-    -1px -1px 0 #000;
+.counter-container {
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  color: white;
+  font-size: 100px;
+  font-family: "Courgette", cursive;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff;
+  line-height: 160px;
+}
+
+.counter-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  margin: 15px;
+}
+
+.counter-border {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  border-width: 4px;
+  border-radius: 10%;
+  border-style: solid;
+  border-color: #8dcfff;
+  filter: drop-shadow(0px 0px 2px #0095ff) drop-shadow(0px 0px 4px #0095ff)
+    drop-shadow(0px 0px 8px #0095ff);
 }
