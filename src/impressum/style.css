@@ -1,0 +1,16 @@
+p {
+    font-family: "Courgette", cursive;
+
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.Layers {
+    text-align: center;
+    color: white;
+}
+.Layer_1, .Layer_2, .Layer_3, .Layer_4, .Layer_5, .Layer_6 {
+    margin-block-end: 50px;
+}
