@@ -6,12 +6,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>FOSchingsball</title>
 	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@300;400;500;700&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<img src="background.jpg" alt="Hintergrundbild" class="bg">
 	<div class="background-gradient"></div></img>
+	<div class="menu">
+		<a href="foschingsball.de" class="menu-link">
+			<div class="button" id="start"><span class="button-span">Start</span></div>
+		</a>
+		<a href="foschingsball.de/galerie" class="menu-link">
+			<div class="button" id="galerie"><span class="button-span">Galerie</span></div>
+		</a>
+		<a href="foschingsball.de/charakter" class="menu-link">
+			<div class="button" id="charakter"><span class="button-span">Charakter</span></div>
+		</a>
+		<a href="foschingsball.de/impressum" class="menu-link">
+			<div class="button" id="impressum"><span class="button-span">Impressum</span></div>
+		</a>
+	</div>
 	<svg class="party" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
 		xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
 		<g>
@@ -106,25 +124,33 @@
 			</g>
 		</g>
 	</svg>
-	<div class="title-counter">
-		<div class="title-container">
-			<span class="title">Foschingsball</span>
+
+	<div class="title-container">
+		<span class="title">Foschingsball</span>
+	</div>
+	<div class="counter-container">
+		<div class="counter-wrapper">
+			<div class="counter-border"></div><span class="counter" id="days">09</span>
 		</div>
-		<div class="counter-container">
-			<div class="counter-wrapper">
-				<div class="counter-border"></div><span class="counter" id="days">09</span>
-			</div>
-			<div class="counter-wrapper">
-				<div class="counter-border"></div><span class="counter" id="hours">02</span>
-			</div>
-			<div class="counter-wrapper">
-				<div class="counter-border"></div><span class="counter" id="minutes">20</span>
-			</div>
-			<div class="counter-wrapper">
-				<div class="counter-border"></div><span class="counter" id="seconds">24</span>
-			</div>
+		<div class="counter-wrapper">
+			<div class="counter-border"></div><span class="counter" id="hours">02</span>
+		</div>
+		<div class="counter-wrapper">
+			<div class="counter-border"></div><span class="counter" id="minutes">20</span>
+		</div>
+		<div class="counter-wrapper">
+			<div class="counter-border"></div><span class="counter" id="seconds">24</span>
 		</div>
 	</div>
+
+	<div class="date-container"><span class="date">9.2.2024 | Einlass ab 19 Uhr</span></div>
+	<div class="social-container">
+		<a href="" class="social-link"><i class='bx bxl-instagram social'></i></a>
+		<a href="https://www.tiktok.com/@foschingsball" class="social-link"><i class='bx bxl-tiktok social'></i></a>
+		<a href="" class="social-link"><i class='bx bx-envelope social'></i></a>
+	</div>
+
+	<div class="text"><span class="lorem"></span></div>
 
 	<script src="./script.js"></script>
 </body>
