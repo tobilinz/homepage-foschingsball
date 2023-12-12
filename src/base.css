@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Noto+Color+Emoji&family=Noto+Sans:wght@300;400;500;700&display=swap");
+
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  --text: #e7f7e4;
+  --background: #020401;
+  --primary: #65ca53;
+  --secondary: #173012;
+  --accent: #4bb738;
+
+  /*===== Font topygraphy =====*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+  /*===== Margines =====*/
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*===== z index =====*/
+  --z-back: -10;
+  --z-fixed: 100;
+
+  /*
+  var(--h2-font-size);
+  font-family: "Courgette", cursive;
+  */
+  font-family: "Noto Color Emoji", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.875rem;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
