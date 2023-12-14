@@ -1,12 +1,12 @@
 body {
-  background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
 }
 
 .layer-wrapper {
-  text-align: center;
-  color: white;
+    text-align: center;
+    color: white;
 }
 
 .layer {
-  margin-block-end: 50px;
+    margin-block-end: 50px;
 }
