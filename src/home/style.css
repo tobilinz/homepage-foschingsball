@@ -32,6 +32,18 @@
     z-index: -1;
 }
 
+.menu-button {
+    display: none;
+    position: absolute;
+    right: 0;
+    font-size: 6rem;
+    color: white;
+}
+
+.menu-button:hover {
+    text-shadow: 0 0 8px #fff;
+}
+
 .menu {
     background-color: #ffffff00;
     backdrop-filter: blur(5px) brightness(80%);
@@ -39,12 +51,10 @@
     filter: drop-shadow(0px 5px 4px rgb(15, 15, 20));
     display: flex;
     justify-content: space-around;
-    height: 48px;
 }
 
 .menu-link {
     width: 100%;
-    height: 100%;
     text-decoration: none;
     display: flex;
     flex-direction: column;
@@ -52,7 +62,8 @@
     text-align: center;
     color: white;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 1.5rem;
+    margin: 1rem 0;
 }
 
 .menu-link:hover {
@@ -61,8 +72,8 @@
 }
 
 .party {
-    width: 175px;
-    padding: 0 50px;
+    width: 12rem;
+    padding-left: 4rem;
     fill: #8dcfff;
     filter: drop-shadow(0px 0px 2px #0095ff) drop-shadow(0px 0px 4px #0095ff) drop-shadow(0px 0px 8px #0095ff);
 }
@@ -70,32 +81,38 @@
 .title {
     color: white;
     font-size: 12vw;
-    padding: 50px 0;
+    margin: 4rem 0;
     font-family: "Courgette", cursive;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #fff;
+    text-align: center;
 }
 
-.counter-text {
-    padding-top: 4px;
-    color: white;
-    font-size: 100px;
-    font-family: "Courgette", cursive;
-    text-shadow: 0 0 7px #fff, 0 0 10px #fff;
-    line-height: 160px;
+.counter-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    max-width: min(85%, 1000px);
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
 }
 
 .counter {
+    position: relative;
     display: flex;
     justify-content: center;
-    width: 160px;
-    height: 160px;
-    margin: 15px;
+    width: 100%;
+    padding-top: 100%;
+    container: counter-text / inline-size;
 }
 
-.counter-border {
+.counter::before {
+    content: "";
     position: absolute;
-    width: 160px;
-    height: 160px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-width: 4px;
     border-radius: 10%;
     border-style: solid;
@@ -103,20 +120,41 @@
     filter: drop-shadow(0px 0px 2px #0095ff) drop-shadow(0px 0px 4px #0095ff) drop-shadow(0px 0px 8px #0095ff);
 }
 
-.date {
-    margin-top: 15px;
-    font-size: 24px;
+.counter > span {
+    position: absolute;
+    left: 5px;
+    right: 0;
+    top: 5px;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 10rem;
+    font-family: "Courgette", cursive;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff;
+    text-align: center;
+}
+
+.date, .time {
+    margin: 0;
+    font-size: 2.5rem;
     color: white;
     font-weight: bold;
+    text-align: center;
+}
+
+.date {
+    margin-top: 2rem;
 }
 
 .social-container {
-    margin-top: 15px;
+    margin-top: 1rem;
 }
 
 .social {
-    font-size: 48px;
-    margin: 10px;
+    font-size: 5rem;
+    margin: 2rem;
     color: white;
     font-weight: bold;
 }
@@ -125,14 +163,76 @@
     text-shadow: 0 0 8px #fff;
 }
 
-@media screen and (max-width: 800px) {
-    .menu {
-        background-color: green;
+@media screen and (max-width: 1050px) {
+    .counter > span {
+        font-size: 7rem;
     }
 }
 
-@media screen and (max-width: 375px) {
+
+@media screen and (max-width: 800px) {
     .menu {
-        background-color: red;
+        display: none;
+    }
+
+    .party {
+        width: 10rem;
+    }
+
+    .title {
+        font-size: 14vw;
+    }
+
+    .menu-button {
+        display: inline;
+    }
+
+    .counter > span {
+        font-size: 5rem;
+    }
+
+    .date, .time {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .counter-wrapper {
+        max-width: min(90%, 1000px);
+    }
+
+    .counter > span {
+        font-size: 4rem;
+    }
+
+    .date, .time {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .counter > span {
+        font-size: 3rem;
+    }
+
+    .social {
+        font-size: 4rem;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .party {
+        width: 8rem;
+        padding-left: 2rem;
+    }
+
+    .counter > span {
+        font-size: 2.5rem;
+    }
+
+    .social {
+        font-size: 3rem;
+        margin: 1rem;
     }
 }
