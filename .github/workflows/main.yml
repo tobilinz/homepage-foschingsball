@@ -1,23 +1,46 @@
 name: Create Release
-on:
-  push:
-    tags:
-      - '*'
+
+on: 
+  workflow_dispatch: # this allows the workflow to be run manually from the GitHub Actions UI
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Copy test.css to all subdirectories of src
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install zip
+      run: sudo apt-get install zip
+
+    - name: Zip Repo and copy test.css to all subdirectories
       run: |
-        find src -type d -exec cp src/test.css {} \;
-    - name: Archive Release
-      uses: thedoctor0/zip-release@0.7.5
-      with:
-        type: 'zip'
-        filename: 'release.zip'
+        mkdir output
+        cp -r . output
+        find output/src -type d -exec cp output/src/test.css {} \;
+        cd output
+        zip -r ../release.zip .
+        cd ..
+
     - name: Create Release
-      uses: ncipollo/release-action@v1.12.0
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        artifacts: "release.zip"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./release.zip
+        asset_name: release.zip
+        asset_content_type: application/zip
