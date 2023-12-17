@@ -91,7 +91,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 10rem;
+    font-size: 8rem;
     font-family: "Courgette", cursive;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff;
     text-align: center;
@@ -124,13 +124,7 @@
     text-shadow: 0 0 8px #fff;
 }
 
-@media screen and (max-width: 1100px) {
-    .counter > span {
-        font-size: 7rem;
-    }
-}
-
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1150px) {
     .party {
         width: 10rem;
     }
@@ -141,7 +135,7 @@
     }
 
     .counter > span {
-        font-size: 5rem;
+        font-size: 6rem;
     }
 
     .date, .time {
@@ -149,17 +143,13 @@
     }
 }
 
-
-@media screen and (max-width: 850px) {
-}
-
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
     .counter-wrapper {
         max-width: min(90%, 1000px);
     }
 
     .counter > span {
-        font-size: 4rem;
+        font-size: 5rem;
     }
 
     .date, .time {
@@ -167,7 +157,13 @@
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
+    .counter > span {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
     .counter > span {
         font-size: 3rem;
     }
