@@ -44,7 +44,7 @@
     font-size: 12vw;
     margin: 4rem 0;
     font-family: "Courgette", cursive;
-    text-shadow: 0 0 10px #fff, 0 0 32px #fff;
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff;
     text-align: center;
 }
 
@@ -137,16 +137,6 @@
 
     .title {
         margin: 2rem 0;
-    }
-}
-
-
-@media screen and (max-width: 850px) {
-    .party {
-        width: 10rem;
-    }
-
-    .title {
         font-size: 14vw;
     }
 
@@ -157,6 +147,10 @@
     .date, .time {
         font-size: 2rem;
     }
+}
+
+
+@media screen and (max-width: 850px) {
 }
 
 @media screen and (max-width: 650px) {
