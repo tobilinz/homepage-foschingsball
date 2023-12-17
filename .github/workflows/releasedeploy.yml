@@ -1,9 +1,8 @@
-name: Test Deploy
+name: Release Deploy
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [ created ]
 
 defaults:
   run:
@@ -30,4 +29,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./src/
-          server-dir: public_html/test/
+          server-dir: public_html/$RELEASE_DIRECTORY/
