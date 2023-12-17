@@ -1,0 +1,34 @@
+name: Custom Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+defaults:
+  run:
+    working-directory: ./src/
+
+jobs:
+  copy-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+
+      - name: Copy base.css to all subdirectoies of src/
+        run: for d in */; do cp base.css "$d"; done
+
+      - name: Edit all .html files to use the copied version of base.css
+        run: for d in */; do sed -i 's/\.\.\//\.\//g' "$d/index.html"; done
+
+      - name: Upload to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./src/
+          server-dir: public_html/test/
+          dangerous-clean-slate: true
