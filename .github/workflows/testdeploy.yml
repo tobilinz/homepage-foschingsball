@@ -23,7 +23,7 @@ jobs:
         run: for d in */; do sed -i 's/\.\.\//\.\//g' "$d/index.html"; done
 
       - name: Upload to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
