@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4.1.1
 
       - name: Copy base.css to all subdirectoies of src/
         run: for d in */; do cp base.css "$d"; done
