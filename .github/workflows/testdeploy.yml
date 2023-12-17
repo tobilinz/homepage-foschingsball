@@ -23,7 +23,7 @@ jobs:
         run: for d in */; do sed -i 's/\.\.\//\.\//' "$d/index.html"; done
 
       - name: Edit all files to use test.foschingsball.de instead of foschingsball.de
-        run: find . -type f -exec sed -i 's/(?<!\w*\.)foschingsball\.de/test\.foschingsball\.de/g' {} +
+        run: find . -type f -exec sed -i 's/foschingsball\.de/test\.foschingsball\.de/g' {} +
 
       - name: Upload to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
