@@ -1,0 +1,11 @@
+.footer {
+    background-color: #090b1c;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+.impressum {
+    color: white;
+    font-size: 1rem;
+}
