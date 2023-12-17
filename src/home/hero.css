@@ -40,13 +40,14 @@
 }
 
 .title {
-    color: white;
+    /*color: white;
     font-size: 12vw;
     margin: 4rem 0;
     font-family: "Courgette", cursive;
-    text-shadow: 0 0 8px #fff, 0 0 16px #fff;
-    text-align: center;
-    -webkit-font-smoothing: subpixel-antialiased;
+    text-shadow: 0 0 8px #fff, 0 0 16px #fff; Komisch in Safari
+    text-align: center;*/
+    margin-top: 1rem;
+    width: 100%;
 }
 
 .counter-wrapper {
@@ -128,11 +129,6 @@
 @media screen and (max-width: 1150px) {
     .party {
         width: 10rem;
-    }
-
-    .title {
-        margin: 2rem 0;
-        font-size: 14vw;
     }
 
     .counter > span {
