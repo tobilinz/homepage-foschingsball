@@ -47,7 +47,7 @@
     text-shadow: 0 0 8px #fff, 0 0 16px #fff; Komisch in Safari
     text-align: center;*/
     margin-top: 1rem;
-    width: 100%;
+    width: 90%;
 }
 
 .counter-wrapper {
@@ -141,6 +141,10 @@
 }
 
 @media screen and (max-width: 800px) {
+    .title {
+        width: 100%;
+    }
+
     .counter-wrapper {
         max-width: min(90%, 1000px);
     }
