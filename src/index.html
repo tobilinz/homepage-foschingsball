@@ -21,7 +21,7 @@
     <div class="center">
         <svg class="title" viewBox="0 0 320 80">
             <filter id="neon">
-                <feFlood flood-color="rgb(255,255,255)" flood-opacity="0.25" in="SourceGraphic"/>
+                <feFlood flood-color="var(--text)" flood-opacity="0.25" in="SourceGraphic"/>
                 <feComposite operator="in" in2="SourceGraphic"/>
                 <feGaussianBlur stdDeviation="5"/>
                 <feComponentTransfer result="glow1">
@@ -32,7 +32,7 @@
                     <feMergeNode in="SourceGraphic"/>
                 </feMerge>
             </filter>
-            <text text-anchor="middle" font-size="50" font-family="Courgette" x="50%" y="65%" fill="white"
+            <text text-anchor="middle" font-size="50" font-family="Courgette" x="50%" y="65%" fill="var(--text)"
                   filter="url(#neon)">FOSchingsball
             </text>
         </svg>
