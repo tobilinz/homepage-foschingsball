@@ -1,11 +1,11 @@
 .footer {
-    background-color: #090b1c;
+    background-color: var(--background);
     display: flex;
     justify-content: center;
     padding: 0.5rem 1rem 1.5rem 1rem;
 }
 
 .impressum {
-    color: white;
+    color: var(--text);
     font-size: 1rem;
 }
