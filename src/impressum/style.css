@@ -10,3 +10,11 @@ body {
 .layer {
     margin-block-end: 50px;
 }
+
+.back {
+    color: white;
+}
+
+.backlayer {
+    margin-top: 2rem;
+}
