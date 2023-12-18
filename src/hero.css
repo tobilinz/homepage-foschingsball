@@ -39,6 +39,10 @@
     filter: var(--glow);    
 }
 
+.title {
+    width: 100%;
+}
+
 .counter-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
