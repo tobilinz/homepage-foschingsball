@@ -15,8 +15,9 @@
 
     /*===== Font =====*/
     font-family: "Noto Sans", sans-serif;
-    --header: 8rem;
-    --normal: 2rem;
+    --very-large: 8rem;
+    --header: 3rem;
+    --normal: 1.5rem;
     --small: 1.25rem;
 
     /*===== Margins =====*/
@@ -29,7 +30,8 @@
 
 @media screen and (max-width: 850px) {
     :root {
-        --header: 6rem;
+        --very-large: 6rem;
+        --header: 2.5rem;
 
         --m1: 0.5rem;
         --m2: 1rem;
@@ -39,15 +41,17 @@
 
 @media screen and (max-width: 600px) {
     :root {
-        --header: 4rem;
+        --very-large: 4rem;
+        --header: 2rem;
         --normal: 1.625rem
     }
 }
 
 @media screen and (max-width: 450px) {
     :root {
-        --header: 2.5rem;
-        --normal: 1.375rem;
+        --very-large: 2.5rem;
+        --header: 1.625rem;
+        --normal: 1.125rem;
     }
 }
 

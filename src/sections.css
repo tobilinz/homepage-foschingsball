@@ -1,0 +1,20 @@
+.section {
+    margin: 0;
+    padding: var(--m3);
+    background-color: var(--background);
+}
+
+.section-title {
+    margin: 0;
+    color: var(--text);
+    font-size: var(--header);
+    text-align: center;
+}
+
+.section-text {
+    margin: var(--m2) auto;
+    color: var(--text);
+    font-size: var(--normal);
+    max-width: 500px;
+    text-align: center;
+}
