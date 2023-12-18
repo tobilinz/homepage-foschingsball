@@ -13,13 +13,13 @@
     --herobackground: #090b1bdd;
     --heroaccent: #22308c99;
 
-    /*===== Font topygraphy =====*/
+    /*===== Font =====*/
     font-family: "Noto Sans", sans-serif;
     --header: 2rem;
     --normal: 1rem;
     --small: 0.75rem;
 
-    /*===== Margines =====*/
+    /*===== Margins =====*/
     --m1: 1rem;
     --m2: 2rem;
     --m3: 4rem;
