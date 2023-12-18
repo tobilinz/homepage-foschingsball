@@ -34,29 +34,18 @@
 
 .party {
     width: 12rem;
-    padding-left: 4rem;
+    padding-left: var(--m3);
     fill: var(--glowbase);
     filter: var(--glow);    
-}
-
-.title {
-    /*color: white;
-    font-size: 12vw;
-    margin: 4rem 0;
-    font-family: "Courgette", cursive;
-    text-shadow: 0 0 8px #fff, 0 0 16px #fff; Komisch in Safari
-    text-align: center;*/
-    margin-top: 1rem;
-    width: 90%;
 }
 
 .counter-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1.5rem;
-    max-width: min(75%, 1000px);
-    margin-left: auto;
-    margin-right: auto;
+    gap: var(--m2);
+    max-width: 1000px;
+    padding: 0 var(--m3);
+    margin: 0 auto;
     align-items: center;
 }
 
@@ -93,7 +82,7 @@
     justify-content: center;
     align-items: center;
     color: var(--text);
-    font-size: 8rem;
+    font-size: var(--header);
     font-family: "Courgette", cursive;
     text-shadow: 
         0 0 5px var(--text), 
@@ -103,96 +92,27 @@
 
 .date, .time {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: var(--normal);
     color: var(--text);
     font-weight: bold;
     text-align: center;
 }
 
 .date {
-    margin-top: 2rem;
+    margin-top: var(--m3);
 }
 
 .social-container {
-    margin-top: 1rem;
+    padding: var(--m3) 0;
 }
 
 .social {
-    font-size: 5rem;
-    margin: 2rem;
+    font-size: var(--header);
+    margin: 0 var(--m2);
     color: var(--text);
     font-weight: bold;
 }
 
 .social:hover {
     text-shadow: 0 0 8px var(--text);
-}
-
-@media screen and (max-width: 1150px) {
-    .party {
-        width: 10rem;
-    }
-
-    .counter > span {
-        font-size: 6rem;
-    }
-
-    .date, .time {
-        font-size: 2rem;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .title {
-        width: 100%;
-    }
-
-    .counter-wrapper {
-        max-width: min(90%, 1000px);
-    }
-
-    .counter > span {
-        font-size: 5rem;
-    }
-
-    .date, .time {
-        font-size: 1.5rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .counter > span {
-        font-size: 4rem;
-    }
-
-    .social {
-        font-size: 4rem;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .counter > span {
-        font-size: 3rem;
-    }
-
-    .social {
-        font-size: 4rem;
-        margin: 1rem;
-    }
-}
-
-@media screen and (max-width: 359px) {
-    .party {
-        width: 8rem;
-        padding-left: 2rem;
-    }
-
-    .counter > span {
-        font-size: 2.5rem;
-    }
-
-    .social {
-        font-size: 3rem;
-        margin: 1rem;
-    }
 }

@@ -2,10 +2,10 @@
     background-color: var(--background);
     display: flex;
     justify-content: center;
-    padding: 0.5rem 1rem 1.5rem 1rem;
+    padding: var(--m1) 0 var(--m2) 0;
 }
 
 .impressum {
     color: var(--text);
-    font-size: 1rem;
+    font-size: var(--small);
 }
