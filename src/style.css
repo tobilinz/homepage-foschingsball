@@ -154,7 +154,8 @@
     padding: var(--m3) 0 var(--m1) 0;
 }
 
-.impressum {
+.footer-link {
     color: var(--text);
     font-size: var(--small);
+    margin: 0 var(--m1);
 }
