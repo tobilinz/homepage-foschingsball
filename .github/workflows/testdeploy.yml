@@ -20,7 +20,7 @@ jobs:
         run: for d in */; do cp base.css "$d"; done
 
       - name: Edit all .html files to use the copied version of base.css
-        run: for d in */; do sed -i 's/\.\.\//\.\//' "$d/index.html"; done
+        run: for d in */; do [ -f "$d/index.html" ] && sed -i 's/\.\.\//\.\//' "$d/index.html"; done
 
       - name: Edit all files to use test.foschingsball.de instead of foschingsball.de
         run: find . -type f -exec sed -i 's/foschingsball\.de/test\.foschingsball\.de/g' {} +
