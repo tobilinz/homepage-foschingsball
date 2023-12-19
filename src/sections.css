@@ -1,6 +1,6 @@
 .section {
     margin: 0;
-    padding: var(--m3);
+    padding-top: var(--m3);
     background-color: var(--background);
 }
 
@@ -12,7 +12,7 @@
 }
 
 .section-text {
-    margin: var(--m2) auto;
+    margin: var(--m2) auto 0 auto;
     color: var(--text);
     font-size: var(--normal);
     max-width: 500px;
