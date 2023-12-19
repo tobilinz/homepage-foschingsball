@@ -12,7 +12,7 @@
 }
 
 .section-text {
-    margin: var(--m2) auto 0 auto;
+    margin: var(--m2) var(--m3) 0 var(--m3);
     color: var(--text);
     font-size: var(--normal);
     max-width: 500px;

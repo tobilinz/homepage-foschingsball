@@ -35,7 +35,6 @@
 
         --m1: 0.5rem;
         --m2: 1rem;
-        --m3: 2rem;
     }
 }
 
@@ -43,7 +42,9 @@
     :root {
         --very-large: 4rem;
         --header: 2rem;
-        --normal: 1.625rem
+        --normal: 1.625rem;
+
+        --m3: 2rem;
     }
 }
 
