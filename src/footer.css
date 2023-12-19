@@ -1,9 +1,0 @@
-.footer {
-    background-color: var(--background);
-    padding: var(--m3) 0 var(--m1) 0;
-}
-
-.impressum {
-    color: var(--text);
-    font-size: var(--small);
-}

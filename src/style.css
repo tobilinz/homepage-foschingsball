@@ -1,3 +1,5 @@
+/*----- HERO -----*/
+
 .hero {
     position: relative;
     width: 100%;
@@ -118,4 +120,41 @@
 
 .social:hover {
     text-shadow: 0 0 8px var(--text);
+}
+
+
+/*----- SECTIONS -----*/
+
+.section {
+    margin: 0;
+    padding-top: var(--m3);
+    background-color: var(--background);
+}
+
+.section-title {
+    margin: 0;
+    color: var(--text);
+    font-size: var(--header);
+    text-align: center;
+}
+
+.section-text {
+    margin: var(--m2) var(--m3) 0 var(--m3);
+    color: var(--text);
+    font-size: var(--normal);
+    max-width: 500px;
+    text-align: center;
+}
+
+
+/*----- FOOTER -----*/
+
+.footer {
+    background-color: var(--background);
+    padding: var(--m3) 0 var(--m1) 0;
+}
+
+.impressum {
+    color: var(--text);
+    font-size: var(--small);
 }
