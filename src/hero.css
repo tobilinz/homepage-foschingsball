@@ -40,8 +40,11 @@
 }
 
 .title {
-    width: 90%;
-    max-width: 1000px;
+    font-size: var(--very-large);
+    text-align: center;
+    color: var(--text);
+    font-family: Courgette;
+    margin: var(--m3) 0 0 0;
 }
 
 .counter-wrapper {
@@ -49,8 +52,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--m2);
     max-width: 1000px;
-    padding: 0 var(--m3);
-    margin: 0 auto;
+    margin: var(--m3) auto;
     align-items: center;
 }
 
@@ -103,12 +105,8 @@
     text-align: center;
 }
 
-.date {
-    margin-top: var(--m3);
-}
-
 .social-container {
-    padding: var(--m3) 0;
+    margin: var(--m3) 0;
 }
 
 .social {
