@@ -67,8 +67,7 @@
     container: counter-text / inline-size;
 }
 
-.counter::before {
-    content: "";
+.counter-frame {
     position: absolute;
     top: 0;
     left: 0;
@@ -108,7 +107,7 @@
 }
 
 .social-container {
-    margin: var(--m3) 0;
+    padding: var(--m3) 0;
 }
 
 .social {

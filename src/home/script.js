@@ -1,10 +1,11 @@
-countDown();
+countDown()
+blinking()
 
 function countDown() {
-    const days = document.getElementById("days");
-    const hours = document.getElementById("hours");
-    const minutes = document.getElementById("minutes");
-    const seconds = document.getElementById("seconds");
+    const days = document.getElementById('days');
+    const hours = document.getElementById('hours');
+    const minutes = document.getElementById('minutes');
+    const seconds = document.getElementById('seconds');
 
     const date = Date.parse("2024-02-09T19:00:00.000+01:00");
 
@@ -30,7 +31,7 @@ function countDown() {
 
     if (!updateCounter()) return;
 
-    const countdownTimer = setInterval(() => { 
+    const countdownTimer = setInterval(() => {
         if (updateCounter()) return;
 
         clearInterval(countdownTimer);
@@ -39,4 +40,19 @@ function countDown() {
         minutes.textContent = "0";
         seconds.textContent = "0";
     }, 1000);
+}
+
+function blinking() {
+    const frames = document.getElementsByClassName('counter-frame');
+    const filter = getComputedStyle(document.documentElement).getPropertyValue('--glow');
+    
+    function blink() {
+        const rand = Math.floor(Math.random() * frames.length);
+        const frame = frames[rand];
+
+        frame.style.filter = "none";
+        setInterval(() => frame.style.filter = filter, Math.random() * 200 + 100);
+    }
+
+    setInterval(blink, Math.random() * 1000 + 1000)
 }
