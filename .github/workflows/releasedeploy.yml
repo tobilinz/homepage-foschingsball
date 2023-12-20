@@ -15,12 +15,6 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v4.1.1
 
-      - name: Copy base.css to all subdirectoies of src/
-        run: for d in */; do cp base.css "$d"; done
-
-      - name: Edit all .html files to use the copied version of base.css
-        run: for d in */; do [ -f "$d/index.html" ] && sed -i 's/\.\.\//\.\//' "$d/index.html"; done
-
       - name: Upload to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
