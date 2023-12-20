@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4.1.1
 
       - name: Edit all files to use test.foschingsball.de instead of foschingsball.de
-        run: find . -type f -exec sed -i 's/foschingsball\.de/test\.foschingsball\.de/g' {} +
+        run: find . -type f -exec perl -pe 's/(?<!\w\.)foschingsball\.de/test\.foschingsball\.de/g' -i {} \;
 
       - name: Upload to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
