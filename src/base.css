@@ -13,7 +13,7 @@
     --shadow: drop-shadow(0px 0px 2px var(--background)) drop-shadow(0px 0px 4px var(--background)) drop-shadow(0px 0px 8px var(--background));
     --glow-animation: filter 50ms;
     --herobackground: #090b1bdd;
-    --heroaccent: #22308c99;
+    --heroaccent: #17267399;
 
     /*===== Font =====*/
     font-family: "Noto Sans", sans-serif;
@@ -28,8 +28,6 @@
     --m3: 4rem;
 
     /*===== var(--name) =====*/
-    text-shadow:
-            0 0 8px var(--background);
 }
 
 @media screen and (max-width: 850px) {
