@@ -66,7 +66,6 @@
     position: relative;
     text-decoration: none;
     margin-bottom: var(--m2);
-    align-items: center;
 }
 
 .section-link > i {
@@ -111,36 +110,17 @@
 }
 
 .title-link {
-    position: relative;
     text-decoration: none;
     margin-bottom: var(--m2);
-    align-items: center;
-}
-
-.title-link > i {
-    position: absolute;
-    top: 5%;
-    left: -1em;
-    font-size: var(--very-large);
-    color: var(--gray-text);
-    visibility: hidden;
-}
-
-.title-link:hover > i {
-    visibility: visible;
 }
 
 .title-link > h1 {
     margin: 0;
-    display: inline-block;
     padding: 0;
     font-size: var(--very-large);
     text-align: center;
     color: var(--text);
     font-family: Courgette, sans-serif;
-}
-
-.title {
 }
 
 .counter-grid {
