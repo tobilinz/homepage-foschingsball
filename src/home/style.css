@@ -200,6 +200,12 @@
     border: 0;
 }
 
+@media screen and (max-width: 600px) {
+    #wo > div > iframe {
+        height: 350px;
+    }
+}
+
 /*-------- FOOTER --------*/
 
 .footer {
