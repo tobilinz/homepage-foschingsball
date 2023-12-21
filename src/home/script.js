@@ -63,10 +63,10 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
         
         let totalDelay = 0;
         for (let i = 0; i < amount; i++) {
-            setTimeout(() => element.style.filter = shadow, totalDelay);
+            setTimeout(() => element.style.setProperty('filter', shadow), totalDelay);
 
             totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
-            setTimeout(() => element.style.filter = filter, totalDelay);
+            setTimeout(() => element.style.setProperty('filter', filter), totalDelay);
 
             totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
         }
