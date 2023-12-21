@@ -174,14 +174,13 @@
 /*-------- VIDEO --------*/
 
 #video > div {
-    margin-bottom: var(--m2);
+    margin: 0 var(--m3) var(--m2) var(--m3);
 }
 
 #video > div > video {
     width: 100%;
     height: auto;
     max-width: 1000px;
-    margin: 0 var(--m3);
 }
 
 /*-------- GALERIE --------*/
