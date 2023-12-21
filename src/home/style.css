@@ -193,6 +193,7 @@
 }
 
 #wo > div > iframe {
+    width: 100%;
     height: 500px;
     max-width: 1000px;
     margin: 0 var(--m3);
