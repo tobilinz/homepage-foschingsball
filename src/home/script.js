@@ -4,6 +4,7 @@ blinking(
     1, 3,
     75, 25,
     'counter-frame', 'party');
+blurAnimation(0.5);
 
 function countDown(year, month, day, hour, minute) {
     const days = document.getElementById('days');
@@ -74,4 +75,21 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
         blink(element, amount)
 
     }, Math.random() * intervalRange + minInterval)
+}
+
+function blurAnimation(blurEntryMultiplier) {
+    let hasBlurred = false;
+    const background = document.getElementsByClassName('background')[0];
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight * blurEntryMultiplier) {
+            background.classList.remove('blur-out');
+            background.classList.add('blur-in');
+            hasBlurred = true;
+        } 
+        else if (hasBlurred) {
+            background.classList.remove('blur-in');
+            background.classList.add('blur-out');
+        }
+    });
 }
