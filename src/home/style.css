@@ -55,15 +55,29 @@
     }
 }
 
-/*-------- HERO --------*/
+/*-------- SECTIONS --------*/
 
-.hero {
-    position: relative;
-    width: 100vw;
-    min-height: 100svh;
-    height: fit-content;
+.section {
+    margin: 0;
+    padding: var(--m3) 0;
 }
 
+.section > h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: var(--header);
+    text-align: center;
+}
+
+.section-text {
+    margin: var(--m2) var(--m3) 0 var(--m3);
+    color: var(--text);
+    font-size: var(--normal);
+    max-width: 500px;
+    text-align: center;
+}
+
+/*-------- HERO --------*/
 .party {
     width: 12rem;
     padding-left: var(--m3);
@@ -80,12 +94,13 @@
     margin: var(--m3) 0 0 0;
 }
 
-.counter-wrapper {
+.counter-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--m2);
     max-width: 1000px;
-    margin: var(--m3) auto;
+    padding: var(--m3);
+    margin: 0 auto;
     align-items: center;
 }
 
@@ -153,39 +168,35 @@
     text-shadow: 0 0 8px var(--text);
 }
 
+/*-------- VIDEO --------*/
 
-/*-------- SECTIONS --------*/
-
-.section {
-    margin: 0;
-    padding-top: var(--m3);
-}
-
-.section > h2 {
-    margin: 0;
-    color: var(--text);
-    font-size: var(--header);
-    text-align: center;
-}
-
-.section-text {
-    margin: var(--m2) var(--m3) 0 var(--m3);
-    color: var(--text);
-    font-size: var(--normal);
-    max-width: 500px;
-    text-align: center;
-}
-
-/*---- wo ----*/
-#wo > div {
-    margin-top: var(--m2);
-}
-
-/*---- video ----*/
 #video > div {
     margin-top: var(--m2);
 }
 
+.videoPlayer {
+    width: 100%;
+    height: auto;
+    margin: var(--m2) var(--m3) 0 var(--m3)
+}
+
+/*-------- LOCATION --------*/
+
+#wo > div {
+    margin: var(--m2) var(--m3) 0 var(--m3);
+    overflow: hidden;
+    padding-bottom: 80%;
+    position: relative;
+    height: 0;
+}
+
+#wo > div > iframe {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 
 /*-------- FOOTER --------*/
 

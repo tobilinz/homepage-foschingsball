@@ -63,10 +63,6 @@ body, html {
     scroll-behavior: smooth;
 }
 
-iframe, object, embed {
-    max-width: 100%;
-}
-
 .center {
     display: flex;
     justify-content: center;
