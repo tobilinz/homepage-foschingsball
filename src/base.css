@@ -10,6 +10,8 @@
     --glowbase: #8dcfff;
     --glowcolor: #0095ff;
     --glow: drop-shadow(0px 0px 2px var(--glowcolor)) drop-shadow(0px 0px 4px var(--glowcolor)) drop-shadow(0px 0px 8px var(--glowcolor));
+    --shadow: drop-shadow(0px 0px 2px var(--background)) drop-shadow(0px 0px 4px var(--background)) drop-shadow(0px 0px 8px var(--background));
+    --glow-animation: filter 50ms;
     --herobackground: #090b1bdd;
     --heroaccent: #22308c99;
 
@@ -26,6 +28,8 @@
     --m3: 4rem;
 
     /*===== var(--name) =====*/
+    text-shadow:
+            0 0 8px var(--background);
 }
 
 @media screen and (max-width: 850px) {
@@ -61,6 +65,10 @@ body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+iframe, object, embed {
+    max-width: 100%;
 }
 
 .center {

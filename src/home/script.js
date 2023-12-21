@@ -1,13 +1,17 @@
-countDown()
-blinking()
+countDown('2024', '02', '09', '19', '00');
+blinking(
+    4000, 4000,
+    1, 3,
+    75, 25,
+    'counter-frame', 'party');
 
-function countDown() {
+function countDown(year, month, day, hour, minute) {
     const days = document.getElementById('days');
     const hours = document.getElementById('hours');
     const minutes = document.getElementById('minutes');
     const seconds = document.getElementById('seconds');
 
-    const date = Date.parse("2024-02-09T19:00:00.000+01:00");
+    const date = Date.parse(`${year}-${month}-${day}T${hour}:${minute}:00.000+01:00`);
 
     function updateCounter() {
         const timeLeft = date - Date.now();
@@ -42,17 +46,32 @@ function countDown() {
     }, 1000);
 }
 
-function blinking() {
-    const frames = document.getElementsByClassName('counter-frame');
-    const filter = getComputedStyle(document.documentElement).getPropertyValue('--glow');
-    
-    function blink() {
-        const rand = Math.floor(Math.random() * frames.length);
-        const frame = frames[rand];
-
-        frame.style.filter = "none";
-        setInterval(() => frame.style.filter = filter, Math.random() * 200 + 100);
+function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, minOnOffDelay, onOffDelayRange, ...classNames) {
+    const elements = []
+    for (const className of classNames) {
+        const classElements = document.getElementsByClassName(className);
+        for (const classElement of classElements) elements.push(classElement);
     }
 
-    setInterval(blink, Math.random() * 1000 + 1000)
+    const filter = getComputedStyle(document.documentElement).getPropertyValue('--glow');
+    const shadow = getComputedStyle(document.documentElement).getPropertyValue('--shadow');
+
+    function blink(frame, count) {
+        let totalDelay = 0;
+        for (let i = 0; i < count; i++) {
+            setTimeout(() => frame.style.filter = shadow, totalDelay);
+
+            totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
+            setTimeout(() => frame.style.filter = filter, totalDelay);
+
+            totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
+        }
+    }
+
+    setInterval(() => {
+        const element = elements[Math.floor(Math.random() * elements.length)];
+        const amount = Math.floor(Math.random() * blinkTimesRange + minBlinkTimes);
+        blink(element, amount)
+
+    }, Math.random() * intervalRange + minInterval)
 }

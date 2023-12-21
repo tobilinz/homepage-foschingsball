@@ -1,20 +1,20 @@
-/*----- HERO -----*/
-
-.hero {
-    position: relative;
-    width: 100%;
-    min-height: 100svh;
-    height: fit-content;
-}
-
-.hero::before {
-    content: "";
+/*-------- BACKGROUND --------*/
+.background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("background.jpg") no-repeat;
+    bottom: 0;
+    right: 0;
+}
+
+.background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("background.jpg") no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -23,22 +23,32 @@
     z-index: -2;
 }
 
-.hero::after {
+.background::after {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, var(--heroaccent), var(--herobackground) 80%);
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle at center, var(--heroaccent), var(--herobackground) 80%) fixed;
     z-index: -1;
+}
+
+/*-------- HERO --------*/
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    height: fit-content;
 }
 
 .party {
     width: 12rem;
     padding-left: var(--m3);
     fill: var(--glowbase);
-    filter: var(--glow);    
+    filter: var(--glow);
+    transition: var(--glow-animation);
 }
 
 .title {
@@ -78,6 +88,7 @@
     border-style: solid;
     border-color: var(--glowbase);
     filter: var(--glow);
+    transition: var(--glow-animation);
 }
 
 .counter > span {
@@ -92,8 +103,8 @@
     color: var(--text);
     font-size: var(--very-large);
     font-family: "Courgette", cursive;
-    text-shadow: 
-        0 0 5px var(--text), 
+    text-shadow:
+        0 0 5px var(--text),
         0 0 10px var(--text);
     text-align: center;
 }
@@ -122,12 +133,11 @@
 }
 
 
-/*----- SECTIONS -----*/
+/*-------- SECTIONS --------*/
 
 .section {
     margin: 0;
     padding-top: var(--m3);
-    background-color: var(--background);
 }
 
 .section > h2 {
@@ -145,16 +155,20 @@
     text-align: center;
 }
 
-/* --- WO ---*/
+/*---- wo ----*/
 #wo > div {
     margin-top: var(--m2);
 }
 
+/*---- video ----*/
+#video > div {
+    margin-top: var(--m2);
+}
 
-/*----- FOOTER -----*/
+
+/*-------- FOOTER --------*/
 
 .footer {
-    background-color: var(--background);
     padding: var(--m3) 0 var(--m1) 0;
 }
 
