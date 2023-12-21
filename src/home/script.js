@@ -1,6 +1,6 @@
 countDown('2024', '02', '09', '19', '00');
 blinking(
-    4000, 4000,
+    2000, 6000,
     1, 3,
     75, 25,
     'counter-frame', 'party');
@@ -57,24 +57,24 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
     const filter = getComputedStyle(document.documentElement).getPropertyValue('--glow');
     const shadow = getComputedStyle(document.documentElement).getPropertyValue('--shadow');
 
-    function blink(frame, count) {
+    function blink() {
+        const element = elements[Math.floor(Math.random() * elements.length)];
+        const amount = Math.floor(Math.random() * blinkTimesRange + minBlinkTimes);
+        
         let totalDelay = 0;
-        for (let i = 0; i < count; i++) {
-            setTimeout(() => frame.style.filter = shadow, totalDelay);
+        for (let i = 0; i < amount; i++) {
+            setTimeout(() => element.style.filter = shadow, totalDelay);
 
             totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
-            setTimeout(() => frame.style.filter = filter, totalDelay);
+            setTimeout(() => element.style.filter = filter, totalDelay);
 
             totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
         }
+
+        setTimeout(blink, Math.random() * intervalRange + minInterval)
     }
-
-    setInterval(() => {
-        const element = elements[Math.floor(Math.random() * elements.length)];
-        const amount = Math.floor(Math.random() * blinkTimesRange + minBlinkTimes);
-        blink(element, amount)
-
-    }, Math.random() * intervalRange + minInterval)
+    
+    blink();
 }
 
 function blurAnimation(blurEntryMultiplier) {
