@@ -23,7 +23,10 @@ function countDown(year, month, day, hour, minute) {
     */
     const hundredDaysInMS = 100 * 24 * 60 * 60 * 1000;
     if (diff < 0 || diff > hundredDaysInMS) {
-        document.getElementById('counter-over').classList.remove('hidden');
+        const over = document.getElementById('counter-over');
+        over.innerText = `Der FOSchingsball ${year - 1} ist vorbei.
+Komm nächstes Jahr wieder.`;
+        over.classList.remove('hidden');
         return;
     }
     
