@@ -131,7 +131,7 @@
 }
 
 .title-link > h1 {
-    margin: 0 var(--mx);
+    margin: 0;
     padding: 0;
     font-size: var(--title);
     text-align: center;
@@ -192,7 +192,7 @@
 
 .counter-span-container > span {
     color: var(--text);
-    font-size: var(--title);
+    font-size: var(--counter);
     font-family: "Courgette", cursive;
     text-shadow:
         0 0 5px var(--text),
