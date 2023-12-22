@@ -90,6 +90,14 @@
     text-align: center;
 }
 
+.section-subtitle {
+    margin: 0 0 var(--m2) 0;
+    padding: 0;
+    color: var(--text);
+    font-size: var(--normal);
+    text-align: center;
+}
+
 .section-text {
     margin: 0 var(--m3) var(--m2) var(--m3);
     color: var(--text);
@@ -135,11 +143,8 @@
 
 .counter {
     position: relative;
-    display: flex;
-    justify-content: center;
     width: 100%;
     padding-top: 100%;
-    container: counter-text / inline-size;
 }
 
 .counter-frame {
@@ -224,6 +229,26 @@
     max-width: 1000px;
     margin: 0 var(--m3);
     border: 0;
+}
+
+/*-------- TICKETS --------*/
+
+.vorverkaufsorte-grid {
+    margin: 0 auto var(--m2) auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--m2);
+    max-width: 1000px;
+    padding: 0 var(--m3) var(--m2) var(--m3);
+    margin: 0 auto;
+    align-items: center;
+}
+
+.vorverkaufsorte-grid > iframe {
+    width: 100%;
+    border: 0;
+    position: relative;
+    padding-top: 100%;
 }
 
 /*-------- TEAM --------*/
