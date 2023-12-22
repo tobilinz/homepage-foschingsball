@@ -227,6 +227,42 @@
 
 /*-------- GALERIE --------*/
 
+.galerie-grid {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 1000px;
+    padding: 0 var(--mx);
+}
+
+.galerie-grid > img {
+    height: 275px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.more-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 275px;
+    height: 275px;
+    background-color: #ffffff22;
+    transition: background-color 75ms;
+}
+
+.more-images:hover {
+    background-color: #ffffff44;
+}
+
+.more-images > i {
+    font-size: 150px;
+    color: var(--text);
+}
 
 /*-------- ORT --------*/
 
