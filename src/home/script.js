@@ -1,10 +1,11 @@
 countDown('2024', '02', '09', '19', '00');
 blinking(
-    2000, 6000,
+    2000, 4000,
     1, 3,
     75, 25,
     'counter-frame', 'party');
 blurAnimation(0.5);
+videoAutoplay(600);
 
 function countDown(year, month, day, hour, minute) {
     const days = document.getElementById('days');
@@ -92,4 +93,9 @@ function blurAnimation(blurEntryMultiplier) {
             background.classList.add('blur-out');
         }
     });
+}
+
+function videoAutoplay(minWidth) {
+    const videoPlayer = document.getElementById('video-player');
+    if (window.innerWidth > minWidth) videoPlayer.setAttribute('autoplay', 'autoplay');
 }
