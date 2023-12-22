@@ -249,10 +249,23 @@
     padding: 0 var(--mx);
 }
 
-.vorverkaufsorte-grid > iframe {
+.vorverkaufsort {
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1;
+}
+
+.vorverkaufsort > iframe {
+    flex-grow: 1;
     width: 100%;
     border: 0;
-    aspect-ratio: 1;
+}
+
+.vorverkaufsort > p {
+    color: var(--text);
+    text-align: center;
+    font-size: var(--normal);
+    margin: var(--msy) 0 0 0;
 }
 
 /*-------- TEAM --------*/
