@@ -6,7 +6,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url("background.jpg") no-repeat scroll;
+    background: url("background.jpg") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -22,7 +22,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at center, #17267377, #04050ddd 90%) scroll;
+    background: radial-gradient(circle at center, #17267377, #04050ddd 90%);
     z-index: -1;
 }
 
