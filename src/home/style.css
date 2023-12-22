@@ -194,9 +194,8 @@
     color: var(--text);
     font-size: var(--counter);
     font-family: "Courgette", cursive;
-    text-shadow:
-        0 0 5px var(--text),
-        0 0 10px var(--text);
+    text-shadow: 0 0 5px var(--text),
+    0 0 10px var(--text);
     text-align: center;
 }
 

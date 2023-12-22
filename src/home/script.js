@@ -98,7 +98,7 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
 function blurAnimation(blurEntryMultiplier) {
     let hasBlurred = false;
     const background = document.getElementsByClassName('background')[0];
-    
+
     function blur() {
         if (window.scrollY > window.innerHeight * blurEntryMultiplier) {
             background.classList.remove('blur-out');
@@ -109,7 +109,7 @@ function blurAnimation(blurEntryMultiplier) {
             background.classList.add('blur-out');
         }
     }
-    
+
     blur();
 
     window.addEventListener('scroll', blur);
