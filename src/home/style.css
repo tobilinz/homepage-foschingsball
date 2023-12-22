@@ -226,12 +226,6 @@
     border: 0;
 }
 
-@media screen and (max-width: 600px) {
-    #ort > div > iframe {
-        height: 350px;
-    }
-}
-
 /*-------- TEAM --------*/
 
 /*-------- FOOTER --------*/
@@ -244,4 +238,16 @@
     color: var(--text);
     font-size: var(--small);
     margin: 0 var(--m1);
+}
+
+/*-------- MEDIA QUERIES --------*/
+
+@media screen and (max-width: 600px) {
+    #ort > div > iframe {
+        height: 350px;
+    }
+
+    .party {
+        width: 8rem;
+    }
 }
