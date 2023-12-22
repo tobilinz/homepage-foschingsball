@@ -139,6 +139,8 @@
     font-family: Courgette, sans-serif;
 }
 
+/*---- COUNTER ----*/
+
 #counter-over {
     padding: 0;
     color: var(--red-text);
@@ -198,8 +200,10 @@
     text-align: center;
 }
 
+/*---- SOCIAL ----*/
+
 .social {
-    font-size: var(--title);
+    font-size: var(--social);
     margin: var(--msy) var(--mx) 0 var(--mx);
     color: var(--text);
     font-weight: bold;
