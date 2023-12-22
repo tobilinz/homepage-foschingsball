@@ -14,9 +14,9 @@ function countDown(year, month, day, hour, minute) {
     const seconds = document.getElementById('seconds');
 
     const date = Date.parse(`${year}-${month}-${day}T${hour}:${minute}:00.000+01:00`);
-    
+
     const diff = date - Date.now();
-    
+
     /* When too much time is left, the day count has three digits.
        This causes the day counter to overflow out of its border. 
        When no time is left, the counter is useless. 
@@ -29,7 +29,7 @@ Komm nächstes Jahr wieder.`;
         over.classList.remove('hidden');
         return;
     }
-    
+
     document.getElementById('counter-container').classList.remove('hidden');
 
     function updateCounter() {
@@ -78,7 +78,7 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
     function blink() {
         const element = elements[Math.floor(Math.random() * elements.length)];
         const amount = Math.floor(Math.random() * blinkTimesRange + minBlinkTimes);
-        
+
         let totalDelay = 0;
         for (let i = 0; i < amount; i++) {
             setTimeout(() => element.style.setProperty('filter', shadow), totalDelay);
@@ -91,7 +91,7 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
 
         setTimeout(blink, Math.random() * intervalRange + minInterval)
     }
-    
+
     blink();
 }
 
@@ -99,17 +99,20 @@ function blurAnimation(blurEntryMultiplier) {
     let hasBlurred = false;
     const background = document.getElementsByClassName('background')[0];
     
-    window.addEventListener('scroll', function() {
+    function blur() {
         if (window.scrollY > window.innerHeight * blurEntryMultiplier) {
             background.classList.remove('blur-out');
             background.classList.add('blur-in');
             hasBlurred = true;
-        } 
-        else if (hasBlurred) {
+        } else if (hasBlurred) {
             background.classList.remove('blur-in');
             background.classList.add('blur-out');
         }
-    });
+    }
+    
+    blur();
+
+    window.addEventListener('scroll', blur);
 }
 
 function videoAutoplay(minWidth) {
