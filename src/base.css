@@ -98,3 +98,8 @@ body, html {
     display: flex;
     justify-content: center;
 }
+
+.hidden {
+    position: fixed;
+    visibility: hidden;
+}

@@ -138,11 +138,6 @@
     font-family: Courgette, sans-serif;
 }
 
-.hide {
-    position: fixed;
-    visibility: hidden;
-}
-
 #counter-over {
     padding: 0;
     color: var(--red-text);

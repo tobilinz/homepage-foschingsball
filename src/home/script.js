@@ -16,14 +16,18 @@ function countDown(year, month, day, hour, minute) {
     const date = Date.parse(`${year}-${month}-${day}T${hour}:${minute}:00.000+01:00`);
     
     const diff = date - Date.now();
-    if (diff < 0 || diff > 8640000000)
-        /* When too much time is left, the day count has three digits.
-           This causes the day counter to overflow out of its border. */
+    
+    /* When too much time is left, the day count has three digits.
+       This causes the day counter to overflow out of its border. 
+       When no time is left, the counter is useless. 
+    */
+    const hundredDaysInMS = 100 * 24 * 60 * 60 * 1000;
+    if (diff < 0 || diff > hundredDaysInMS) {
+        document.getElementById('counter-over').classList.remove('hidden');
         return;
-    else {
-        document.getElementById('counter-over').classList.add('hide');
-        document.getElementById('counter-container').classList.remove('hide');
     }
+    
+    document.getElementById('counter-container').classList.remove('hidden');
 
     function updateCounter() {
         const timeLeft = date - Date.now();
