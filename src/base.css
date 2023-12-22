@@ -17,8 +17,7 @@
 
     /*===== Font =====*/
     font-family: "Noto Sans", sans-serif;
-    --title: 8rem;
-    --counter: 6.5rem;
+    --title: 6.5rem;
     --social: 8rem;
     --header: 2.5rem;
     --normal: 1.5rem;
@@ -34,15 +33,13 @@
 
 @media screen and (max-width: 1000px) {
     :root {
-        --title: 7rem;
+        --title: 5.5rem;
         --social: 7rem;
-        --counter: 5.5rem;
     }
 }
 
 @media screen and (max-width: 900px) {
     :root {
-        --title: 6.5rem;
         --social: 6.5rem;
 
         --mx: 3rem;
@@ -51,9 +48,8 @@
 
 @media screen and (max-width: 800px) {
     :root {
-        --title: 6rem;
+        --title: 4.5rem;
         --social: 6rem;
-        --counter: 4.5rem;
     }
 }
 
@@ -68,14 +64,12 @@
 
 @media screen and (max-width: 600px) {
     :root {
-        --title: 4rem;
-        --counter: 3.5rem;
+        --title: 3.5rem;
     }
 }
 
 @media screen and (max-width: 500px) {
     :root {
-        --title: 3rem;
         --social: 4rem;
         --header: 2rem;
         --normal: 1.25rem;
@@ -89,8 +83,7 @@
 
 @media screen and (max-width: 400px) {
     :root {
-        --title: 2.875rem;
-        --counter: 2.5rem;
+        --title: 2.5rem;
     }
 }
 
