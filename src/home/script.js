@@ -14,16 +14,15 @@ function countDown(year, month, day, hour, minute) {
     const seconds = document.getElementById('seconds');
 
     const date = Date.parse(`${year}-${month}-${day}T${hour}:${minute}:00.000+01:00`);
-
+    
     const diff = date - Date.now();
-    const counterContainer = document.getElementById('counter-container')
-    if (diff < 0 || diff > 8640000) 
-    /* When too much time is left, the day count has three digits.
-       This causes the day counter to overflow out of its border. */ 
+    if (diff < 0 || diff > 8640000000)
+        /* When too much time is left, the day count has three digits.
+           This causes the day counter to overflow out of its border. */
         return;
     else {
-        counterContainer.classList.remove('counter-over');
-        counterContainer.classList.add('counter-grid');
+        document.getElementById('counter-over').classList.add('hide');
+        document.getElementById('counter-container').classList.remove('hide');
     }
 
     function updateCounter() {

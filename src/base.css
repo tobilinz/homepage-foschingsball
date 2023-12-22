@@ -4,6 +4,7 @@
     /*===== Colors =====*/
     --text: #eceef9;
     --gray-text: #b6b7bf;
+    --red-text: #ec1f13;
     --background: #172673;
     --primary: #9ba5e4;
     --secondary: #22308c;
@@ -16,45 +17,74 @@
 
     /*===== Font =====*/
     font-family: "Noto Sans", sans-serif;
-    --very-large: 8rem;
-    --header: 3rem;
+    --title: 8rem;
+    --counter: 6.5rem;
+    --header: 2.5rem;
     --normal: 1.5rem;
     --small: 1.25rem;
 
     /*===== Margins =====*/
-    --m1: 1rem;
-    --m2: 2rem;
-    --m3: 4rem;
+    --mx: 4rem;
+    --msy: 2rem;
+    --my: 6rem;
 
     /*===== var(--name) =====*/
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1000px) {
     :root {
-        --very-large: 6rem;
-        --header: 2.5rem;
+        --title: 7rem;
+        --counter: 5.5rem;
+    }
+}
 
-        --m1: 0.5rem;
-        --m2: 1rem;
+@media screen and (max-width: 900px) {
+    :root {
+        --title: 6.5rem;
+
+        --mx: 3rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    :root {
+        --title: 6rem;
+        --counter: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    :root {
+        --title: 5rem;
+
+        --mx: 2rem;
     }
 }
 
 @media screen and (max-width: 600px) {
     :root {
-        --very-large: 4rem;
-        --header: 2rem;
-        --normal: 1.625rem;
-
-        --m3: 2rem;
+        --title: 4rem;
+        --counter: 3.5rem;
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     :root {
-        --very-large: 2.5rem;
-        --header: 1.625rem;
-        --normal: 1.125rem;
+        --title: 3rem;
+        --header: 2rem;
+        --normal: 1.25rem;
         --small: 1rem;
+
+        --mx: 1rem;
+        --msy: 1.5rem;
+        --my: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    :root {
+        --title: 2.875rem;
+        --counter: 2.5rem;
     }
 }
 

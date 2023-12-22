@@ -58,14 +58,14 @@
 /*-------- SECTIONS --------*/
 
 .section {
-    margin-bottom: var(--m3);
+    margin: var(--my) 0;
     padding: 0;
 }
 
 .section-link {
     position: relative;
     text-decoration: none;
-    margin-bottom: var(--m2);
+    margin-bottom: var(--msy);
 }
 
 .section-link > i {
@@ -91,7 +91,7 @@
 }
 
 .section-subtitle {
-    margin: 0 0 var(--m2) 0;
+    margin: 0 0 var(--msy) 0;
     padding: 0;
     color: var(--text);
     font-size: var(--normal);
@@ -99,82 +99,81 @@
 }
 
 .section-text {
-    margin: 0 var(--m3) var(--m2) var(--m3);
+    margin: 0 var(--mx);
     color: var(--text);
     font-size: var(--normal);
     max-width: 500px;
     text-align: center;
 }
 
+.space {
+    margin-top: var(--msy);
+}
+
 /*-------- HERO --------*/
+#hero {
+    margin-top: 0;
+}
 
 .party {
     width: 12rem;
-    padding-left: var(--m3);
+    padding-left: var(--mx);
     fill: var(--glowbase);
     filter: var(--glow);
     transition: var(--glow-animation);
-    margin-bottom: var(--m2);
+    margin-bottom: var(--msy);
 }
 
 .title-link {
     text-decoration: none;
-    margin-bottom: var(--m2);
+    margin-bottom: var(--msy);
 }
 
 .title-link > h1 {
     margin: 0;
     padding: 0;
-    font-size: var(--very-large);
+    font-size: var(--title);
     text-align: center;
     color: var(--text);
     font-family: Courgette, sans-serif;
 }
 
+.hide {
+    position: fixed;
+    visibility: hidden;
+}
+
+#counter-over {
+    padding: 0;
+    color: var(--red-text);
+    font-size: var(--header);
+    text-align: center;
+    margin: 0 0 var(--msy) 0;
+}
+
+#counter-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 var(--mx);
+}
+
 .counter-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--m2);
+    gap: var(--mx);
+    width: 100%;
     max-width: 1000px;
-    padding: 0 var(--m3) var(--m2) var(--m3);
-    margin: 0 auto;
-    align-items: center;
-}
-
-.counter-grid > h2 {
-    visibility: collapse;
-}
-
-.counter-grid > div {
-    visibility: visible;
-}
-
-.counter-over {
-    margin: 0;
-    padding: 0;
-    color: var(--text);
-    font-size: var(--normal);
-    text-align: center;
-}
-
-.counter-over > h2 {
-    visibility: visible;
-}
-
-.counter-over > div {
-    visibility: collapse;
 }
 
 .counter {
     position: relative;
-    width: 100%;
-    padding-top: 100%;
+    aspect-ratio: 1;
 }
 
 .counter-frame {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -4px;
+    left: -4px;
     width: 100%;
     height: 100%;
     border-width: 4px;
@@ -185,17 +184,17 @@
     transition: var(--glow-animation);
 }
 
-.counter > span {
-    position: absolute;
-    left: 5px;
-    right: 0;
-    top: 5px;
-    bottom: 0;
+.counter-span-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.counter-span-container > span {
     color: var(--text);
-    font-size: var(--very-large);
+    font-size: var(--counter);
     font-family: "Courgette", cursive;
     text-shadow:
         0 0 5px var(--text),
@@ -203,21 +202,9 @@
     text-align: center;
 }
 
-.date, .time {
-    margin: 0;
-    font-size: var(--header);
-    color: var(--text);
-    font-weight: bold;
-    text-align: center;
-}
-
-.social-container {
-    margin: var(--m2) 0;
-}
-
 .social {
-    font-size: var(--very-large);
-    margin: 0 var(--m2);
+    font-size: var(--title);
+    margin: var(--msy) var(--mx) 0 var(--mx);
     color: var(--text);
     font-weight: bold;
 }
@@ -229,7 +216,7 @@
 /*-------- VIDEO --------*/
 
 #video > div {
-    margin: 0 var(--m3) var(--m2) var(--m3);
+    margin: 0 var(--mx);
 }
 
 #video > div > video {
@@ -243,36 +230,29 @@
 
 /*-------- ORT --------*/
 
-#ort > div {
-    margin-bottom: var(--m2);
-}
-
 #ort > div > iframe {
     width: 100%;
     height: 500px;
     max-width: 1000px;
-    margin: 0 var(--m3);
+    margin: 0 var(--mx);
     border: 0;
 }
 
 /*-------- TICKETS --------*/
 
 .vorverkaufsorte-grid {
-    margin: 0 auto var(--m2) auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--m2);
-    max-width: 1000px;
-    padding: 0 var(--m3) var(--m2) var(--m3);
     margin: 0 auto;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    gap: var(--mx);
+    max-width: 1000px;
+    padding: 0 var(--mx);
 }
 
 .vorverkaufsorte-grid > iframe {
     width: 100%;
     border: 0;
-    position: relative;
-    padding-top: 100%;
+    aspect-ratio: 1;
 }
 
 /*-------- TEAM --------*/
@@ -280,18 +260,18 @@
 /*-------- FOOTER --------*/
 
 .footer {
-    margin-bottom: var(--m2);
+    margin-bottom: var(--msy);
 }
 
 .footer-link {
     color: var(--text);
     font-size: var(--small);
-    margin: 0 var(--m1);
+    margin: 0 var(--mx);
 }
 
 /*-------- MEDIA QUERIES --------*/
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
     #ort > div > iframe {
         height: 350px;
     }
