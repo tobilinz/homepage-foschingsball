@@ -127,7 +127,7 @@
 
 .title-link {
     text-decoration: none;
-    margin-bottom: var(--msy);
+    margin: var(--msy) 0;
 }
 
 .title-link > h1 {
@@ -146,13 +146,13 @@
     color: var(--red-text);
     font-size: var(--header);
     text-align: center;
-    margin: 0 0 var(--msy) 0;
+    margin: var(--msy) 0;
 }
 
 #counter-container {
     display: flex;
     justify-content: center;
-    margin: 0 var(--mx);
+    margin: var(--my) var(--mx);
 }
 
 .counter-grid {
@@ -204,7 +204,7 @@
 
 .social {
     font-size: var(--social);
-    margin: var(--msy) var(--mx) 0 var(--mx);
+    margin: 0 var(--mx);
     color: var(--text);
     font-weight: bold;
 }
