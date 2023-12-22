@@ -141,6 +141,31 @@
     align-items: center;
 }
 
+.counter-grid > h2 {
+    visibility: collapse;
+}
+
+.counter-grid > div {
+    visibility: visible;
+}
+
+.counter-over {
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    color: var(--text);
+    font-size: var(--header);
+    text-align: center;
+}
+
+.counter-over > h2 {
+    visibility: visible;
+}
+
+.counter-over > div {
+    visibility: collapse;
+}
+
 .counter {
     position: relative;
     width: 100%;
