@@ -44,7 +44,7 @@
     width: 100%;
     height: 100%;
     border-width: 4px;
-    border-radius: 10%;
+    border-radius: var(--border-radius);
     border-style: solid;
     border-color: var(--glowbase);
     filter: var(--glow);
@@ -92,6 +92,7 @@
 }
 
 #video > div > video {
+    border-radius: var(--border-radius);
     width: 100%;
     height: auto;
     max-width: 1000px;
@@ -110,12 +111,14 @@
 }
 
 .galerie-grid > img {
+    border-radius: var(--border-radius);
     height: 275px;
     object-fit: cover;
     overflow: hidden;
 }
 
 .more-images {
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,12 +126,12 @@
     text-decoration: none;
     width: 275px;
     height: 275px;
-    background-color: #ffffff22;
+    background-color: var(--primary);
     transition: background-color 75ms;
 }
 
 .more-images:hover {
-    background-color: #ffffff44;
+    background-color: var(--hover);
 }
 
 .more-images > i {
@@ -143,6 +146,7 @@
 }
 
 #ort > div > iframe {
+    border-radius: var(--border-radius);
     width: 100%;
     height: 500px;
     max-width: 1000px;
@@ -168,6 +172,7 @@
 }
 
 .vorverkaufsort > iframe {
+    border-radius: var(--border-radius);
     flex-grow: 1;
     width: 100%;
     border: 0;
@@ -181,6 +186,50 @@
 }
 
 /*-------- TEAM --------*/
+
+.custom-select {
+    display: inline-block;
+    position: relative;
+    margin: var(--msy) auto 0 auto;
+}
+
+.custom-select > label {
+    display: none;
+}
+
+#team-selector {
+    font-size: var(--normal);
+    color: var(--text);
+    padding: 1rem 3.5rem 1rem 1rem;
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    border: none;
+    appearance: none;
+    transition: background-color 75ms;
+    font-weight: bold;
+}
+
+#team-selector:hover {
+    background-color: var(--hover);
+}
+
+#team-selector > option {
+    background: var(--background);
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    color: var(--text);
+    background-color: transparent;
+    padding: 1.25rem 1rem 0 1rem;
+    text-align: center;
+    pointer-events: none;
+    font-size: var(--normal);
+}
 
 /*-------- FOOTER --------*/
 
