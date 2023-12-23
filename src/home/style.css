@@ -149,21 +149,16 @@
     margin: var(--msy) 0;
 }
 
-#counter-container {
-    display: flex;
-    justify-content: center;
-    margin: var(--my) var(--mx);
-}
-
-.counter-grid {
+#counter {
+    margin: var(--my) auto;
+    padding: 0 var(--mx);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--mx);
-    width: 100%;
     max-width: 1000px;
 }
 
-.counter {
+#counter > div {
     position: relative;
     aspect-ratio: 1;
 }

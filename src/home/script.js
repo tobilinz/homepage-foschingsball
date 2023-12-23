@@ -30,7 +30,7 @@ Komm nächstes Jahr wieder.`;
         return;
     }
 
-    document.getElementById('counter-container').classList.remove('hidden');
+    document.getElementById('counter').classList.remove('hidden');
 
     function updateCounter() {
         const timeLeft = date - Date.now();
