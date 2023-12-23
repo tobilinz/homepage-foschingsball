@@ -200,35 +200,14 @@
         </a>
     </div>
     <div class="center">
-        <h2 class="hidden" id="team-loading-error">
-            Die Informationen über das Team konnten nicht geladen werden.<br>
-            Fehler:
-        </h2>
-        <div class="custom-select hidden">
-            <label for="team-selector">Team selector</label>
-            <select name="team-type" id="team-selector">
-                <option value="bar">Bar</option>
-                <option value="controlling">Controlling</option>
-                <option value="dekoration">Dekoration</option>
-                <option value="design">Design</option>
-                <option value="film">Film</option>
-                <option value="finanzen">Finanzen</option>
-                <option value="homepage">Homepage</option>
-                <option value="instagram">Instagram</option>
-                <option value="management" selected>Management</option>
-                <option value="sponsoring">Sponsoring</option>
-                <option value="tiktok">TikTok</option>
-                <option value="verpflegung">Verpflegung</option>
-            </select>
-            <i class='bx bxs-chevron-down custom-arrow'></i>
+        <p class="hidden" id="team-loading-error"></p>
+        <div class="hidden" id="custom-team-selector">
+            <select id="team-selector" onchange="selectTeam()"></select>
+            <i class='bx bxs-chevron-down'></i>
         </div>
     </div>
-    <div id="member-grid">
-        <!--a href="">
-            <img src="home/team/management/til.jpeg" alt="Bild von Louis">
-            <p>Peter Griffin</p>
-        </a-->
-    </div>
+    <div id="member-grid"></div>
+    <script src="home/team.js"></script>
 </section>
 
 <section id="geschichte">

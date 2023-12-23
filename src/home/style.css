@@ -189,23 +189,37 @@
 /*-------- TEAM --------*/
 
 #team-loading-error {
-    padding: 0;
     color: var(--red-text);
-    font-size: var(--header);
+    font-size: var(--normal);
     text-align: center;
-    margin: 0 0 var(--msy) 0;
+    padding: 0 var(--mx);
+    max-width: 500px;
 }
 
 /*---- SELECT ----*/
 
-.custom-select {
+#custom-team-selector {
     display: inline-block;
     position: relative;
-    margin: var(--msy) auto 0 auto;
+    margin: var(--msy) 0 0 0;
 }
 
-.custom-select > label {
+#custom-team-selector > label {
     display: none;
+}
+
+#custom-team-selector > i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    color: var(--text);
+    background-color: transparent;
+    padding: 1.25rem 1rem 0 1rem;
+    text-align: center;
+    pointer-events: none;
+    font-size: var(--normal);
 }
 
 #team-selector {
@@ -226,20 +240,6 @@
 
 #team-selector > option {
     background: var(--background);
-}
-
-.custom-arrow {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    display: block;
-    color: var(--text);
-    background-color: transparent;
-    padding: 1.25rem 1rem 0 1rem;
-    text-align: center;
-    pointer-events: none;
-    font-size: var(--normal);
 }
 
 /*---- LIST ----*/

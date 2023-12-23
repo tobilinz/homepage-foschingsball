@@ -1,4 +1,4 @@
-countDown('2023', '02', '09', '19', '00');
+countDown('2024', '02', '09', '19', '00');
 blinking(
     2000, 4000,
     1, 3,
@@ -6,7 +6,6 @@ blinking(
     'counter-frame', 'party');
 blurAnimation(0.5);
 videoAutoplay(600);
-generateTeam('https://webftp.your-server.de/index.php#/?cd=%2Fpublic_html%2Fresources%2F2024%2Fteam', '%2F');
 
 function countDown(year, month, day, hour, minute) {
     const days = document.getElementById('days');
@@ -119,27 +118,4 @@ function blurAnimation(blurEntryMultiplier) {
 function videoAutoplay(minWidth) {
     const videoPlayer = document.getElementById('video-player');
     if (window.innerWidth > minWidth) videoPlayer.setAttribute('autoplay', 'autoplay');
-}
-
-function generateTeam(endpoint, pathSymbol) {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', endpoint + pathSymbol + 'team.json', true);
-    xhr.responseType = 'json';
-    xhr.onload = () => {
-        const status = xhr.status;
-        console.log('got answer')
-        if (status === 200) {
-            readJSON();
-        }
-        else {
-            const errorDisplay = document.getElementById('team-loading-error');
-            errorDisplay.innerText += status.toString();
-        }
-    };
-    xhr.send();
-    
-    function readJSON() {
-        console.log('Test')
-        
-    }
 }
