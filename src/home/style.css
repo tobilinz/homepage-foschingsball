@@ -307,14 +307,19 @@
 
 /*-------- FOOTER --------*/
 
-.footer {
-    margin-bottom: var(--msy);
+#footer {
+    margin: 0 auto var(--msy) auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mx);
+    max-width: 1000px;
+    padding: 0 var(--mx);
 }
 
 .footer-link {
     color: var(--text);
     font-size: var(--small);
-    margin: 0 var(--mx);
 }
 
 /*-------- MEDIA QUERIES --------*/
