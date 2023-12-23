@@ -25,6 +25,7 @@
     --small: 1.25rem;
 
     /*===== Margins =====*/
+    --mg: 1.5rem;
     --mx: 4rem;
     --msy: 2rem;
     --my: 6rem;
@@ -64,6 +65,7 @@
 
 @media screen and (max-width: 500px) {
     :root {
+        --counter: 3rem;
         --header: 2rem;
         --normal: 1.25rem;
         --small: 1rem;
@@ -77,6 +79,12 @@
 @media screen and (max-width: 400px) {
     :root {
         --counter: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 355px){
+    :root {
+        --counter: 2rem;
     }
 }
 
@@ -165,7 +173,7 @@ section {
 .section-link {
     position: relative;
     text-decoration: none;
-    margin: 0 var(--mx) 0 var(--mx);
+    margin: 0 var(--mx);
 }
 
 .section-link > i {
@@ -211,7 +219,7 @@ section > p {
 
 .title-link {
     text-decoration: none;
-    margin: var(--msy) 0;
+    margin-bottom: var(--msy);
     display: flex;
     justify-content: center;
 }

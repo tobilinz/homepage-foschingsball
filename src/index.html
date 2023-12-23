@@ -86,7 +86,7 @@
     </div>
     <div class="center">
         <video id="video-player" width="500" muted controls loop poster="home/video-poster.png">
-            <source src="https://resources.foschingsball.de/2024/video-2023-h264-aac.mp4"
+            <source src="https://resources.foschingsball.de/videos/2023/video-2023-h264-aac.mp4"
                     type="video/mp4">
             <meta itemprop="name" content="FOSchingsball 2023">
             <meta itemprop="description"
@@ -105,9 +105,9 @@
         </a>
     </div>
     <div class="galerie-grid">
-        <img src="home/featured-images/4.webp" alt="">
-        <img src="home/featured-images/5.webp" alt="">
-        <img src="home/featured-images/6.webp" alt="">
+        <img src="home/featured-images/1.jpg" alt="">
+        <img src="home/featured-images/2.jpg" alt="">
+        <img src="home/featured-images/3.jpg" alt="">
         <a class="more-images" href="https://foschingsball.de/galerie">
             <i class='bx bx-dots-horizontal'></i>
         </a>
@@ -200,7 +200,11 @@
         </a>
     </div>
     <div class="center">
-        <div class="custom-select">
+        <h2 class="hidden" id="team-loading-error">
+            Die Informationen über das Team konnten nicht geladen werden.<br>
+            Fehler:
+        </h2>
+        <div class="custom-select hidden">
             <label for="team-selector">Team selector</label>
             <select name="team-type" id="team-selector">
                 <option value="bar">Bar</option>
@@ -218,6 +222,12 @@
             </select>
             <i class='bx bxs-chevron-down custom-arrow'></i>
         </div>
+    </div>
+    <div id="member-grid">
+        <!--a href="">
+            <img src="home/team/management/til.jpeg" alt="Bild von Louis">
+            <p>Peter Griffin</p>
+        </a-->
     </div>
 </section>
 

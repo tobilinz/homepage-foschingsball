@@ -20,15 +20,15 @@
     color: var(--red-text);
     font-size: var(--header);
     text-align: center;
-    margin: var(--msy) 0;
+    margin: 0 0 var(--msy) 0;
 }
 
 #counter {
-    margin: var(--my) auto;
+    margin: var(--msy) auto var(--msy) auto;
     padding: 0 var(--mx);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--mx);
+    gap: var(--mg);
     max-width: 1000px;
 }
 
@@ -71,12 +71,11 @@
 /*---- SOCIAL ----*/
 
 .social-link {
-    margin: var(--msy) 0;
+    margin: var(--msy) var(--mx) 0 var(--mx);
 }
 
 .social {
     font-size: var(--social);
-    margin: 0 var(--mx);
     color: var(--text);
     font-weight: bold;
 }
@@ -105,7 +104,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
+    gap: var(--mg);
     max-width: 1000px;
     padding: 0 var(--mx);
 }
@@ -158,14 +157,16 @@
 
 .vorverkaufsorte-grid {
     margin: var(--msy) auto 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-    gap: var(--mx);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mg);
     max-width: 1000px;
     padding: 0 var(--mx);
 }
 
 .vorverkaufsort {
+    max-width: 480px;
     display: flex;
     flex-direction: column;
     aspect-ratio: 1;
@@ -182,10 +183,20 @@
     color: var(--text);
     text-align: center;
     font-size: var(--normal);
-    margin: var(--msy) 0 0 0;
+    margin: var(--mg) 0;
 }
 
 /*-------- TEAM --------*/
+
+#team-loading-error {
+    padding: 0;
+    color: var(--red-text);
+    font-size: var(--header);
+    text-align: center;
+    margin: 0 0 var(--msy) 0;
+}
+
+/*---- SELECT ----*/
 
 .custom-select {
     display: inline-block;
@@ -229,6 +240,39 @@
     text-align: center;
     pointer-events: none;
     font-size: var(--normal);
+}
+
+/*---- LIST ----*/
+
+#member-grid {
+    margin: var(--msy) auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mg);
+    max-width: 1000px;
+    padding: 0 var(--mx);
+}
+
+#member-grid > a {
+    width: 200px;
+    text-decoration: none;
+}
+
+#member-grid > a > img {
+    border-radius: var(--border-radius);
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#member-grid > a > p {
+    margin: var(--mg) 0;
+    color: var(--text);
+    font-size: var(--normal);
+    width: 100%;
+    text-align: center;
 }
 
 /*-------- FOOTER --------*/
