@@ -52,7 +52,7 @@ function selectTeam() {
     
     const members = team[teamSelector.value].members;
     
-    for (const member of members) {
+    const elements = members.map(member => {
         const name = member.name;
         
         const img = document.createElement('img');
@@ -66,10 +66,19 @@ function selectTeam() {
         a.appendChild(img);
         a.appendChild(p);
 
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        a.href = member.link;
+        if (isEmpty(member.link)) a.href = 'https://foschingsball.de/#team';
+        else {
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.href = member.link.trim();
+        }
         
-        memberGrid.appendChild(a);
-    }
+        return a;
+    });
+    
+    memberGrid.replaceChildren(...elements);
+}
+
+function isEmpty(s) {
+    return s === null || s === undefined || s.trim().length === 0;
 }
