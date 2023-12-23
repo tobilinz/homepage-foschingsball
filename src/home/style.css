@@ -70,9 +70,13 @@
 
 /*---- SOCIAL ----*/
 
+.social-link {
+    margin: var(--msy) 0;
+}
+
 .social {
     font-size: var(--social);
-    margin: 0 var(--mx) var(--my) var(--mx);
+    margin: 0 var(--mx);
     color: var(--text);
     font-weight: bold;
 }
@@ -84,7 +88,7 @@
 /*-------- VIDEO --------*/
 
 #video > div {
-    margin: 0 var(--mx);
+    margin: var(--msy) var(--mx) 0 var(--mx);
 }
 
 #video > div > video {
@@ -96,7 +100,7 @@
 /*-------- GALERIE --------*/
 
 .galerie-grid {
-    margin: 0 auto;
+    margin: var(--msy) auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -133,6 +137,10 @@
 }
 
 /*-------- ORT --------*/
+
+#ort > div {
+    margin-top: var(--msy);
+}
 
 #ort > div > iframe {
     width: 100%;
