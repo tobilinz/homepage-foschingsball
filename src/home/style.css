@@ -199,7 +199,7 @@
 
 .social {
     font-size: var(--social);
-    margin: 0 var(--mx);
+    margin: 0 var(--mx) var(--my) var(--mx);
     color: var(--text);
     font-weight: bold;
 }
