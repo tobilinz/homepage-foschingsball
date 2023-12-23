@@ -17,9 +17,9 @@
 
     /*===== Font =====*/
     font-family: "Noto Sans", sans-serif;
-    --title: 8rem;
+    --title: min(8rem, 14vw);
     --counter: 6.5rem;
-    --social: 8rem;
+    --social: min(8rem, 16vw);
     --header: 2.5rem;
     --normal: 1.5rem;
     --small: 1.25rem;
@@ -34,49 +34,36 @@
 
 @media screen and (max-width: 1000px) {
     :root {
-        --title: 7rem;
-        --social: 7rem;
         --counter: 5.5rem;
     }
 }
 
 @media screen and (max-width: 900px) {
     :root {
-        --title: 6.5rem;
-        --social: 6.5rem;
-
         --mx: 3rem;
     }
 }
 
 @media screen and (max-width: 800px) {
     :root {
-        --title: 6rem;
-        --social: 6rem;
         --counter: 4.5rem;
     }
 }
 
 @media screen and (max-width: 700px) {
     :root {
-        --title: 5rem;
-        --social: 5rem;
-
         --mx: 2rem;
     }
 }
 
 @media screen and (max-width: 600px) {
     :root {
-        --title: 4rem;
         --counter: 3.5rem;
     }
 }
 
 @media screen and (max-width: 500px) {
     :root {
-        --title: 3rem;
-        --social: 4rem;
         --header: 2rem;
         --normal: 1.25rem;
         --small: 1rem;
@@ -89,7 +76,6 @@
 
 @media screen and (max-width: 400px) {
     :root {
-        --title: 2.875rem;
         --counter: 2.5rem;
     }
 }
@@ -108,4 +94,133 @@ body, html {
 .hidden {
     position: fixed;
     visibility: hidden;
+}
+
+
+/*-------- BACKGROUND --------*/
+
+.background {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url("background.jpg") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: grayscale(100%) brightness(60%);
+    transform: translate3d(0, 0, 0);
+    z-index: -2;
+}
+
+.background-gradient {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #17267377, #04050ddd 90%);
+    z-index: -1;
+}
+
+.blur-in {
+    animation-name: blur-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.blur-out {
+    animation-name: blur-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blur-in {
+    0% {
+        filter: grayscale(100%) brightness(60%) blur(0);
+    }
+    100% {
+        filter: grayscale(100%) brightness(50%) blur(4px);
+    }
+}
+
+@keyframes blur-out {
+    0% {
+        filter: grayscale(100%) brightness(50%) blur(4px);
+    }
+    100% {
+        filter: grayscale(100%) brightness(60%) blur(0);
+    }
+}
+
+/*-------- SECTIONS --------*/
+
+section {
+    margin: var(--my) 0;
+    padding: 0;
+}
+
+.section-link {
+    position: relative;
+    text-decoration: none;
+    margin: 0 var(--mx) 0 var(--mx);
+}
+
+.section-link > i {
+    position: absolute;
+    top: 15%;
+    left: -1em;
+    font-size: var(--header);
+    color: var(--gray-text);
+    visibility: hidden;
+}
+
+.section-link:hover > i {
+    visibility: visible;
+}
+
+.section-link > h2 {
+    margin: 0;
+    display: inline-block;
+    padding: 0;
+    color: var(--text);
+    font-size: var(--header);
+    text-align: center;
+}
+
+section > h3 {
+    margin: var(--msy) 0 0 0;
+    padding: 0;
+    color: var(--text);
+    font-size: var(--normal);
+    text-align: center;
+}
+
+section > p {
+    margin: var(--msy) auto 0 auto;
+    padding: 0 var(--mx);
+    color: var(--text);
+    font-size: var(--normal);
+    max-width: 500px;
+    text-align: center;
+}
+
+/*-------- HERO --------*/
+
+.title-link {
+    text-decoration: none;
+    margin: var(--msy) 0;
+    display: flex;
+    justify-content: center;
+}
+
+.title-link > h1 {
+    margin: 0;
+    padding: 0;
+    font-size: var(--title);
+    text-align: center;
+    color: var(--text);
+    font-family: Courgette, sans-serif;
 }
