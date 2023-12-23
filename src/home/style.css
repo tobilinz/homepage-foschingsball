@@ -91,7 +91,7 @@
     text-align: center;
 }
 
-.section-subtitle {
+.section > h3 {
     margin: 0 0 var(--msy) 0;
     padding: 0;
     color: var(--text);
@@ -99,8 +99,9 @@
     text-align: center;
 }
 
-.section-text {
-    margin: 0 var(--mx);
+.section > p {
+    margin: 0 auto;
+    padding: 0 var(--mx);
     color: var(--text);
     font-size: var(--normal);
     max-width: 500px;
