@@ -1,56 +1,132 @@
-loadGallery('https://resources.foschingsball.de', 3, 2020, 2030);
+const endpoint = 'https://resources.foschingsball.de';
+const previewCount = 3;
+const from = 2020
+const to = 2030;
+const batchSize = 16;
 
-async function loadGallery(endpoint, previewCount, from, to) {
-    const sectionsToLoad = Array.from({ length: to - from + 1 }, (_, index) => (async () => {
-        const year = from + index;
-        
-        let elements;
-        try {
-            elements = await getGalleryPreviewElements(`${endpoint}/${year}/pictures`, 3, year, 'der Galerie');
-        } catch (error) {
-            return [year, undefined];
+const years = document.getElementById('years');
+const backButton = document.getElementById('to-overview');
+const moreButton = document.getElementById('more');
+
+let currentDiv = null;
+let currentYear = 0;
+let currentImages = [];
+
+const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async () => {
+    const year = from + index;
+
+    let images;
+    try {
+        images = await fetchJson(`${endpoint}/${year}/pictures/content.json`, `die Bilder der Galerie`);
+    } catch (error) {
+        return [year, undefined];
+    }
+
+    const start = Math.floor(Math.random() * (images.length - previewCount))
+    const previewElements = getImagesFromEndpoint(`${endpoint}/${year}/pictures`, images, start, previewCount);
+
+    const button = document.createElement('button');
+
+    button.classList.add('more-images',);
+    button.onclick = () => {
+        let found = false;
+        for (const child of years.children) {
+            if (child.id !== `${year}-full`) {
+                child.classList.add('hidden');
+                continue;
+            }
+
+            found = true;
+            currentDiv = child.lastChild;
+            child.classList.remove('hidden');
         }
 
-        if (elements.length === 1) return;
+        if (found === false) {
+            const fullSection = document.createElement('section');
+            years.appendChild(fullSection);
 
-        const section = document.createElement('section');
+            fullSection.id = year.toString() + '-full';
+            currentDiv = createGallerySection(fullSection, year, `https://foschingsball.de/galerie/#${year}`);
+        }
 
-        const headerContainer = document.createElement('div');
-        section.appendChild(headerContainer);
+        currentImages = images;
+        currentYear = year;
+        backButton.classList.remove('hidden');
+        moreButton.classList.remove('hidden')
+        loadImages();
+    };
 
-        headerContainer.classList.add('center');
+    const i = document.createElement('i');
+    button.appendChild(i);
+    i.classList.add('bx', 'bx-dots-horizontal-rounded');
 
-        const headerAnchor = document.createElement('a');
-        headerContainer.appendChild(headerAnchor);
+    const gallerySection = document.createElement('section');
+    gallerySection.id = year.toString();
 
-        headerAnchor.classList.add('section-link');
-        headerAnchor.href = `https://foschingsball.de/galerie/#${year}`;
+    const div = createGallerySection(gallerySection, year, `https://foschingsball.de/galerie/#${year}`);
+    div.append(...previewElements, button);
 
-        const headerLinkIcon = document.createElement('i');
-        headerAnchor.appendChild(headerLinkIcon);
+    return [year - from, gallerySection];
+})());
 
-        headerLinkIcon.classList.add('bx', 'bx-link');
-
-        const headerText = document.createElement('h2');
-        headerAnchor.appendChild(headerText);
-
-        headerText.textContent = year.toString();
-
-        const div = document.createElement('div');
-        section.appendChild(div);
-
-        div.classList.add('galerie-grid');
-        div.append(...elements);
-
-        return [year - from, section];
-    })());
-
-    const result = await Promise.all(sectionsToLoad);
-
+Promise.all(sectionsToLoad).then(result => {
     const length = to - from;
-    const sorted = Array.from({ length: length + 1 });
+    const sorted = Array.from({length: length + 1});
 
     for (const element of result) sorted[length - element[0]] = element[1];
 
-    document.getElementById('years').append(...sorted.filter((value) => value !== undefined));
+    years.append(...sorted.filter((value) => value !== undefined));
+});
+
+function loadImages() {
+    const images = getImagesFromEndpoint(`${endpoint}/${currentYear}/pictures`, currentImages, currentDiv.children.length, Math.min(batchSize, currentImages.length - currentDiv.children.length));
+    currentDiv.append(...images);
+    
+    if (currentDiv.children.length >= currentImages.length) moreButton.classList.add('hidden')
+}
+
+function back() {
+    currentDiv = null;
+
+    for (const child of years.children) {
+        if (child.id.endsWith('-full')) {
+            child.classList.add('hidden');
+            continue;
+        }
+
+        child.classList.remove('hidden');
+    }
+
+    backButton.classList.add('hidden');
+    moreButton.classList.add('hidden');
+}
+
+function createGallerySection(section, header, link) {
+    const headerContainer = document.createElement('div');
+    section.appendChild(headerContainer);
+
+    headerContainer.classList.add('center');
+
+    const headerAnchor = document.createElement('a');
+    headerContainer.appendChild(headerAnchor);
+
+    headerAnchor.classList.add('section-link');
+    headerAnchor.href = link.toString();
+
+    const headerLinkIcon = document.createElement('i');
+    headerAnchor.appendChild(headerLinkIcon);
+
+    headerLinkIcon.classList.add('bx', 'bx-link');
+
+    const headerText = document.createElement('h2');
+    headerAnchor.appendChild(headerText);
+
+    headerText.textContent = header.toString();
+
+    const div = document.createElement('div');
+    section.appendChild(div);
+
+    div.classList.add('galerie-grid');
+
+    return div;
 }

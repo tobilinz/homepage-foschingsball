@@ -124,9 +124,9 @@ function videoAutoplay(minWidth) {
 async function loadGalleryPreview(endpoint, pictureCount) {
     const grid = document.getElementById('galerie-grid');
 
-    let elements;
+    let images;
     try {
-        elements = await getGalleryPreviewElements(endpoint, pictureCount, 'galerie', 'des Galeriepreviews');
+        images = await fetchJson(endpoint + '/content.json', 'die Bilder des Galerie-Previews');
     }
     catch (error) {
         const galerieError = document.getElementById('galerie-error');
@@ -134,5 +134,17 @@ async function loadGalleryPreview(endpoint, pictureCount) {
         galerieError.classList.remove('hidden');
     }
 
-    grid.append(...elements);
+    const start = Math.floor(Math.random() * (images.length - pictureCount))
+    const elements = getImagesFromEndpoint(endpoint, images, start, pictureCount);
+
+    const a = document.createElement('a');
+
+    a.href = 'galerie';
+    a.classList.add('more-images');
+
+    const i = document.createElement('i');
+    a.appendChild(i);
+    i.classList.add('bx', 'bx-dots-horizontal-rounded');
+
+    grid.append(...elements, a);
 }

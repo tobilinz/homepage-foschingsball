@@ -18,29 +18,13 @@ const fetchJson = async (url, name) => {
     return json;
 }
 
-const getGalleryPreviewElements = async (url, previewCount, href, name) => {
-    const elements = [];
-    
-    const galleryContent = await fetchJson(`${url}/content.json`, `die Bilder ${name} `);
-
-    for (let i = 0; i < previewCount; i++) {
+const getImagesFromEndpoint = (endpoint, images, start, range) =>
+    Array.from({ length: range }, (_, index) => {
         const img = document.createElement('img');
-        elements.push(img);
 
-        const imgName = galleryContent[Math.floor(Math.random() * galleryContent.length)];
-        img.src = `${url}/${imgName}`;
+        const imgName = images[start + index];
+        img.src = `${endpoint}/${imgName}`;
         img.alt = `Preview Bild: ${imgName}`;
-    }
 
-    const a = document.createElement('a');
-    elements.push(a)
-
-    a.href = href;
-    a.classList.add('more-images');
-
-    const i = document.createElement('i');
-    a.appendChild(i);
-    i.classList.add('bx', 'bx-dots-horizontal');
-    
-    return elements;
-}
+        return img;
+    });
