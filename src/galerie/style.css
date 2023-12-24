@@ -19,7 +19,3 @@
 .phone {
     font-size: var(--normal);
 }
-
-.back > i {
-    margin-right: 1rem;
-}

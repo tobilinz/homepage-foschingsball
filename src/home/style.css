@@ -126,7 +126,7 @@
     width: 275px;
     height: 275px;
     background-color: var(--primary);
-    transition: background-color 75ms;
+    transition: background-color var(--transition-time);
 }
 
 .more-images:hover {
@@ -230,7 +230,7 @@
     background-color: var(--primary);
     border: none;
     appearance: none;
-    transition: background-color 75ms;
+    transition: background-color var(--transition-time);
     font-weight: bold;
 }
 

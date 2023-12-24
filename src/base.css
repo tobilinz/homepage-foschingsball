@@ -14,6 +14,7 @@
     --shadow: drop-shadow(0px 0px 2px var(--background)) drop-shadow(0px 0px 4px var(--background)) drop-shadow(0px 0px 8px var(--background));
     --glow-animation: filter 50ms;
     --border-radius: 20px;
+    --transition-time: 75ms;
 
     /*===== Font =====*/
     font-family: "Noto Sans", sans-serif;
@@ -173,6 +174,28 @@ body, html {
 section {
     margin: var(--my) 0;
     padding: 0;
+}
+
+.back {
+    text-decoration: none;
+    margin: 0 var(--mx);
+}
+
+.back > i, .back > h2 {
+    font-size: var(--header);
+    color: var(--gray-text);
+    transition: color var(--transition-time);
+}
+
+.back:hover > i, .back:hover > h2 {
+    color: var(--text);
+}
+
+.back > h2 {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .section-link {
