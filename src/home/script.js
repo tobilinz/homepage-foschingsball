@@ -6,6 +6,7 @@ blinking(
     'counter-frame', 'party');
 blurAnimation(0.5);
 videoAutoplay(600);
+loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 3);
 
 function countDown(year, month, day, hour, minute) {
     const days = document.getElementById('days');
@@ -118,4 +119,55 @@ function blurAnimation(blurEntryMultiplier) {
 function videoAutoplay(minWidth) {
     const videoPlayer = document.getElementById('video-player');
     if (window.innerWidth > minWidth) videoPlayer.setAttribute('autoplay', 'autoplay');
+}
+
+function loadGalleryPreview(endpoint, pictureCount) {
+    const galleryContent = (async () => {
+        let response;
+        try {
+            response = await fetch(endpoint + '/content.json', {mode: 'cors'});
+        } catch (error) {
+            console.error(`Der Endpunkt mit den Team Daten konnte nicht erreicht werden:\n${error}`);
+            return null;
+        }
+
+        if (!response.ok) {
+            console.error(`Die Informationen über das Team konnten nicht geladen werden:\n${response.statusText}`);
+            return null;
+        }
+
+        let json;
+        try {
+            json = await response.json();
+        } catch (error) {
+            console.error(`Die JSON Datei mit den Team Daten konnte nicht verarbeitet werden:\n${error}`);
+            return null;
+        }
+
+        return json;
+    })();
+
+    const grid = document.getElementById('galerie-grid');
+
+    for (let i = 0; i < pictureCount; i++) {
+        const img = document.createElement('img');
+
+        galleryContent.then(content => {
+            const imgName = content[Math.floor(Math.random() * content.length)];
+            img.src = `${endpoint}/${imgName}`;
+            img.alt = `Preview Bild: ${imgName}`;
+        })
+
+        grid.appendChild(img);
+    }
+
+    const i = document.createElement('i');
+    i.classList.add('bx', 'bx-dots-horizontal');
+
+    const a = document.createElement('a');
+    a.appendChild(i);
+    a.href = 'https://foschingsball.de/galerie';
+    a.classList.add('more-images');
+
+    grid.appendChild(a);
 }
