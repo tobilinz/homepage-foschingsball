@@ -51,6 +51,7 @@ function selectTeam() {
     }
     
     const members = team[teamSelector.value].members;
+    console.log(members)
     
     const elements = members.map(member => {
         const name = member.name;

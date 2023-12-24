@@ -255,16 +255,22 @@
 }
 
 #member-grid > a {
-    width: 200px;
+    width: 120px;
     text-decoration: none;
 }
 
 #member-grid > a > img {
+    display: block;
     border-radius: var(--border-radius);
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
     overflow: hidden;
+    color: transparent;
+    font-size: var(--small);
+    text-align: center;
+    background: url("generic-avatar.svg") no-repeat scroll center;
+    background-size: cover;
 }
 
 #member-grid > a > p {
