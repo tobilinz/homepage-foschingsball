@@ -33,7 +33,7 @@
     --my: 6rem;
 
     /*===== OTHER =====*/
-    --galerie-grid-height: 275px;
+    --galerie-grid-height: 200px;
     --border-radius: 20px;
 
     /*===== var(--name) =====*/
@@ -88,7 +88,7 @@
     }
 }
 
-@media screen and (max-width: 355px){
+@media screen and (max-width: 355px) {
     :root {
         --counter: 2rem;
     }
@@ -187,9 +187,9 @@ section {
 }
 
 .back > i, .back > h2 {
-    font-size: var(--header);
     color: var(--gray-text);
     transition: color var(--transition-time);
+    font-size: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));
 }
 
 .back:hover > i, .back:hover > h2 {
@@ -292,8 +292,8 @@ section > p {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    width: 275px;
-    height: 275px;
+    width: var(--galerie-grid-height);
+    aspect-ratio: 1;
     background-color: var(--primary);
     transition: background-color var(--transition-time);
     border: 0;

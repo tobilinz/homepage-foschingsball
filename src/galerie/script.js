@@ -1,5 +1,5 @@
 const endpoint = 'https://resources.foschingsball.de';
-const previewCount = 3;
+const previewCount = 2;
 const from = 2020
 const to = 2030;
 const batchSize = 16;

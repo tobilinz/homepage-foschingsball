@@ -1,16 +1,20 @@
+.title-link {
+    margin-bottom: 0;
+}
+
 #to-overview {
     text-decoration: none;
     margin: var(--msy) var(--mx) 0 var(--mx);
     cursor: pointer;
 }
 
-#to-overview > i, #to-overview > h2 {
-    font-size: var(--header);
+#to-overview > i, #to-overview > h2, #more {
     color: var(--gray-text);
     transition: color var(--transition-time);
+    font-size: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));
 }
 
-#to-overview:hover > i, #to-overview:hover > h2 {
+#to-overview:hover > i, #to-overview:hover > h2, #more:hover {
     color: var(--text);
 }
 
@@ -24,12 +28,5 @@
 #more {
     margin: 0 var(--mx) var(--my) var(--mx);
     cursor: pointer;
-    font-size: var(--header);
-    color: var(--gray-text);
-    transition: color var(--transition-time);
     text-align: center;
-}
-
-#more:hover {
-    color: var(--text);
 }

@@ -6,7 +6,7 @@ blinking(
     'counter-frame', 'party');
 blurAnimation(0.5);
 videoAutoplay(600);
-loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 3);
+loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 2);
 
 function countDown(year, month, day, hour, minute) {
     const days = document.getElementById('days');
