@@ -1,37 +1,52 @@
 const endpoint = 'https://resources.foschingsball.de/2024/team';
-let team = null;
-
 const customTeamSelector = document.getElementById('custom-team-selector');
+const teamSelector = document.getElementById('team-selector');
+const memberGrid = document.getElementById('member-grid');
 
-fetch(endpoint + '/team.json', {mode: 'cors'})
-    .then(response => {
-        if (!response.ok) {
-            throwError`Die Informationen über das Team konnten nicht geladen werden:\n${response.statusText}`;
-            return;
-        }
+const team = (async () => {
+    let response;
 
-        response.json()
-            .then(json => {
-                team = json;
+    try {
+        response = await fetch(endpoint + '/team.json', {mode: 'cors'});
+    } catch (error) {
+        throwError(`Der Endpunkt mit den Team Daten konnte nicht erreicht werden:\n${error}`);
+        return null;
+    }
 
-                const select = document.getElementById('team-selector');
+    if (!response.ok) {
+        throwError(`Die Informationen über das Team konnten nicht geladen werden:\n${response.statusText}`);
+        return null;
+    }
 
-                for (const name in team) {
-                    const option = document.createElement('option');
-                    select.appendChild(option);
+    let json;
+    try {
+        json = await response.json();
+    } catch (error) {
+        throwError(`Die JSON Datei mit den Team Daten konnte nicht verarbeitet werden:\n${error}`);
+        return null;
 
-                    option.setAttribute('value', name);
-                    if (team[name].selected === true) option.setAttribute('selected', 'selected');
-                    option.innerText = name;
-                }
+    }
 
-                customTeamSelector.classList.remove('hidden');
-                
-                selectTeam();
-            })
-            .catch(error => throwError(`Die JSON Datei mit den Team Daten konnte nicht verarbeitet werden:\n${error}`));
-    })
-    .catch(error => throwError(`Der Endpunkt mit den Team Daten konnte nicht erreicht werden:\n${error}`));
+    return json;
+})();
+
+team.then(groups => {
+    const select = document.getElementById('team-selector');
+
+    for (const groupName in groups) {
+        const option = document.createElement('option');
+        select.appendChild(option);
+
+        option.setAttribute('value', groupName);
+        if (groups[groupName].selected === true) 
+            option.setAttribute('selected', 'selected');
+        option.innerText = groupName;
+    }
+
+    customTeamSelector.classList.remove('hidden');
+    
+    selectTeam();
+})
 
 function throwError(message) {
     customTeamSelector.classList.add('hidden');
@@ -41,25 +56,24 @@ function throwError(message) {
     loadingError.classList.remove('hidden');
 }
 
-const teamSelector = document.getElementById('team-selector');
-const memberGrid = document.getElementById('member-grid');
-
-function selectTeam() {
-    if (team === null) {
+async function selectTeam() {
+    const groups = await team;
+    if (groups === null) {
         throwError('Beim Auswählen des Teams ist ein Fehler aufgetreten.')
         return;
     }
     
-    const members = team[teamSelector.value].members;
-    console.log(members)
-    
+    const members = groups[teamSelector.value].members;
+
     const elements = members.map(member => {
         const name = member.name;
-        
+
         const img = document.createElement('img');
-        img.src = `${endpoint}/${teamSelector.value.toLowerCase()}/${member.picture}`;
-        img.alt = `Bild von ${name}`;
+        if (!isEmpty(member.picture)) 
+            img.src = `${endpoint}/${teamSelector.value.toLowerCase()}/${member.picture}`;
         
+        img.alt = `Bild von ${name}`;
+
         const p = document.createElement('p');
         p.textContent = name;
 
@@ -73,10 +87,10 @@ function selectTeam() {
             a.rel = 'noopener noreferrer';
             a.href = member.link.trim();
         }
-        
+
         return a;
     });
-    
+
     memberGrid.replaceChildren(...elements);
 }
 
