@@ -1,4 +1,4 @@
-loadGallery('https://resources.foschingsball.de', 3, 2022, 2025);
+loadGallery('https://resources.foschingsball.de', 3, 2020, 2030);
 
 async function loadGallery(endpoint, previewCount, from, to) {
     const sectionsToLoad = Array.from({ length: to - from + 1 }, (_, index) => (async () => {
