@@ -178,7 +178,7 @@ section {
 
 .back {
     text-decoration: none;
-    margin: 0 var(--mx);
+    margin: 0 var(--mx) var(--msy) var(--mx);
 }
 
 .back > i, .back > h2 {
@@ -259,4 +259,62 @@ section > p {
     text-align: center;
     color: var(--text);
     font-family: Courgette, sans-serif;
+}
+
+/*-------- GALERIE --------*/
+
+#galerie-grid {
+    margin: var(--msy) auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mg);
+    max-width: 1000px;
+    padding: 0 var(--mx);
+}
+
+#galerie-grid > img {
+    border-radius: var(--border-radius);
+    height: 275px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.more-images {
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 275px;
+    height: 275px;
+    background-color: var(--primary);
+    transition: background-color var(--transition-time);
+}
+
+.more-images:hover {
+    background-color: var(--hover);
+}
+
+.more-images > i {
+    font-size: 150px;
+    color: var(--text);
+}
+
+/*-------- FOOTER --------*/
+
+#footer {
+    margin: 0 auto var(--msy) auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mx);
+    max-width: 1000px;
+    padding: 0 var(--mx);
+}
+
+.footer-link {
+    color: var(--text);
+    font-size: var(--small);
 }

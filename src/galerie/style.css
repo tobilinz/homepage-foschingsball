@@ -1,21 +1,16 @@
-.email, .phone {
-    text-decoration: none;
+.galerie-grid {
+    margin: var(--msy) auto 0 auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: var(--msy) var(--mx) 0 var(--mx);
+    gap: var(--mg);
+    max-width: 1000px;
+    padding: 0 var(--mx);
 }
 
-.email > span, .phone > span {
-    max-width: 500px;
-    color: var(--text);
-    white-space: nowrap;
-    text-align: center;
-}
-
-.email {
-    font-size: clamp(min(var(--normal), 3.75vw), 100vw, min(var(--normal), 3.75vw));
-}
-
-.phone {
-    font-size: var(--normal);
+.galerie-grid > img {
+    border-radius: var(--border-radius);
+    height: 275px;
+    object-fit: cover;
+    overflow: hidden;
 }

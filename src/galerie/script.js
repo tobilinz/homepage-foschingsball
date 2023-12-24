@@ -1,173 +1,56 @@
-countDown('2024', '02', '09', '19', '00');
-blinking(
-    2000, 4000,
-    1, 3,
-    75, 25,
-    'counter-frame', 'party');
-blurAnimation(0.5);
-videoAutoplay(600);
-loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 3);
+loadGallery('https://resources.foschingsball.de', 3, 2022, 2025);
 
-function countDown(year, month, day, hour, minute) {
-    const days = document.getElementById('days');
-    const hours = document.getElementById('hours');
-    const minutes = document.getElementById('minutes');
-    const seconds = document.getElementById('seconds');
-
-    const date = Date.parse(`${year}-${month}-${day}T${hour}:${minute}:00.000+01:00`);
-
-    const diff = date - Date.now();
-
-    /* When too much time is left, the day count has three digits.
-       This causes the day counter to overflow out of its border. 
-       When no time is left, the counter is useless. 
-    */
-    const hundredDaysInMS = 100 * 24 * 60 * 60 * 1000;
-    if (diff < 0 || diff > hundredDaysInMS) {
-        const over = document.getElementById('counter-over');
-        over.innerText = `Der FOSchingsball ${year - 1} ist vorbei.
-Komm ein anderes Mal wieder.`;
-        over.classList.remove('hidden');
-        return;
-    }
-
-    document.getElementById('counter').classList.remove('hidden');
-
-    function updateCounter() {
-        const timeLeft = date - Date.now();
-
-        if (timeLeft <= 0) return false;
-
-        const daysLeft = timeLeft / (1000 * 60 * 60 * 24);
-        days.textContent = Math.floor(daysLeft).toString();
-        const daysRest = daysLeft % 1;
-        const hoursLeft = daysRest * 24;
-        hours.textContent = Math.floor(hoursLeft).toString();
-        const hoursRest = hoursLeft % 1;
-        const minutesLeft = hoursRest * 60;
-        minutes.textContent = Math.floor(minutesLeft).toString();
-        const minutesRest = minutesLeft % 1;
-        const secondsLeft = minutesRest * 60;
-        seconds.textContent = Math.floor(secondsLeft).toString();
-
-        return true;
-    }
-
-    if (!updateCounter()) return;
-
-    const countdownTimer = setInterval(() => {
-        if (updateCounter()) return;
-
-        clearInterval(countdownTimer);
-        days.textContent = "0";
-        hours.textContent = "0";
-        minutes.textContent = "0";
-        seconds.textContent = "0";
-    }, 1000);
-}
-
-function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, minOnOffDelay, onOffDelayRange, ...classNames) {
-    const elements = []
-    for (const className of classNames) {
-        const classElements = document.getElementsByClassName(className);
-        for (const classElement of classElements) elements.push(classElement);
-    }
-
-    const filter = getComputedStyle(document.documentElement).getPropertyValue('--glow');
-    const shadow = getComputedStyle(document.documentElement).getPropertyValue('--shadow');
-
-    function blink() {
-        const element = elements[Math.floor(Math.random() * elements.length)];
-        const amount = Math.floor(Math.random() * blinkTimesRange + minBlinkTimes);
-
-        let totalDelay = 0;
-        for (let i = 0; i < amount; i++) {
-            setTimeout(() => element.style.setProperty('filter', shadow), totalDelay);
-
-            totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
-            setTimeout(() => element.style.setProperty('filter', filter), totalDelay);
-
-            totalDelay += Math.random() * onOffDelayRange + minOnOffDelay;
-        }
-
-        setTimeout(blink, Math.random() * intervalRange + minInterval)
-    }
-
-    blink();
-}
-
-function blurAnimation(blurEntryMultiplier) {
-    let hasBlurred = false;
-    const background = document.getElementsByClassName('background')[0];
-
-    function blur() {
-        if (window.scrollY > window.innerHeight * blurEntryMultiplier) {
-            background.classList.remove('blur-out');
-            background.classList.add('blur-in');
-            hasBlurred = true;
-        } else if (hasBlurred) {
-            background.classList.remove('blur-in');
-            background.classList.add('blur-out');
-        }
-    }
-
-    blur();
-
-    window.addEventListener('scroll', blur);
-}
-
-function videoAutoplay(minWidth) {
-    const videoPlayer = document.getElementById('video-player');
-    if (window.innerWidth > minWidth) videoPlayer.setAttribute('autoplay', 'autoplay');
-}
-
-function loadGalleryPreview(endpoint, pictureCount) {
-    const galleryContent = (async () => {
-        let response;
+async function loadGallery(endpoint, previewCount, from, to) {
+    const sectionsToLoad = Array.from({ length: to - from + 1 }, (_, index) => (async () => {
+        const year = from + index;
+        
+        let elements;
         try {
-            response = await fetch(endpoint + '/content.json', {mode: 'cors'});
+            elements = await getGalleryPreviewElements(`${endpoint}/${year}/pictures`, 3, year, 'der Galerie');
         } catch (error) {
-            console.error(`Der Endpunkt mit den Team Daten konnte nicht erreicht werden:\n${error}`);
-            return null;
+            return [year, undefined];
         }
 
-        if (!response.ok) {
-            console.error(`Die Informationen über das Team konnten nicht geladen werden:\n${response.statusText}`);
-            return null;
-        }
+        if (elements.length === 1) return;
 
-        let json;
-        try {
-            json = await response.json();
-        } catch (error) {
-            console.error(`Die JSON Datei mit den Team Daten konnte nicht verarbeitet werden:\n${error}`);
-            return null;
-        }
+        const section = document.createElement('section');
 
-        return json;
-    })();
+        const headerContainer = document.createElement('div');
+        section.appendChild(headerContainer);
 
-    const grid = document.getElementById('galerie-grid');
+        headerContainer.classList.add('center');
 
-    for (let i = 0; i < pictureCount; i++) {
-        const img = document.createElement('img');
+        const headerAnchor = document.createElement('a');
+        headerContainer.appendChild(headerAnchor);
 
-        galleryContent.then(content => {
-            const imgName = content[Math.floor(Math.random() * content.length)];
-            img.src = `${endpoint}/${imgName}`;
-            img.alt = `Preview Bild: ${imgName}`;
-        })
+        headerAnchor.classList.add('section-link');
+        headerAnchor.href = `https://foschingsball.de/galerie/#${year}`;
 
-        grid.appendChild(img);
-    }
+        const headerLinkIcon = document.createElement('i');
+        headerAnchor.appendChild(headerLinkIcon);
 
-    const i = document.createElement('i');
-    i.classList.add('bx', 'bx-dots-horizontal');
+        headerLinkIcon.classList.add('bx', 'bx-link');
 
-    const a = document.createElement('a');
-    a.appendChild(i);
-    a.href = 'https://foschingsball.de/galerie';
-    a.classList.add('more-images');
+        const headerText = document.createElement('h2');
+        headerAnchor.appendChild(headerText);
 
-    grid.appendChild(a);
+        headerText.textContent = year.toString();
+
+        const div = document.createElement('div');
+        section.appendChild(div);
+
+        div.classList.add('galerie-grid');
+        div.append(...elements);
+
+        return [year - from, section];
+    })());
+
+    const result = await Promise.all(sectionsToLoad);
+
+    const length = to - from;
+    const sorted = Array.from({ length: length + 1 });
+
+    for (const element of result) sorted[length - element[0]] = element[1];
+
+    document.getElementById('years').append(...sorted.filter((value) => value !== undefined));
 }

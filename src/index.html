@@ -11,9 +11,10 @@
           content="FOSchingsball, Faschingsball, Neumarkt, Feier, Fest, Fasching, Ball, Verkleiden, Fasching, Karneval, Party, Veranstaltung, Kostüme, Maskenball, Tanzen, Musik, Faschingsfeier, lokale Events, Faschingsparty, Jurahalle, FOS, BOS, Generell, Video, Fotos, Bilder, Galerie, Geschichte, Verein">
     <meta name="author" content="AktiveFOSBOSNeumarkt.EV">
     <title>Home - FOSchingsball Neumarkt i.d. OPf.</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="home/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' type="text/css">
+    <link rel="stylesheet" href="base.css" type="text/css">
+    <link rel="stylesheet" href="home/style.css" type="text/css">
+    <script src="base.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -104,7 +105,9 @@
             <h2>Galerie</h2>
         </a>
     </div>
-    <div id="galerie-grid"></div>
+    <div id="galerie-grid">
+        <p id="galerie-error" class="hidden"></p>
+    </div>
 </section>
 
 <section id="datum">
@@ -200,7 +203,7 @@
         </div>
     </div>
     <div id="member-grid"></div>
-    <script src="home/team.js"></script>
+    <script src="home/team.js" type="text/javascript"></script>
 </section>
 
 <section id="geschichte">
@@ -232,7 +235,7 @@
 </section>
 
 <div id="footer">
-    <a href="https://foschingsball.de/impressum" class="footer-link">
+    <a href="impressum" class="footer-link">
         Impressum
     </a>
     <a target="_blank" rel="noopener noreferrer" href="https://fosbos-neumarkt.de/" class="footer-link">
@@ -243,7 +246,7 @@
     </a>
 </div>
 
-<script src="home/script.js"></script>
+<script src="home/script.js" type="text/javascript"></script>
 
 </body>
 
