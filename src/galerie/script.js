@@ -53,7 +53,8 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
         currentYear = year;
         backButton.classList.remove('hidden');
         moreButton.classList.remove('hidden')
-        loadImages();
+        
+        if (currentDiv.children.length === 0) loadImages();
     };
 
     const i = document.createElement('i');
