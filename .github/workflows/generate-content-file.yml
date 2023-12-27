@@ -27,3 +27,4 @@ jobs:
       out-path: public_html/resources/${{ github.event.inputs.target-year }}/pictures/content.json
       exclude-regex: content.json
       include-directories: false
+      sort: true
