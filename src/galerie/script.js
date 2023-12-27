@@ -2,7 +2,7 @@ const endpoint = 'https://resources.foschingsball.de';
 const previewCount = 2;
 const from = 2020
 const to = 2030;
-const batchSize = 16;
+const batchSize = 32;
 
 const years = document.getElementById('years');
 const backButton = document.getElementById('to-overview');
