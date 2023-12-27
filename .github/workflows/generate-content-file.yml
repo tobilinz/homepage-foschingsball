@@ -1,0 +1,29 @@
+name: Generate content file
+
+on:
+ workflow_dispatch:
+   inputs:
+      target-year:
+        required: true
+        type: string
+        description: Year to generate content file for.
+
+jobs:
+ ftp-scan:
+   runs-on: ubuntu-latest
+
+   steps:
+   - name: Checkout code
+     uses: actions/checkout@v4.1.1
+
+   - name: FTP Directory Scan
+     id: ftp-scan
+     uses: tobilinz/ftp-directory-scan@v1.1.0
+     with:
+      server: ${{ secrets.FTP_SERVER }}
+      user: ${{ secrets.FTP_USERNAME }}
+      password: ${{ secrets.FTP_PASSWORD }}
+      server-dir: public_html/resources/${{ github.event.inputs.target-year }}/pictures
+      out-path: public_html/resources/${{ github.event.inputs.target-year }}/pictures/content.json
+      exclude-regex: content.json
+      include-directories: false
