@@ -1,12 +1,11 @@
 name: Release Deploy
 
+env:
+  YEAR: 2024
+  
 on:
   release:
     types: [ created ]
-
-defaults:
-  run:
-    working-directory: ./src/
 
 jobs:
   copy-and-upload:
@@ -23,4 +22,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./src/
-          server-dir: public_html/2024/
+          server-dir: public_html/${{ env.YEAR }}/
