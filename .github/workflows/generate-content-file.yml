@@ -18,7 +18,7 @@ jobs:
 
    - name: FTP Directory Scan
      id: ftp-scan
-     uses: tobilinz/ftp-directory-scan@v1.1.0
+     uses: tobilinz/ftp-directory-scan@v1.2.0
      with:
       server: ${{ secrets.FTP_SERVER }}
       user: ${{ secrets.FTP_USERNAME }}
