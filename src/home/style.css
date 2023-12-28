@@ -242,6 +242,9 @@
     background: url("generic-avatar.svg") no-repeat scroll center;
     background-size: cover;
     border-width: 0;
+    border-style: none;
+    border-color: transparent;
+    padding: 0;
 }
 
 #member-grid > a > p {
