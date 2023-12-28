@@ -80,6 +80,8 @@
         --mx: 1rem;
         --msy: 1.5rem;
         --my: 4.5rem;
+
+        --border-radius: 16px;
     }
 }
 
