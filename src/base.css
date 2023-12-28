@@ -76,18 +76,19 @@
         --normal: 1.25rem;
         --small: 1rem;
 
-        --mg: 1.25rem;
         --mx: 1rem;
         --msy: 1.5rem;
         --my: 4.5rem;
-
-        --border-radius: 16px;
     }
 }
 
 @media screen and (max-width: 400px) {
     :root {
         --counter: 2.5rem;
+
+        --mg: 1.25rem;
+
+        --border-radius: 16px;
     }
 }
 
