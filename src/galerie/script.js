@@ -2,7 +2,7 @@ const endpoint = 'https://resources.foschingsball.de';
 const previewCount = 2;
 const from = 2020
 const to = 2030;
-const batchSize = 16;
+const batchSize = 32;
 
 const years = document.getElementById('years');
 const backButton = document.getElementById('to-overview');
@@ -52,8 +52,10 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
         currentImages = images;
         currentYear = year;
         backButton.classList.remove('hidden');
-        moreButton.classList.remove('hidden')
-        loadImages();
+
+        if (images.length > currentDiv.children.length) moreButton.classList.remove('hidden');
+        
+        if (currentDiv.children.length === 0) loadImages();
     };
 
     const i = document.createElement('i');
@@ -82,7 +84,7 @@ function loadImages() {
     const images = getImagesFromEndpoint(`${endpoint}/${currentYear}/pictures`, currentImages, currentDiv.children.length, Math.min(batchSize, currentImages.length - currentDiv.children.length));
     currentDiv.append(...images);
     
-    if (currentDiv.children.length >= currentImages.length) moreButton.classList.add('hidden')
+    if (currentDiv.children.length >= currentImages.length) moreButton.classList.add('hidden');
 }
 
 function back() {
