@@ -243,13 +243,18 @@ section > h3 {
     text-align: center;
 }
 
-section > p {
+section > p, section .link {
+    display: block;
     margin: var(--msy) auto 0 auto;
     padding: 0 var(--mx);
     color: var(--text);
     font-size: var(--normal);
     max-width: 500px;
     text-align: center;
+}
+
+section .link {
+    text-decoration: underline;
 }
 
 /*-------- HERO --------*/
