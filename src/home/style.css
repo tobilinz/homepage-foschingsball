@@ -236,11 +236,6 @@
     aspect-ratio: 1;
     object-fit: cover;
     overflow: hidden;
-    color: transparent;
-    font-size: var(--small);
-    text-align: center;
-    background: url("generic-avatar.svg") no-repeat scroll center;
-    background-size: cover;
 }
 
 #member-grid > a > p {

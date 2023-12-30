@@ -63,8 +63,8 @@ async function selectTeam() {
         const img = document.createElement('img');
         a.appendChild(img);
 
-        if (!isEmpty(member.picture))
-            img.src = `${endpoint}/${teamSelector.value.toLowerCase()}/${member.picture}`;
+        img.src = isEmpty(member.picture) ? 'home/generic-avatar.svg' : `${endpoint}/${teamSelector.value.toLowerCase()}/${member.picture}`;
+        
         img.alt = `Bild von ${name}`;
 
         const p = document.createElement('p');
