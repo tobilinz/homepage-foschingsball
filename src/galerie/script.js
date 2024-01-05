@@ -112,6 +112,7 @@ function createGallerySection(section, header, link) {
 
     headerAnchor.classList.add('section-link');
     headerAnchor.href = link.toString();
+    headerAnchor.ariaLabel = 'Mehr Bilder anschauen'
 
     const headerLinkIcon = document.createElement('img');
     headerAnchor.appendChild(headerLinkIcon);

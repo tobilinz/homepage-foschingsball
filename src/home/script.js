@@ -151,7 +151,7 @@ async function loadGalleryPreview(endpoint, pictureCount) {
     const elements = getImagesFromEndpoint(endpoint, images, start, pictureCount);
 
     const a = document.createElement('a');
-
+    a.ariaLabel = 'Mehr Bilder anschauen';
     a.href = 'galerie';
     a.classList.add('more-images');
 
