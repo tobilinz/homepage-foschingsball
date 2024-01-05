@@ -132,7 +132,7 @@ function blurAnimation(blurEntryMultiplier) {
 
 function videoAutoplay(minWidth) {
   const videoPlayer = document.getElementById('video-player');
-  if (window.innerWidth > minWidth) videoPlayer.setAttribute('autoplay', 'autoplay');
+  if (window.innerWidth > minWidth) videoPlayer.autoplay = true;
 }
 
 async function loadGalleryPreview(endpoint, pictureCount) {
