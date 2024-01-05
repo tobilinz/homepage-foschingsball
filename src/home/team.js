@@ -25,7 +25,7 @@ team.then(groups => {
 
     customTeamSelector.classList.remove('hidden');
 
-    selectTeam();
+    selectTeam().then(r => null);
 })
 
 function throwError(message) {

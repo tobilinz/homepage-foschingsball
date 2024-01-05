@@ -75,13 +75,11 @@
 }
 
 .social {
-    font-size: var(--social);
-    color: var(--text);
-    font-weight: bold;
+    width: min(12.5vw, 100px);
 }
 
 .social:hover {
-    text-shadow: 0 0 8px var(--text);
+    filter: drop-shadow(0 0 8px var(--text));
 }
 
 /*-------- VIDEO --------*/
@@ -178,18 +176,16 @@
     display: none;
 }
 
-#custom-team-selector > i {
+#custom-team-selector > svg {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     display: block;
-    color: var(--text);
-    background-color: transparent;
-    padding: 1.25rem 1rem 0 1rem;
+    padding: 1.1rem 1rem 0 1rem;
     text-align: center;
     pointer-events: none;
-    font-size: var(--normal);
+    width: 30px;
 }
 
 #team-selector {

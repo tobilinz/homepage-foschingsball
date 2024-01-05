@@ -58,9 +58,7 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
         if (currentDiv.children.length === 0) loadImages();
     };
 
-    const i = document.createElement('i');
-    button.appendChild(i);
-    i.classList.add('bx', 'bx-dots-horizontal-rounded');
+    button.innerHTML = dotsSVG;
 
     const gallerySection = document.createElement('section');
     gallerySection.id = year.toString();
@@ -115,10 +113,10 @@ function createGallerySection(section, header, link) {
     headerAnchor.classList.add('section-link');
     headerAnchor.href = link.toString();
 
-    const headerLinkIcon = document.createElement('i');
+    const headerLinkIcon = document.createElement('img');
     headerAnchor.appendChild(headerLinkIcon);
-
-    headerLinkIcon.classList.add('bx', 'bx-link');
+    headerAnchor.src = '../../../link.svg';
+    headerAnchor.alt = 'Link Icon';
 
     const headerText = document.createElement('h2');
     headerAnchor.appendChild(headerText);

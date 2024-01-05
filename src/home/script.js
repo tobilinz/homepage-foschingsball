@@ -6,7 +6,7 @@ blinking(
     'counter-frame', 'party');
 blurAnimation(0.5);
 videoAutoplay(600);
-loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 2);
+loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 2).then(r => null);
 loadIFrames([
     {
         id: 'main-map',
@@ -155,9 +155,7 @@ async function loadGalleryPreview(endpoint, pictureCount) {
     a.href = 'galerie';
     a.classList.add('more-images');
 
-    const i = document.createElement('i');
-    a.appendChild(i);
-    i.classList.add('bx', 'bx-dots-horizontal-rounded');
+    a.innerHTML = dotsSVG;
 
     grid.append(...elements, a);
 }
