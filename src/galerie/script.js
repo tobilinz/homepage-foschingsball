@@ -115,8 +115,8 @@ function createGallerySection(section, header, link) {
 
     const headerLinkIcon = document.createElement('img');
     headerAnchor.appendChild(headerLinkIcon);
-    headerAnchor.src = '../../../link.svg';
-    headerAnchor.alt = 'Link Icon';
+    headerLinkIcon.src = '../link.svg';
+    headerLinkIcon.alt = 'Link Icon';
 
     const headerText = document.createElement('h2');
     headerAnchor.appendChild(headerText);
