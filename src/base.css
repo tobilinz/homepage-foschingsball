@@ -127,8 +127,8 @@ body, html {
     top: 0;
     right: 0;
     width: 100vw;
-    height: 125vh;
-    background: url("background.jpg") no-repeat;
+    height: 100vh;
+    background: url("background.webp") no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
