@@ -1,26 +1,3 @@
-window.addEventListener('DOMContentLoaded', () => {
-  const portrait = document.getElementById('portrait');
-  const landscape = document.getElementById('landscape');
-  const displayOrientation = () => {
-    const screenOrientation = screen.orientation.type;
-    if (screenOrientation === 'landscape-primary' || screenOrientation === 'landscape-secondary') {
-      landscape.classList.remove('hidden');
-      portrait.classList.add('hidden')
-    } else if (screenOrientation === 'portrait-secondary' || screenOrientation === 'portrait-primary') {
-      portrait.classList.remove('hidden');
-      landscape.classList.add('hidden');
-    }
-  };
-
-  if (screen && screen.orientation !== null) {
-    try {
-      window.screen.orientation.onchange = displayOrientation;
-      displayOrientation();
-    } catch (e) {
-    }
-  }
-});
-
 const fetchJson = async (url, name) => {
   let response;
   try {
@@ -60,3 +37,26 @@ const getImagesFromEndpoint = (endpoint, images, start, range) => {
 const dotsSVG = `<svg width="60%" viewBox="0 0 32.1 32.1" xmlns="http://www.w3.org/2000/svg" fill="#eceef9">
     <path d="m3.97 12.1c-2.19 0-3.97 1.77-3.97 3.97s1.77 3.97 3.97 3.97c2.19 0 3.97-1.77 3.97-3.97 0-2.19-1.78-3.97-3.97-3.97zm12.3 0c-2.19 0-3.97 1.77-3.97 3.96s1.78 3.97 3.97 3.97 3.97-1.77 3.97-3.97c-2e-3 -2.19-1.78-3.96-3.97-3.96zm11.9 0c-2.19 0-3.97 1.77-3.97 3.97 0 2.19 1.77 3.96 3.97 3.96 2.19 0 3.96-1.77 3.96-3.96s-1.78-3.97-3.96-3.97z"/>
 </svg>`
+
+window.addEventListener('DOMContentLoaded', () => {
+  const portrait = document.getElementById('portrait');
+  const landscape = document.getElementById('landscape');
+  const displayOrientation = () => {
+    const screenOrientation = screen.orientation.type;
+    if (screenOrientation === 'landscape-primary' || screenOrientation === 'landscape-secondary') {
+      landscape.classList.remove('hidden');
+      portrait.classList.add('hidden')
+    } else if (screenOrientation === 'portrait-secondary' || screenOrientation === 'portrait-primary') {
+      portrait.classList.remove('hidden');
+      landscape.classList.add('hidden');
+    }
+  };
+
+  if (screen && screen.orientation !== null) {
+    try {
+      window.screen.orientation.onchange = displayOrientation;
+      displayOrientation();
+    } catch (e) {
+    }
+  }
+});
