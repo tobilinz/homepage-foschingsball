@@ -101,7 +101,8 @@ body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: var(--background)
+    background-color: var(--background);
+    z-index: -3;
 }
 
 .center {
