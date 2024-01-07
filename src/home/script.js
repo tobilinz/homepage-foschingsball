@@ -148,7 +148,7 @@ async function loadGalleryPreview(endpoint, pictureCount) {
   }
 
   const start = Math.floor(Math.random() * (images.length - pictureCount))
-  const elements = getImagesFromEndpoint(endpoint, images, start, pictureCount);
+  const elements = getMediaFromEndpoint(endpoint, images, start, pictureCount);
 
   const a = document.createElement('a');
   a.ariaLabel = 'Mehr Bilder anschauen';

@@ -18,7 +18,7 @@ const fetchJson = async (url, name) => {
   return json;
 }
 
-const getImagesFromEndpoint = (endpoint, images, start, range) => {
+const getMediaFromEndpoint = (endpoint, images, start, range) => {
   const imageHeight = getComputedStyle(document.documentElement).getPropertyValue('--galerie-grid-height').slice(0, -2);
 
   return Array.from({length: range}, (_, index) => {

@@ -23,7 +23,7 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
   }
 
   const start = Math.floor(Math.random() * (images.length - previewCount))
-  const previewElements = getImagesFromEndpoint(`${endpoint}/${year}/pictures`, images, start, previewCount);
+  const previewElements = getMediaFromEndpoint(`${endpoint}/${year}/pictures`, images, start, previewCount);
 
   const button = document.createElement('button');
 
@@ -79,7 +79,7 @@ Promise.all(sectionsToLoad).then(result => {
 });
 
 function loadImages() {
-  const images = getImagesFromEndpoint(`${endpoint}/${currentYear}/pictures`, currentImages, currentDiv.children.length, Math.min(batchSize, currentImages.length - currentDiv.children.length));
+  const images = getMediaFromEndpoint(`${endpoint}/${currentYear}/pictures`, currentImages, currentDiv.children.length, Math.min(batchSize, currentImages.length - currentDiv.children.length));
   currentDiv.append(...images);
 
   if (currentDiv.children.length >= currentImages.length) moreButton.classList.add('hidden');
