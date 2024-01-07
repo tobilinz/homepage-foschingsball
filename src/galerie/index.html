@@ -13,12 +13,21 @@
     <link href="../base.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://resources.foschingsball.de">
-    <script src="../base.js" type="text/javascript"></script>
+    <script src="../base.js" async type="text/javascript"></script>
 </head>
 
 <body>
 
-<div class="background"></div>
+<!-- Landscape -->
+<img class="background" id="landscape" sizes="(orientation: landscape)"
+     srcset="../background/qwqhd.webp 2560w, ../background/qfhd.webp 1920w, ../background/qhd.webp 1280w"
+     src="../background/qhd.webp" alt="Background"/>
+
+<!-- Portrait -->
+<img class="background hidden" id="portrait" sizes="(orientation: portrait)"
+     srcset="../background/hwqhd.webp 1440w, ../background/hfhd.webp 1080w, ../background/hhd.webp 720w"
+     src="../background/hhd.webp" alt="Background"/>
+
 <div class="background-gradient"></div>
 
 <section id="hero">

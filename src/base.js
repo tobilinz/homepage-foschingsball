@@ -1,3 +1,26 @@
+window.addEventListener('DOMContentLoaded', () => {
+  const portrait = document.getElementById('portrait');
+  const landscape = document.getElementById('landscape');
+  const displayOrientation = () => {
+    const screenOrientation = screen.orientation.type;
+    if (screenOrientation === 'landscape-primary' || screenOrientation === 'landscape-secondary') {
+      landscape.classList.remove('hidden');
+      portrait.classList.add('hidden')
+    } else if (screenOrientation === 'portrait-secondary' || screenOrientation === 'portrait-primary') {
+      portrait.classList.remove('hidden');
+      landscape.classList.add('hidden');
+    }
+  };
+
+  if (screen && screen.orientation !== null) {
+    try {
+      window.screen.orientation.onchange = displayOrientation;
+      displayOrientation();
+    } catch (e) {
+    }
+  }
+});
+
 const fetchJson = async (url, name) => {
   let response;
   try {

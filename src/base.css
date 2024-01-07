@@ -101,8 +101,6 @@ body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
-    background-color: var(--background);
-    z-index: -3;
 }
 
 .center {
@@ -129,12 +127,7 @@ body, html {
     right: 0;
     width: 100vw;
     height: 100vh;
-    background: url("background.webp") no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    filter: grayscale(100%) brightness(40%);
+    object-fit: cover;
     transform: translate3d(0, 0, 0);
     z-index: -2;
 }
@@ -163,19 +156,19 @@ body, html {
 
 @keyframes blur-in {
     0% {
-        filter: grayscale(100%) brightness(40%) blur(0);
+        filter: blur(0);
     }
     100% {
-        filter: grayscale(100%) brightness(40%) blur(4px);
+        filter: blur(4px);
     }
 }
 
 @keyframes blur-out {
     0% {
-        filter: grayscale(100%) brightness(40%) blur(4px);
+        filter: blur(4px);
     }
     100% {
-        filter: grayscale(100%) brightness(40%) blur(0);
+        filter: blur(0);
     }
 }
 
