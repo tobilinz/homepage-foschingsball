@@ -152,6 +152,7 @@
     text-align: center;
     font-size: var(--normal);
     margin: var(--mg) 0;
+    text-decoration: none;
 }
 
 /*-------- TEAM --------*/
