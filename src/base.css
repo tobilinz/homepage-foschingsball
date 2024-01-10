@@ -333,7 +333,7 @@ section .link {
     padding: 0 var(--mx);
 }
 
-.footer-link {
+#footer > a, #footer > p {
     color: var(--text);
     font-size: var(--small);
 }
