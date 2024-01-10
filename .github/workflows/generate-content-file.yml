@@ -25,6 +25,6 @@ jobs:
       password: ${{ secrets.FTP_PASSWORD }}
       server-dir: public_html/resources/${{ github.event.inputs.target-year }}/pictures
       out-path: public_html/resources/${{ github.event.inputs.target-year }}/pictures/content.json
-      exclude-regex: content.json
+      exclude-regex: (^.*-full\.[^.]*$)|(^content\.json$)
       include-directories: false
       sort: true
