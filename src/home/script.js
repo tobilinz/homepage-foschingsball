@@ -14,7 +14,7 @@ loadIFrames([
   },
   {
     id: 'ticket-map-tourist',
-    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.801254064046!2d11.455839876072515!3d49.28016307093312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f644ceb39721d%3A0xeaafbcd9beddf099!2sTourist-Information%20der%20Stadt%20Neumarkt%20i.d.OPf.!5e0!3m2!1sde!2sde!4v1704888497345!5m2!1sde!2sde'
+    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2416.402896822465!2d11.458414800000002!3d49.2801596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f644ceb39721d%3A0xeaafbcd9beddf099!2sTourist-Information%20der%20Stadt%20Neumarkt%20i.d.OPf.!5e1!3m2!1sde!2sde!4v1704888698803!5m2!1sde!2sde'
   },
   {
     id: 'ticket-map-sparkasse',
@@ -22,7 +22,7 @@ loadIFrames([
   },
   {
     id: 'ticket-map-schule',
-    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d72211.21476069411!2d11.408812711191608!3d49.25170414369462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6fde07078387%3A0x608baab947ae1d4d!2sMaximilian-Kolbe-Schule%20Neumarkt%20(staatliche%20FOS%2FBOS)!5e0!3m2!1sde!2sde!4v1704888559810!5m2!1sde!2sde'
+    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.240409585188!2d11.469261899999998!3d49.2630645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6fde07078387%3A0x608baab947ae1d4d!2sMaximilian-Kolbe-Schule%20Neumarkt%20(staatliche%20FOS%2FBOS)!5e1!3m2!1sde!2sde!4v1704888746853!5m2!1sde!2sde'
   }
 ])
 
