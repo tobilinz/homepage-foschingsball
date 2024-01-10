@@ -13,12 +13,16 @@ loadIFrames([
     src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde'
   },
   {
-    id: 'ticket-map-1',
-    src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde'
+    id: 'ticket-map-tourist',
+    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2602.801254064046!2d11.455839876072515!3d49.28016307093312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f644ceb39721d%3A0xeaafbcd9beddf099!2sTourist-Information%20der%20Stadt%20Neumarkt%20i.d.OPf.!5e0!3m2!1sde!2sde!4v1704888497345!5m2!1sde!2sde'
   },
   {
-    id: 'ticket-map-2',
-    src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde'
+    id: 'ticket-map-sparkasse',
+    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1208.268244881882!2d11.45935597405606!3d49.27743302880976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6ff3d5d0619b%3A0xaf29732dcfaa8238!2sSparkasse%20Neumarkt-Parsberg%20-%20Hauptstelle!5e1!3m2!1sde!2sde!4v1704888240006!5m2!1sde!2sde'
+  },
+  {
+    id: 'ticket-map-schule',
+    src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d72211.21476069411!2d11.408812711191608!3d49.25170414369462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6fde07078387%3A0x608baab947ae1d4d!2sMaximilian-Kolbe-Schule%20Neumarkt%20(staatliche%20FOS%2FBOS)!5e0!3m2!1sde!2sde!4v1704888559810!5m2!1sde!2sde'
   }
 ])
 
