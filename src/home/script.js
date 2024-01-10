@@ -11,7 +11,7 @@ loadIFrames([
   {
     id: 'main-map',
     src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde'
-  },/*
+  },
   {
     id: 'ticket-map-1',
     src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde'
@@ -19,7 +19,7 @@ loadIFrames([
   {
     id: 'ticket-map-2',
     src: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde'
-  }*/
+  }
 ])
 
 function countDown(year, month, day, hour, minute) {
