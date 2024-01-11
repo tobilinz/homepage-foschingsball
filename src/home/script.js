@@ -168,11 +168,3 @@ async function loadGalleryPreview(endpoint, pictureCount) {
 function loadIFrames(data) {
   data.forEach(iFrame => document.getElementById(iFrame.id).src = iFrame.src)
 }
-
-function setViews() {
-  const counter = document.getElementById('aufrufe');
-
-  const count = 5;
-  
-  counter.textContent = count + ' Aufrufe';
-}

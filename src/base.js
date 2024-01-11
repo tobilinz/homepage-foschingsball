@@ -63,4 +63,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener(
   'DOMContentLoaded', 
-  () => document.getElementById('version').textContent = 'Version: 1.3.0');
+  () => document.getElementById('version').textContent = 'Version: 1.3.1');
