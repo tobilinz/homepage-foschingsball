@@ -324,7 +324,12 @@ section .link {
 /*-------- FOOTER --------*/
 
 #footer {
-    margin: 0 auto var(--msy) auto;
+    padding-top: var(--msy);
+    background-color: #00000033;
+}
+
+#footer > div {
+    margin: 0 auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -333,7 +338,7 @@ section .link {
     padding: 0 var(--mx);
 }
 
-#footer > a, #footer > p {
+#footer > div > a, #footer > div > p {
     color: var(--text);
     font-size: var(--small);
 }

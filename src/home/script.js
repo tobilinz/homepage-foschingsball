@@ -24,7 +24,8 @@ loadIFrames([
     id: 'ticket-map-schule',
     src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.240409585188!2d11.469261899999998!3d49.2630645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6fde07078387%3A0x608baab947ae1d4d!2sMaximilian-Kolbe-Schule%20Neumarkt%20(staatliche%20FOS%2FBOS)!5e1!3m2!1sde!2sde!4v1704888746853!5m2!1sde!2sde'
   }
-])
+]);
+setViews();
 
 function countDown(year, month, day, hour, minute) {
   const days = document.getElementById('days');
@@ -166,4 +167,12 @@ async function loadGalleryPreview(endpoint, pictureCount) {
 
 function loadIFrames(data) {
   data.forEach(iFrame => document.getElementById(iFrame.id).src = iFrame.src)
+}
+
+function setViews() {
+  const counter = document.getElementById('aufrufe');
+
+  const count = 5;
+  
+  counter.textContent = count + ' Aufrufe';
 }
