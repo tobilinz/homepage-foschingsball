@@ -1,7 +1,7 @@
 const endpoint = 'https://resources.foschingsball.de';
 const previewCount = 2;
-const from = 2020
-const to = 2030;
+const from = 2023;
+const to = 2024;
 const batchSize = 32;
 
 const years = document.getElementById('years');
@@ -11,6 +11,60 @@ const moreButton = document.getElementById('more');
 let currentDiv = null;
 let currentYear = 0;
 let currentImages = [];
+
+const body = document.getElementById('body');
+const fullImage = document.getElementById('big-image');
+const fullImageView = document.getElementById('big-view');
+const nextButton = document.getElementById('next');
+const previousButton = document.getElementById('previous');
+let currentShownImage = undefined;
+
+function showImage(i) {
+  const url = `${endpoint}/${currentYear}/pictures/${currentImages[i]}`;
+  
+  fullImage.onerror = () => {
+    if (fullImage.src === url) return;
+    fullImage.src = url;
+  }
+  fullImage.src = url + '-original';
+  currentShownImage = i;
+}
+
+const imageClickAction = (img, i) => {
+  img.addEventListener('click', () => {
+    body.style.overflow = 'hidden';
+    showImage(i);
+    fullImageView.classList.remove('hidden');
+    
+    if (i === 0) previousButton.classList.add('hidden');
+    if (i === currentImages.length - 1) nextButton.classList.add('hidden');
+  });
+}
+
+nextButton.addEventListener('click', () => {
+  const newImage = currentShownImage + 1;
+  
+  if (newImage >= currentImages.length) return;
+  if (newImage >= currentImages.length - 1) nextButton.classList.add('hidden');
+  
+  previousButton.classList.remove('hidden');
+  showImage(newImage)
+});
+
+previousButton.addEventListener('click', () => {
+  const newImage = currentShownImage - 1;
+  
+  if (newImage < 0) return;
+  if (newImage < 1) previousButton.classList.add('hidden');
+
+  nextButton.classList.remove('hidden');
+  showImage(newImage)
+});
+
+document.getElementById('close').addEventListener('click', () => {
+  fullImageView.classList.add('hidden');
+  body.style.overflow = '';
+})
 
 const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async () => {
   const year = from + index;
@@ -79,7 +133,7 @@ Promise.all(sectionsToLoad).then(result => {
 });
 
 function loadImages() {
-  const images = getMediaFromEndpoint(`${endpoint}/${currentYear}/pictures`, currentImages, currentDiv.children.length, Math.min(batchSize, currentImages.length - currentDiv.children.length));
+  const images = getMediaFromEndpoint(`${endpoint}/${currentYear}/pictures`, currentImages, currentDiv.children.length, Math.min(batchSize, currentImages.length - currentDiv.children.length), imageClickAction);
   currentDiv.append(...images);
 
   if (currentDiv.children.length >= currentImages.length) moreButton.classList.add('hidden');

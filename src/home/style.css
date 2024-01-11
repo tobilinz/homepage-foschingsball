@@ -200,7 +200,7 @@
     background-color: var(--primary);
     border: none;
     appearance: none;
-    transition: background-color var(--transition-time);
+    transition: background-color var(--transition-time) linear;
     font-weight: bold;
 }
 

@@ -190,7 +190,7 @@ section {
 
 .back > svg > g {
     stroke: var(--gray-text);
-    transition: stroke var(--transition-time);
+    transition: stroke var(--transition-time) linear;
 }
 
 .back:hover > svg > g {
@@ -203,7 +203,7 @@ section {
 
 .back > h2 {
     color: var(--gray-text);
-    transition: color var(--transition-time);
+    transition: color var(--transition-time) linear;
     font-size: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));
     display: inline-block;
     margin: 0;
@@ -308,7 +308,7 @@ section .link {
     width: var(--galerie-grid-height);
     aspect-ratio: 1;
     background-color: var(--primary);
-    transition: background-color var(--transition-time);
+    transition: background-color var(--transition-time) linear;
     border: 0;
 }
 
@@ -325,7 +325,6 @@ section .link {
 
 #footer {
     padding-top: var(--msy);
-    background-color: #00000033;
 }
 
 #footer > div {
