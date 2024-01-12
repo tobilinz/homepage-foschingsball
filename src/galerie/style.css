@@ -7,7 +7,7 @@
     height: 100%;
     border: 0;
     z-index: 1;
-    background-color: #000b;
+    background-color: #000d;
     transition: background-color var(--transition-time) linear;
 }
 
