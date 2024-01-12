@@ -19,25 +19,22 @@ const nextButton = document.getElementById('next');
 const previousButton = document.getElementById('previous');
 let currentShownImage = undefined;
 
+function updateButtons(i) {
+  previousButton.disabled = i <= 0;
+  nextButton.disabled = i >= currentImages.length - 1
+}
+
 function showImage(i) {
-  const url = `${endpoint}/${currentYear}/pictures/${currentImages[i]}`;
-  
-  fullImage.onerror = () => {
-    if (fullImage.src === url) return;
-    fullImage.src = url;
-  }
-  fullImage.src = url + '-original';
+  fullImage.src = `${endpoint}/${currentYear}/pictures/${currentImages[i]}`;
   currentShownImage = i;
 }
 
 const imageClickAction = (img, i) => {
   img.addEventListener('click', () => {
     body.style.overflow = 'hidden';
-    showImage(i);
     fullImageView.classList.remove('hidden');
-    
-    if (i === 0) previousButton.classList.add('hidden');
-    if (i === currentImages.length - 1) nextButton.classList.add('hidden');
+    showImage(i);
+    updateButtons(i);
   });
 }
 
@@ -45,26 +42,23 @@ nextButton.addEventListener('click', () => {
   const newImage = currentShownImage + 1;
   
   if (newImage >= currentImages.length) return;
-  if (newImage >= currentImages.length - 1) nextButton.classList.add('hidden');
-  
-  previousButton.classList.remove('hidden');
-  showImage(newImage)
+  updateButtons(newImage);
+  showImage(newImage);
 });
 
 previousButton.addEventListener('click', () => {
   const newImage = currentShownImage - 1;
   
   if (newImage < 0) return;
-  if (newImage < 1) previousButton.classList.add('hidden');
-
-  nextButton.classList.remove('hidden');
-  showImage(newImage)
+  updateButtons(newImage);
+  showImage(newImage);
 });
 
 document.getElementById('close').addEventListener('click', () => {
   fullImageView.classList.add('hidden');
   body.style.overflow = '';
-})
+  currentShownImage = undefined;
+});
 
 const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async () => {
   const year = from + index;
