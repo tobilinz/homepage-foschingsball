@@ -40,6 +40,9 @@
     align-items: center;
     width: var(--my);
     height: var(--my);
+}
+
+#previous > svg > g, #next > svg > g, #close > svg > g {
     stroke: var(--text);
 }
 
