@@ -1,3 +1,5 @@
+const version = '1.4.1';
+
 const fetchJson = async (url, name) => {
   let response;
   try {
@@ -66,4 +68,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener(
   'DOMContentLoaded', 
-  () => document.getElementById('version').textContent = 'Version: 1.4.0');
+  () => document.getElementById('version').textContent = 'Version: ' + version);
