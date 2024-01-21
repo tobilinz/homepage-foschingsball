@@ -29,7 +29,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--mg);
-    max-width: 1000px;
+    max-width: var(--max-width-2);
 }
 
 #counter > div {
@@ -92,7 +92,7 @@
     border-radius: var(--border-radius);
     width: 100%;
     height: auto;
-    max-width: 1000px;
+    max-width: var(--max-width-2);
 }
 
 /*-------- GALERIE --------*/
@@ -102,7 +102,7 @@
     font-size: var(--normal);
     text-align: center;
     padding: 0 var(--mx);
-    max-width: 500px;
+    max-width: var(--max-width-1);
 }
 
 /*-------- ORT --------*/
@@ -115,7 +115,7 @@
     border-radius: var(--border-radius);
     width: 100%;
     height: auto;
-    max-width: 1000px;
+    max-width: var(--max-width-2);
     aspect-ratio: 1.778;
     margin: 0 var(--mx);
     border: 0;
@@ -129,12 +129,12 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--mg);
-    max-width: 1000px;
+    max-width: var(--max-width-2);
     padding: 0 var(--mx);
 }
 
 .vorverkaufsort {
-    max-width: 480px;
+    max-width: calc(calc(var(--max-width-2) - var(--mg)) / 2);
     display: flex;
     flex-direction: column;
 }
@@ -165,7 +165,7 @@
     font-size: var(--normal);
     text-align: center;
     padding: 0 var(--mx);
-    max-width: 500px;
+    max-width: var(--max-width-1);
 }
 
 /*---- SELECT ----*/
@@ -220,7 +220,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--mg);
-    max-width: 1000px;
+    max-width: var(--max-width-2);
     padding: 0 var(--mx);
 }
 

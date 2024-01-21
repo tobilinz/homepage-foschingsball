@@ -32,6 +32,8 @@
     /*===== OTHER =====*/
     --galerie-grid-height: 200px;
     --border-radius: 20px;
+    --max-width-1: 600px;
+    --max-width-2: 1000px;
 
     /*===== var(--name) =====*/
 }
@@ -253,7 +255,7 @@ section > p, section .link {
     padding: 0 var(--mx);
     color: var(--text);
     font-size: var(--normal);
-    max-width: 500px;
+    max-width: var(--max-width-1);
     text-align: center;
 }
 
@@ -287,7 +289,7 @@ section .link {
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--mg);
-    max-width: 1000px;
+    max-width: var(--max-width-2);
     padding: 0 var(--mx);
 }
 
@@ -333,7 +335,7 @@ section .link {
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--mx);
-    max-width: 1000px;
+    max-width: var(--max-width-2);
     padding: 0 var(--mx);
 }
 
