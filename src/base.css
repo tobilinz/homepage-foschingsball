@@ -16,7 +16,7 @@
     --transition-time: 75ms;
 
     /*===== Font =====*/
-    font-family: "Noto Sans", sans-serif;
+    font-family: sans-serif;
     --title: min(8rem, 14vw);
     --counter: 6.5rem;
     --header: 2.5rem;
@@ -101,6 +101,10 @@ body, html {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
 }
 
 .center {
