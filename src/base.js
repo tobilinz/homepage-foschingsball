@@ -1,4 +1,4 @@
-const version = '1.5.2';
+const version = '1.5.3';
 
 const fetchJson = async (url, name) => {
   let response;

@@ -179,7 +179,7 @@ body {
 /*-------- SECTIONS --------*/
 
 section {
-    margin: var(--my) 0;
+    margin: var(--my) 0 0 0;
     padding: 0;
 }
 
@@ -330,7 +330,7 @@ section .link {
 /*-------- FOOTER --------*/
 
 #footer {
-    padding-top: var(--msy);
+    padding-top: var(--my);
 }
 
 #footer > div {

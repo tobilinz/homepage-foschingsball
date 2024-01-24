@@ -1,7 +1,25 @@
+/*-------- VK-WARNING --------*/
+
+#vorverkauf-banner {
+    background-color: var(--red-text);
+    margin-top: 0;
+}
+
+#vorverkauf-banner > a {
+    display: block;
+    font-size: var(--normal);
+    color: var(--text);
+    text-decoration: none;
+    width: 100%;
+    padding: var(--msy) 0;
+    text-align: center;
+    font-weight: bold;
+}
+
 /*-------- HERO --------*/
 
 #hero {
-    margin-top: 0;
+    margin-top: 5px;
 }
 
 .party {
@@ -130,6 +148,11 @@
 }
 
 /*-------- TICKETS --------*/
+
+#vorverkauf-warning {
+    color: var(--red-text);   
+    font-weight: bold;
+}
 
 .vorverkaufsorte-grid {
     margin: var(--msy) auto 0 auto;
