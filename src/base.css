@@ -1,5 +1,6 @@
 @font-face {
     font-family: "Courgette";
+    font-display: "swap";
     src: url("./courgette/font.ttf");
 }
 
