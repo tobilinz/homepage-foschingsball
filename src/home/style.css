@@ -15,7 +15,7 @@
 /*-------- HERO --------*/
 
 .party {
-    width: min(30vw, 400px);
+    width: min(20vw, 400px);
     padding-left: var(--mx);
     fill: var(--glowbase);
     filter: var(--glow);
