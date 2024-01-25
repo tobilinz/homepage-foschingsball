@@ -2,7 +2,7 @@
     text-decoration: none;
     display: flex;
     justify-content: center;
-    margin: var(--msy) var(--mx) 0 var(--mx);
+    margin-inline: var(--mx);
 }
 
 .email > span, .phone > span {

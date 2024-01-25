@@ -1,4 +1,4 @@
-const version = '1.5.5';
+const version = '1.6.0';
 
 const fetchJson = async (url, name) => {
   let response;
@@ -32,7 +32,7 @@ const getMediaFromEndpoint = (endpoint, images, start, range, action) => {
     img.alt = `Preview Bild: ${imgName}`;
     img.classList.add('img')
     img.height = imageHeight;
-    
+
     if (action) action(img, i);
 
     return img;
@@ -67,5 +67,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener(
-  'DOMContentLoaded', 
+  'DOMContentLoaded',
   () => document.getElementById('version').textContent = 'Version: ' + version);

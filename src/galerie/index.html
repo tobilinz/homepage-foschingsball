@@ -30,6 +30,40 @@
 
 <div class="background-gradient"></div>
 
+<div></div>
+
+<section id="hero">
+    <div class="center">
+        <a class="back" href="..">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                    <path d="m14 7-5 5"/>
+                    <path d="m9 12 5 5"/>
+                </g>
+            </svg>
+            <h2>Hauptseite</h2>
+        </a>
+    </div>
+
+    <a class="title-link" href="https://foschingsball.de/galerie"><h1>
+        Galerie
+    </h1></a>
+
+    <div class="center hidden" id="to-overview" onclick="back()">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
+                <path d="m14 7-5 5"/>
+                <path d="m9 12 5 5"/>
+            </g>
+        </svg>
+        <h2>Übersicht</h2>
+    </div>
+</section>
+
+<section id="years"></section>
+
+<h2 class="hidden" id="more" onclick="loadImages()">Mehr</h2>
+
 <section id="big-view" class="hidden">
     <img id="big-image" src="../background/hfhd.webp" alt="Größere Einzelansicht des gerade angetippten Bildes">
     <button id="previous">
@@ -58,41 +92,7 @@
     </button>
 </section>
 
-<section id="hero">
-    <div class="center">
-        <a class="back" href="..">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-                    <path d="m14 7-5 5"/>
-                    <path d="m9 12 5 5"/>
-                </g>
-            </svg>
-            <h2>Zurück zur Hauptseite</h2>
-        </a>
-    </div>
-
-    <a class="title-link" href="https://foschingsball.de/galerie"><h1>
-        Galerie
-    </h1></a>
-
-    <div class="center">
-        <div class="hidden" id="to-overview" onclick="back()">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
-                    <path d="m14 7-5 5"/>
-                    <path d="m9 12 5 5"/>
-                </g>
-            </svg>
-            <h2>Zurück zur Übersicht</h2>
-        </div>
-    </div>
-</section>
-
-<div id="years"></div>
-
-<h2 class="hidden" id="more" onclick="loadImages()">Mehr</h2>
-
-<div id="footer">
+<section id="footer">
     <div>
         <a href="../impressum">
             Impressum
@@ -107,7 +107,7 @@
     <div>
         <p id="version"></p>
     </div>
-</div>
+</section>
 
 <script defer src="script.js" type="text/javascript"></script>
 

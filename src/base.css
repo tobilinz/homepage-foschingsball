@@ -1,7 +1,7 @@
 @font-face {
-    font-family: "Courgette";
-    font-display: "swap";
-    src: url("./courgette/font.ttf");
+    font-family: Courgette;
+    font-display: swap;
+    src: url(./courgette/font.ttf);
 }
 
 :root {
@@ -40,6 +40,9 @@
     --border-radius: 20px;
     --max-width-1: 600px;
     --max-width-2: 1000px;
+
+    --big-width: min(100% - var(--mx), 1000px);
+    --small-width: min(100% - var(--mx), 600px);
 
     /*===== var(--name) =====*/
 }
@@ -103,14 +106,22 @@
     }
 }
 
-body, html {
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: 0;
+}
+
+body, html {
     scroll-behavior: smooth;
 }
 
 body {
     background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: var(--my);
 }
 
 .center {
@@ -184,14 +195,9 @@ body {
 
 /*-------- SECTIONS --------*/
 
-section {
-    margin: var(--my) 0 0 0;
-    padding: 0;
-}
-
 .back {
     text-decoration: none;
-    margin: 0 var(--mx) var(--msy) var(--mx);
+    margin: 0 var(--mx);
 }
 
 .back > svg {
@@ -218,8 +224,6 @@ section {
     transition: color var(--transition-time) linear;
     font-size: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));
     display: inline-block;
-    margin: 0;
-    padding: 0;
     text-align: center;
 }
 
@@ -242,31 +246,33 @@ section {
 }
 
 .section-link > h2 {
-    margin: 0;
     display: inline-block;
-    padding: 0;
     color: var(--text);
     font-size: var(--header);
     text-align: center;
     font-weight: bold;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--msy);
+}
+
 section > h3 {
-    margin: var(--msy) 0 0 0;
-    padding: 0;
     color: var(--text);
     font-size: var(--normal);
     text-align: center;
 }
 
 section > p, section .link {
-    display: block;
-    margin: var(--msy) auto 0 auto;
-    padding: 0 var(--mx);
+    display: inline;
+    margin-inline: auto;
+    width: var(--small-width);
     color: var(--text);
     font-size: var(--normal);
-    max-width: var(--max-width-1);
     text-align: center;
+    line-height: 1.3;
 }
 
 section .link {
@@ -277,14 +283,11 @@ section .link {
 
 .title-link {
     text-decoration: none;
-    margin-bottom: var(--msy);
     display: flex;
     justify-content: center;
 }
 
 .title-link > h1 {
-    margin: 0;
-    padding: 0;
     font-size: var(--title);
     text-align: center;
     color: var(--text);
@@ -294,13 +297,12 @@ section .link {
 /*-------- GALERIE --------*/
 
 #galerie-grid, .galerie-grid {
-    margin: var(--msy) auto 0 auto;
+    margin-inline: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--mg);
-    max-width: var(--max-width-2);
-    padding: 0 var(--mx);
+    width: var(--big-width);
 }
 
 #galerie-grid > .img, .galerie-grid > .img {
@@ -321,7 +323,6 @@ section .link {
     aspect-ratio: 1;
     background-color: var(--primary);
     transition: background-color var(--transition-time) linear;
-    border: 0;
 }
 
 .more-images:hover {
@@ -336,17 +337,16 @@ section .link {
 /*-------- FOOTER --------*/
 
 #footer {
-    padding-top: var(--my);
+    padding-bottom: var(--msy);
 }
 
 #footer > div {
-    margin: 0 auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: var(--mx);
-    max-width: var(--max-width-2);
-    padding: 0 var(--mx);
+    width: var(--big-width);
+    margin-inline: auto;
 }
 
 #footer > div > a, #footer > div > p {

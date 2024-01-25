@@ -40,7 +40,7 @@ const imageClickAction = (img, i) => {
 
 nextButton.addEventListener('click', () => {
   const newImage = currentShownImage + 1;
-  
+
   if (newImage >= currentImages.length) return;
   updateButtons(newImage);
   showImage(newImage);
@@ -48,7 +48,7 @@ nextButton.addEventListener('click', () => {
 
 previousButton.addEventListener('click', () => {
   const newImage = currentShownImage - 1;
-  
+
   if (newImage < 0) return;
   updateButtons(newImage);
   showImage(newImage);
@@ -75,7 +75,7 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
 
   const button = document.createElement('button');
 
-  button.classList.add('more-images',);
+  button.classList.add('more-images');
   button.onclick = () => {
     let found = false;
     for (const child of years.children) {
