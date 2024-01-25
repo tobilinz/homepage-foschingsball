@@ -5,7 +5,6 @@ blinking(
   75, 25,
   'counter-frame', 'party');
 blurAnimation(0.5);
-videoAutoplay(600);
 loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 2).then(_ => null);
 
 function countDown(year, month, day, hour, minute) {
@@ -114,11 +113,6 @@ function blurAnimation(blurEntryMultiplier) {
   blur();
 
   window.addEventListener('scroll', blur, {passive: true});
-}
-
-function videoAutoplay(minWidth) {
-  const videoPlayer = document.getElementById('video-player');
-  if (window.innerWidth > minWidth) videoPlayer.autoplay = true;
 }
 
 async function loadGalleryPreview(endpoint, pictureCount) {
