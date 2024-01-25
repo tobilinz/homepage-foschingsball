@@ -28,11 +28,11 @@ const getMediaFromEndpoint = (endpoint, images, start, range, action) => {
 
     const i = start + index;
     const imgName = images[i];
+    img.loading = "lazy";
     img.src = `${endpoint}/${imgName}`;
     img.alt = `Preview Bild: ${imgName}`;
     img.classList.add('img')
-    img.height = imageHeight;
-    img.loading = "lazy";
+    img.height = +imageHeight;
 
     if (action) action(img, i);
 
