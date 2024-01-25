@@ -32,6 +32,7 @@ const getMediaFromEndpoint = (endpoint, images, start, range, action) => {
     img.alt = `Preview Bild: ${imgName}`;
     img.classList.add('img')
     img.height = imageHeight;
+    img.loading = "lazy";
 
     if (action) action(img, i);
 
