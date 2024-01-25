@@ -150,7 +150,7 @@ body {
     height: 100vh;
     object-fit: cover;
     transform: translate3d(0, 0, 0);
-    z-index: -2;
+    z-index: -12;
 }
 
 .background-gradient {
@@ -160,7 +160,7 @@ body {
     width: 100vw;
     height: 125vh;
     background: radial-gradient(circle at center, #17267377, #04050ddd 90%);
-    z-index: -1;
+    z-index: -11;
 }
 
 .blur-in {

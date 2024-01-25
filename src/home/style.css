@@ -1,3 +1,13 @@
+.fallback-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
 /*-------- VK-WARNING --------*/
 
 .vk-banner {
@@ -116,9 +126,6 @@
 /*-------- ORT --------*/
 
 .main-map-wrapper {
-    display: inline-block;
-    background-image: url(main-map-placeholder.webp);
-    background-size: cover;
     margin-inline: auto;
     width: var(--big-width);
     border-radius: var(--border-radius);
@@ -153,21 +160,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-}
-
-#tourist-map {
-    background-image: url(tourist-map-placeholder.webp);
-    background-size: cover;
-}
-
-#fos-map {
-    background-image: url(fos-map-placeholder.webp);
-    background-size: cover;
-}
-
-#ticket-map {
-    background-image: url(ticket-map-placeholder.webp);
-    background-size: cover;
 }
 
 .vorverkaufsort > div {
