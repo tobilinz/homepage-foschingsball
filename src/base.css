@@ -119,9 +119,6 @@ body, html {
 
 body {
     background-color: black;
-    display: flex;
-    flex-direction: column;
-    gap: var(--my);
 }
 
 .center {
@@ -194,6 +191,13 @@ body {
 }
 
 /*-------- SECTIONS --------*/
+
+.sections {
+    display: flex;
+    flex-direction: column;
+    gap: var(--my);
+    margin-top: var(--msy);
+}
 
 .back {
     text-decoration: none;
