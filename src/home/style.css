@@ -12,55 +12,7 @@
     font-weight: bold;
 }
 
-/*-------- NAV --------*/
-
-nav {
-    --height: 60px;
-    display: grid;
-    grid-template-columns: var(--height) repeat(3, 1fr);
-    height: var(--height);
-    width: 100vw;
-    background-color: #0005;
-    box-shadow: 0 4px 4px #0005;
-}
-
-nav > a {
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background var(--transition-time) linear;
-}
-
-nav > a > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-nav > a > span {
-    text-align: center;
-    color: var(--text);
-    font-weight: bold;
-    font-size: var(--normal);
-}
-
-nav > a:hover {
-    background-color: #fff5;
-}
-
 /*-------- HERO --------*/
-
-.party {
-    width: min(20vw, 400px);
-    padding-left: var(--mx);
-    fill: var(--glowbase);
-    filter: var(--glow);
-    transition: var(--glow-animation);
-    margin-top: calc(-0.75 * var(--msy));
-}
 
 /*---- COUNTER ----*/
 

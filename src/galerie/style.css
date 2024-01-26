@@ -59,43 +59,18 @@
 }
 
 #to-overview {
-    text-decoration: none;
-    margin-inline: var(--mx);
     cursor: pointer;
-}
-
-#to-overview > h2, #more {
-    color: var(--gray-text);
-    transition: color var(--transition-time) linear;
-    font-size: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));
-}
-
-#to-overview:hover > h2, #more:hover {
-    color: var(--text);
-}
-
-#to-overview > h2 {
-    display: inline-block;
-    text-align: center;
-}
-
-#to-overview > svg {
-    top: 10%;
-    position: relative;
-    width: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));;
-}
-
-#to-overview > svg > g {
-    stroke: var(--gray-text);
-    transition: stroke var(--transition-time) linear;
-}
-
-#to-overview:hover > svg > g {
-    stroke: var(--text);
 }
 
 #more {
+    color: var(--gray-text);
+    transition: color var(--transition-time) linear;
+    font-size: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));
     margin-inline: var(--mx);
     cursor: pointer;
     text-align: center;
+}
+
+#more:hover {
+    color: var(--text);
 }
