@@ -246,11 +246,15 @@ nav {
 }
 
 @media screen and (max-width: 500px) {
-    .fix-nav {
+    nav {
         position: fixed;
         top: auto;
         bottom: 0;
         left: 0;
+    }
+
+    .nav-space {
+        height: 0;
     }
 }
 
