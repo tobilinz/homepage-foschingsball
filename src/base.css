@@ -43,8 +43,6 @@
 
     --nav-height: 88px;
     --nav-m: calc(var(--nav-height) * 0.25);
-
-    /*===== var(--name) =====*/
 }
 
 @media screen and (max-width: 750px) {
@@ -81,7 +79,7 @@ body, html {
 }
 
 body {
-    background-color: var(--background);
+    background-color: black;
     padding: calc(var(--nav-height) + var(--mNormal)) 0 var(--mNormal) 0;
     display: flex;
     flex-direction: column;
