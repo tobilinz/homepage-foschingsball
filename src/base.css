@@ -64,8 +64,8 @@
         --mNormal: 1rem;
         --mSection: 3rem;
 
-        --nav-height: 76px;
-        --nav-m: calc(var(--nav-height) * 0.2);
+        --nav-height: 64px;
+        --nav-m: calc(var(--nav-height) * 0.15);
     }
 }
 
