@@ -173,6 +173,7 @@ nav::before {
     content: "";
     position: absolute;
     bottom: 0;
+    top: auto;
     height: 1px;
     left: 0;
     width: 100%;
@@ -239,6 +240,11 @@ nav::before {
         grid-template-columns: 1fr 1fr;
         bottom: 0;
         top: auto;
+    }
+
+    nav::before {
+        top: 0;
+        bottom: auto;
     }
 
     body {
