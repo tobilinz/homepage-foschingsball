@@ -63,6 +63,9 @@
 
         --mNormal: 1rem;
         --mSection: 3rem;
+
+        --nav-height: 76px;
+        --nav-m: calc(var(--nav-height) * 0.2);
     }
 }
 
@@ -82,7 +85,6 @@ body {
     padding: calc(var(--nav-height) + var(--mNormal)) 0 var(--mNormal) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--mSection);
 }
 
 .hidden {
@@ -235,8 +237,6 @@ nav::before {
 @media screen and (max-width: 450px) {
     nav {
         grid-template-columns: 1fr 1fr;
-        padding-inline: calc(var(--nav-m) * 0.35);
-        gap: calc(var(--nav-m) * 0.35);
         bottom: 0;
         top: auto;
     }
@@ -247,6 +247,10 @@ nav::before {
 }
 
 /*-------- SECTIONS --------*/
+
+body > section:not(:first-of-type) {
+    padding: calc(var(--mSection)) 0 0 0;
+}
 
 section {
     display: flex;
