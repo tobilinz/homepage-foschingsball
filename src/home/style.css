@@ -1,16 +1,10 @@
 /*-------- VK-WARNING --------*/
 
 .vk-banner {
-    margin-top: var(--mNormal);
-    display: flex;
-    justify-content: center;
-    margin-inline: var(--mNormal);
-}
-
-.vk-banner > a {
     position: relative;
+    margin: 0 auto var(--mNormal) auto;
+    width: var(--small-width);
     font-weight: bold;
-    font-size: var(--normal);
     text-align: center;
     color: var(--text);
     text-decoration: none;
@@ -18,7 +12,7 @@
     padding: 24px;
 }
 
-.vk-banner > a::before {
+.vk-banner::before {
     content: "";
     position: absolute;
     top: 0;
@@ -36,17 +30,22 @@
 
 #counter-over {
     color: var(--red-text);
-    font-size: var(--normal);
     font-weight: bold;
     text-align: center;
 }
 
 #counter {
     margin-inline: auto;
-    width: var(--big-width);
+    width: var(--small-width);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--mNormal);
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(var(--mNormal) * 2);
+}
+
+@media screen and (max-width: 450px) {
+    #counter {
+        gap: var(--mNormal);
+    }
 }
 
 #counter > div {
@@ -78,45 +77,53 @@
 
 .counter-span-container > span {
     color: var(--text);
-    font-size: var(--counter);
+    font-size: var(--highlight);
     font-family: Courgette, sans-serif;
-    text-shadow: 0 0 5px var(--text),
-    0 0 10px var(--text);
     text-align: center;
 }
 
 /*---- SOCIAL ----*/
 
-.social-link {
-    margin: 0 var(--mNormal);
+.social-wrapper {
+    width: var(--small-width);
+    margin: var(--mNormal) auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
-.social {
-    width: min(12.5vw, 100px);
+.social-wrapper > a {
+    margin-inline: auto;
+    aspect-ratio: 1;
+    height: var(--highlight);
 }
 
-.social:hover {
-    filter: drop-shadow(0 0 8px var(--text));
+.social-wrapper > a > svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.social-wrapper > a:hover {
+    filter: drop-shadow(0 0 4px var(--text));
 }
 
 /*-------- VIDEO --------*/
 
 .video-wrapper {
-    margin: 0 var(--mNormal);
+    margin-inline: auto;
+    width: var(--big-width);
 }
 
 .video-wrapper > video {
     border-radius: var(--border-radius);
     width: 100%;
     height: auto;
-    max-width: var(--max-width-2);
 }
 
 /*-------- GALERIE --------*/
 
 #galerie-error {
     color: var(--red-text);
-    font-size: var(--normal);
     text-align: center;
     margin-inline: auto;
     width: var(--small-width);
@@ -141,6 +148,21 @@
 
 /*-------- TICKETS --------*/
 
+.pricing {
+    margin: var(--mNormal) auto;
+    display: flex;
+    justify-content: center;
+    gap: var(--mNormal);
+    width: var(--small-width);
+}
+
+.pricing > div {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mNormal)
+}
+
 #vorverkauf-warning {
     color: var(--red-text);
     font-weight: bold;
@@ -156,7 +178,7 @@
 }
 
 .vorverkaufsort {
-    max-width: calc(calc(var(--max-width-2) - var(--mNormal)) / 2);
+    max-width: calc(0.5 * (var(--big-max-width) - var(--mNormal)));
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -179,7 +201,6 @@
 .vorverkaufsort > p {
     color: var(--text);
     text-align: center;
-    font-size: var(--normal);
     margin: var(--mNormal) 0;
 }
 
@@ -191,7 +212,6 @@
 
 #team-loading-error {
     color: var(--red-text);
-    font-size: var(--normal);
     text-align: center;
     margin-inline: auto;
     width: var(--small-width);
@@ -221,7 +241,6 @@
 }
 
 #team-selector {
-    font-size: var(--normal);
     color: var(--text);
     padding: 1rem 3.5rem 1rem 1rem;
     border-radius: var(--border-radius);
@@ -268,7 +287,6 @@
 #member-grid > a > p {
     margin: var(--mNormal) 0;
     color: var(--text);
-    font-size: var(--normal);
     width: 100%;
     text-align: center;
 }

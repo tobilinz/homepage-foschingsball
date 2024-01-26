@@ -12,6 +12,7 @@ let currentDiv = null;
 let currentYear = 0;
 let currentImages = [];
 
+const nav = document.getElementsByTagName('nav')[0];
 const body = document.getElementById('body');
 const fullImage = document.getElementById('big-image');
 const fullImageView = document.getElementById('big-view');
@@ -33,6 +34,7 @@ const imageClickAction = (img, i) => {
   img.addEventListener('click', () => {
     body.style.overflow = 'hidden';
     fullImageView.classList.remove('hidden');
+    nav.classList.add('hidden');
     showImage(i);
     updateButtons(i);
   });
@@ -56,6 +58,7 @@ previousButton.addEventListener('click', () => {
 
 document.getElementById('close').addEventListener('click', () => {
   fullImageView.classList.add('hidden');
+  nav.classList.remove('hidden');
   body.style.overflow = '';
   currentShownImage = undefined;
 });
@@ -90,11 +93,9 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
     }
 
     if (found === false) {
-      const fullSection = document.createElement('section');
+      const fullSection = createGallerySection(year, year.toString() + '-full');
       years.appendChild(fullSection);
-
-      fullSection.id = year.toString() + '-full';
-      currentDiv = createGallerySection(fullSection, year, `https://foschingsball.de/galerie/#${year}`);
+      currentDiv = fullSection.lastChild;
     }
 
     currentImages = images;
@@ -108,12 +109,7 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
 
   button.innerHTML = dotsSVG;
 
-  const gallerySection = document.createElement('section');
-  gallerySection.id = year.toString();
-
-  const div = createGallerySection(gallerySection, year, `https://foschingsball.de/galerie/#${year}`);
-  div.append(...previewElements, button);
-
+  const gallerySection = createGallerySection(year, year, ...previewElements, button);
   return [year - from, gallerySection];
 })());
 
@@ -149,33 +145,21 @@ function back() {
   moreButton.classList.add('hidden');
 }
 
-function createGallerySection(section, header, link) {
-  const headerContainer = document.createElement('div');
-  section.appendChild(headerContainer);
-
-  headerContainer.classList.add('center');
-
-  const headerAnchor = document.createElement('a');
-  headerContainer.appendChild(headerAnchor);
-
-  headerAnchor.classList.add('section-link');
-  headerAnchor.href = link.toString();
-  headerAnchor.ariaLabel = 'Mehr Bilder anschauen'
-
-  const headerLinkIcon = document.createElement('img');
-  headerAnchor.appendChild(headerLinkIcon);
-  headerLinkIcon.src = '../link.svg';
-  headerLinkIcon.alt = 'Link Icon';
-
+function createGallerySection(header, id, ...children) {
+  const section = document.createElement('section');
+  section.id = id;
+  
   const headerText = document.createElement('h2');
-  headerAnchor.appendChild(headerText);
+  section.appendChild(headerText);
 
-  headerText.textContent = header.toString();
+  headerText.textContent = header;
 
   const div = document.createElement('div');
   section.appendChild(div);
 
   div.classList.add('galerie-grid');
+  
+  div.append(...children);
 
-  return div;
+  return section;
 }

@@ -30,27 +30,23 @@
 
 <div class="background-gradient"></div>
 
-<div class="nav-space-top"></div>
-
 <nav>
-    <a href="https://foschingsball.de/" class="nav-logo"><img src="../icon/logo.jpeg" alt="FOSchingsball Logo"></a>
-    <a href="https://foschingsball.de/" class="nav-link"><span>Home</span></a>
-    <div class="hidden nav-link" id="to-overview" onclick="back()">
-        <span>Übersicht</span>
+    <a href="https://foschingsball.de/" class="nav-logo">
+        <img src="../icon/logo.jpeg" alt="FOSchingsball Logo">
+        <span>FOSchingsball</span>
+    </a>
+    <div class="nav-links">
+        <a href="https://foschingsball.de/">Home</a>
+        <span class="hidden" id="to-overview" onclick="back()">Übersicht</span>
+        <span class="hidden" id="more" onclick="loadImages()">Mehr</span>
     </div>
 </nav>
 
-<div class="sections">
-
 <section id="hero">
-    <a class="title-link" href="https://foschingsball.de/galerie"><h1>
-        Galerie
-    </h1></a>
+    <h1>Galerie</h1>
 </section>
 
 <section id="years"></section>
-
-<h2 class="hidden" id="more" onclick="loadImages()">Mehr</h2>
 
 <section id="big-view" class="hidden">
     <img id="big-image" src="../background/hfhd.webp" alt="Größere Einzelansicht des gerade angetippten Bildes">
@@ -96,10 +92,6 @@
         <p id="version"></p>
     </div>
 </section>
-
-</div>
-
-<div class="nav-space-bottom"></div>
 
 <script defer src="script.js" type="text/javascript"></script>
 

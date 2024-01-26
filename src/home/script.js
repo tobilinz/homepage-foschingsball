@@ -95,7 +95,7 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
 }
 
 async function loadGalleryPreview(endpoint, pictureCount) {
-  const grid = document.getElementById('galerie-grid');
+  const grid = document.getElementsByClassName('galerie-grid')[0];
 
   let images;
   try {

@@ -57,20 +57,3 @@
     top: 0;
     right: 0;
 }
-
-#to-overview {
-    cursor: pointer;
-}
-
-#more {
-    color: var(--gray-text);
-    transition: color var(--transition-time) linear;
-    font-size: clamp(min(var(--header), 7vw), 100vw, min(var(--header), 7vw));
-    margin-inline: var(--mNormal);
-    cursor: pointer;
-    text-align: center;
-}
-
-#more:hover {
-    color: var(--text);
-}
