@@ -4,7 +4,6 @@ blinking(
   1, 3,
   75, 25,
   'counter-frame', 'party');
-blurAnimation(0.5);
 loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 2).then(_ => null);
 
 function countDown(year, month, day, hour, minute) {
@@ -93,26 +92,6 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
   }
 
   blink();
-}
-
-function blurAnimation(blurEntryMultiplier) {
-  let hasBlurred = false;
-  const background = document.getElementsByClassName('background')[0];
-
-  function blur() {
-    if (window.scrollY > window.innerHeight * blurEntryMultiplier) {
-      background.classList.remove('blur-out');
-      background.classList.add('blur-in');
-      hasBlurred = true;
-    } else if (hasBlurred) {
-      background.classList.remove('blur-in');
-      background.classList.add('blur-out');
-    }
-  }
-
-  blur();
-
-  window.addEventListener('scroll', blur, {passive: true});
 }
 
 async function loadGalleryPreview(endpoint, pictureCount) {

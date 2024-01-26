@@ -1,4 +1,5 @@
 const version = '1.6.0';
+const blurEntryMultiplier = 0.5;
 
 const fetchJson = async (url, name) => {
   let response;
@@ -65,8 +66,26 @@ window.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
     }
   }
-});
 
-document.addEventListener(
-  'DOMContentLoaded',
-  () => document.getElementById('version').textContent = 'Version: ' + version);
+  document.getElementById('version').textContent = 'Version: ' + version;
+
+  let hasBlurred = false;
+  const background = document.getElementsByClassName('background')[0];
+  const nav = document.getElementsByTagName('nav')[0];
+
+  function blur() {
+    if (window.scrollY > window.innerHeight * blurEntryMultiplier) {
+      background.classList.remove('blur-out');
+      background.classList.add('blur-in');
+      nav.classList.add('fix-nav');
+      hasBlurred = true;
+    } else if (hasBlurred) {
+      background.classList.remove('blur-in');
+      background.classList.add('blur-out');
+      nav.classList.remove('fix-nav');
+    }
+  }
+
+  blur();
+  window.addEventListener('scroll', blur, {passive: true});
+});

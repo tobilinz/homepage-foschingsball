@@ -2,7 +2,6 @@
 
 .vk-banner {
     background-color: var(--red-text);
-    margin-top: 60px;
     display: block;
     font-size: var(--normal);
     color: var(--text);
