@@ -71,18 +71,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
   let hasBlurred = false;
   const background = document.getElementsByClassName('background')[0];
-  const nav = document.getElementsByTagName('nav')[0];
 
   function blur() {
     if (window.scrollY > window.innerHeight * blurEntryMultiplier) {
       background.classList.remove('blur-out');
       background.classList.add('blur-in');
-      nav.classList.add('fix-nav');
       hasBlurred = true;
     } else if (hasBlurred) {
       background.classList.remove('blur-in');
       background.classList.add('blur-out');
-      nav.classList.remove('fix-nav');
     }
   }
 

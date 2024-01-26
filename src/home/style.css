@@ -1,15 +1,33 @@
 /*-------- VK-WARNING --------*/
 
 .vk-banner {
-    background-color: var(--red-text);
-    display: block;
+    margin-top: var(--mNormal);
+    display: flex;
+    justify-content: center;
+    margin-inline: var(--mNormal);
+}
+
+.vk-banner > a {
+    position: relative;
+    font-weight: bold;
     font-size: var(--normal);
+    text-align: center;
     color: var(--text);
     text-decoration: none;
+    line-height: 1.6;
+    padding: 24px;
+}
+
+.vk-banner > a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: var(--msy) 0;
-    text-align: center;
-    font-weight: bold;
+    height: 100%;
+    border-radius: var(--border-radius);
+    border: solid 4px var(--glowbase);
+    filter: var(--glow);
 }
 
 /*-------- HERO --------*/
@@ -28,7 +46,7 @@
     width: var(--big-width);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: var(--mg);
+    gap: var(--mNormal);
 }
 
 #counter > div {
@@ -70,7 +88,7 @@
 /*---- SOCIAL ----*/
 
 .social-link {
-    margin: 0 var(--mx);
+    margin: 0 var(--mNormal);
 }
 
 .social {
@@ -84,7 +102,7 @@
 /*-------- VIDEO --------*/
 
 .video-wrapper {
-    margin: 0 var(--mx);
+    margin: 0 var(--mNormal);
 }
 
 .video-wrapper > video {
@@ -133,12 +151,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--mg);
+    gap: var(--mNormal);
     width: var(--big-width);
 }
 
 .vorverkaufsort {
-    max-width: calc(calc(var(--max-width-2) - var(--mg)) / 2);
+    max-width: calc(calc(var(--max-width-2) - var(--mNormal)) / 2);
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -162,7 +180,7 @@
     color: var(--text);
     text-align: center;
     font-size: var(--normal);
-    margin: var(--mg) 0;
+    margin: var(--mNormal) 0;
 }
 
 .vorverkaufsort > p > a {
@@ -228,7 +246,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--mg);
+    gap: var(--mNormal);
     margin-inline: auto;
     width: var(--big-width);
 }
@@ -248,7 +266,7 @@
 }
 
 #member-grid > a > p {
-    margin: var(--mg) 0;
+    margin: var(--mNormal) 0;
     color: var(--text);
     font-size: var(--normal);
     width: 100%;
