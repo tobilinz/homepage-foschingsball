@@ -191,9 +191,14 @@ body {
 
 /*-------- NAV --------*/
 
-.nav-space {
+.nav-space-top {
     width: 100%;
     height: 60px;
+}
+
+.nav-space-bottom {
+    width: 100%;
+    height: 0;
 }
 
 nav {
@@ -253,8 +258,12 @@ nav {
         left: 0;
     }
 
-    .nav-space {
+    .nav-space-top {
         height: 0;
+    }
+
+    .nav-space-bottom {
+        height: 60px;
     }
 }
 
