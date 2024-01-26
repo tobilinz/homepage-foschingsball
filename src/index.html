@@ -15,6 +15,7 @@
     <link href="home/style.css" rel="stylesheet" type="text/css">
     <script src="base.js" type="text/javascript"></script>
     <link rel="preconnect" href="https://resources.foschingsball.de/">
+    <link rel="preload" fetchpriority="high" href="home/video-poster.webp" as="image" type="image/webp">
     <link rel="preconnect" href="https://google.com/maps/">
 </head>
 
@@ -122,7 +123,7 @@
 <section id="video">
     <h2>Video</h2>
     <div class="video-wrapper">
-        <video controls id="video-player" preload="none" poster="home/video-poster.webp">
+        <video controls id="video-player" preload="metadata" poster="home/video-poster.webp">
             <source src="https://resources.foschingsball.de/2023/videos/video-2023-h264-aac.mp4"
                     type="video/mp4">
             <meta content="FOSchingsball 2023" itemprop="name">
