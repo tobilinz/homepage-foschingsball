@@ -36,7 +36,7 @@
 
 #counter {
     margin-inline: auto;
-    width: var(--small-width);
+    width: var(--big-width);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: calc(var(--mNormal) * 2);
@@ -109,14 +109,10 @@
 
 /*-------- VIDEO --------*/
 
-.video-wrapper {
+.video-player {
     margin-inline: auto;
     width: var(--big-width);
-}
-
-.video-wrapper > video {
     border-radius: var(--border-radius);
-    width: 100%;
     height: auto;
 }
 
