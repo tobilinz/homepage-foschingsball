@@ -24,16 +24,16 @@
     /*===== Font =====*/
     font-family: sans-serif;
     --title: 4.5rem;
-    --header: 3rem;
-    --highlight: 2.5rem;
+    --header: calc(var(--title) * 0.65);
     --normal: 1.125rem;
 
     /*===== Margins =====*/
     --mNormal: 1rem;
-    --mSection: 6rem;
+    --nav-height: calc(4 * var(--mNormal) + 2 * 1px + 1rem);
+    --mSection: calc(var(--nav-height) + 1rem);
 
     /*===== OTHER =====*/
-    --border-radius: 20px;
+    --border-radius: 18px;
     --big-max-width: 600px;
 
     --big-width: min(100% - var(--mNormal) * 2, var(--big-max-width));
@@ -41,25 +41,19 @@
 
     --galerie-grid-height: 200px;
 
-    --nav-height: calc(4 * var(--mNormal) + 2 * 1px + 1rem);
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px) {
     :root {
-        --title: 3.75rem;
-        --header: 2.5rem;
+        --title: 4rem;
     }
 }
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     :root {
-        --title: 2.75rem;
-        --header: 1.85rem;
-        --highlight: 2rem;
-
-        --mNormal: 0.7rem;
-        --mSection: 3rem;
+        --title: 2.875rem;
+        --mSection: 4rem;
     }
 }
 

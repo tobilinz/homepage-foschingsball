@@ -77,7 +77,7 @@
 
 .counter-span-container > span {
     color: var(--text);
-    font-size: var(--highlight);
+    font-size: var(--header);
     font-family: Courgette, sans-serif;
     text-align: center;
 }
@@ -94,7 +94,7 @@
 .social-wrapper > a {
     margin-inline: auto;
     aspect-ratio: 1;
-    height: calc(var(--highlight) * 1.125);
+    height: calc(var(--header) * 1.25);
 }
 
 .social-wrapper > a > svg {
