@@ -1,3 +1,7 @@
+:root {
+    --big-max-width: 1000px;
+}
+
 #big-view {
     position: fixed;
     right: 0;
