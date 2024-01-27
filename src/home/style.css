@@ -94,7 +94,7 @@
 .social-wrapper > a {
     margin-inline: auto;
     aspect-ratio: 1;
-    height: var(--highlight);
+    height: calc(var(--highlight) * 1.125);
 }
 
 .social-wrapper > a > svg {
