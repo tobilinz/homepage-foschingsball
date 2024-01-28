@@ -16,6 +16,8 @@
     <link href="pages/home/style.css" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://resources.foschingsball.de/">
     <link rel="preconnect" href="https://google.com/maps/">
+    <link rel="preload" href="assets/logo/logo.webp" as="image" type="image/webp"/>
+    <link rel="preload" href="pages/home/video-poster.webp" as="image" type="image/webp"/>
 </head>
 
 <body>
@@ -121,7 +123,7 @@
 
 <section id="video">
     <h2>Video</h2>
-    <video controls class="video-player" preload="metadata" poster="pages/home/video-poster.webp">
+    <video controls class="video-player" preload="none" poster="pages/home/video-poster.webp">
         <source src="https://resources.foschingsball.de/2023/videos/video-2023-h264-aac.mp4"
                 type="video/mp4">
         <meta content="FOSchingsball 2023" itemprop="name">
