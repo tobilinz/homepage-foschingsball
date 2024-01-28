@@ -1,3 +1,6 @@
+import {getMediaFromEndpoint} from "../../scripts/getMediaFromEndpoint";
+import {fetchJson} from "../../scripts/fetchJson";
+
 const endpoint = 'https://resources.foschingsball.de';
 const previewCount = 2;
 const from = 2023;
@@ -107,7 +110,7 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
     if (currentDiv.children.length === 0) loadImages();
   };
 
-  button.innerHTML = dotsSVG;
+  button.innerText = '...';
 
   const gallerySection = createGallerySection(year, year, ...previewElements, button);
   return [year - from, gallerySection];

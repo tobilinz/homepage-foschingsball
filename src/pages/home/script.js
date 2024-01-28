@@ -3,8 +3,7 @@ blinking(
   2000, 4000,
   1, 3,
   75, 25,
-  'counter-frame', 'party');
-loadGalleryPreview('https://resources.foschingsball.de/2023/pictures', 2).then(_ => null);
+  'counter-frame');
 
 function countDown(year, month, day, hour, minute) {
   const days = document.getElementById('days');
@@ -92,29 +91,4 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
   }
 
   blink();
-}
-
-async function loadGalleryPreview(endpoint, pictureCount) {
-  const grid = document.getElementsByClassName('galerie-grid')[0];
-
-  let images;
-  try {
-    images = await fetchJson(endpoint + '/content.json', 'die Bilder des Galerie-Previews');
-  } catch (error) {
-    const galerieError = document.getElementById('galerie-error');
-    galerieError.innerText = error;
-    galerieError.classList.remove('hidden');
-  }
-
-  const start = Math.floor(Math.random() * (images.length - pictureCount))
-  const elements = getMediaFromEndpoint(endpoint, images, start, pictureCount);
-
-  const a = document.createElement('a');
-  a.ariaLabel = 'Mehr Bilder anschauen';
-  a.href = 'galerie';
-  a.classList.add('more-images');
-
-  a.innerHTML = dotsSVG;
-
-  grid.append(...elements, a);
 }

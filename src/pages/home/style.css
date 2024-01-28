@@ -230,7 +230,7 @@
     color: var(--text);
 }
 
-/*-------- TEAM --------*/
+/*-------- TEAM --------*
 
 #team-loading-error {
     color: var(--red-text);
@@ -239,7 +239,7 @@
     width: var(--small-width);
 }
 
-/*---- SELECT ----*/
+/*---- SELECT ----*
 
 #custom-team-selector {
     display: inline-block;
@@ -281,7 +281,7 @@
     background: var(--background);
 }
 
-/*---- LIST ----*/
+/*---- LIST ----*
 
 #member-grid {
     display: flex;
@@ -312,6 +312,8 @@
     width: 100%;
     text-align: center;
 }
+
+/*----*/
 
 .fallback-image {
     position: absolute;
