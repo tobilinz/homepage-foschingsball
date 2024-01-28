@@ -137,6 +137,7 @@
     width: max-content;
     gap: var(--mNormal);
     animation: slide 32s linear infinite;
+    will-change: transform;
 }
 
 .moving-gallery-wrapper > img {
@@ -146,8 +147,12 @@
 }
 
 @keyframes slide {
+    0% {
+        transform: translateZ(0px) translate(0%);
+    }
+
     100% {
-        transform: translate(calc(-100% + var(--big-width)));
+        transform: translateZ(0px) translate(calc(-100% + var(--big-width)));
     }
 }
 
