@@ -4,6 +4,9 @@ blinking(
   1, 3,
   75, 25,
   'counter-frame');
+new LazyLoad({
+  // Your custom settings go here
+});
 
 function countDown(year, month, day, hour, minute) {
   const days = document.getElementById('days');
