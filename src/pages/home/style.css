@@ -113,7 +113,7 @@
     margin-inline: auto;
     width: var(--big-width);
     border-radius: var(--border-radius);
-    height: auto;
+    aspect-ratio: 16 / 9;
 }
 
 /*-------- GALERIE --------*/
