@@ -132,7 +132,6 @@
 }
 
 .moving-gallery-wrapper {
-    contain: content;
     height: 100%;
     display: flex;
     width: max-content;
