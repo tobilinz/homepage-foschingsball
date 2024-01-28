@@ -118,11 +118,37 @@
 
 /*-------- GALERIE --------*/
 
-#galerie-error {
-    color: var(--red-text);
-    text-align: center;
+#galerie > a {
     margin-inline: auto;
-    width: var(--small-width);
+}
+
+.gallery-wrapper {
+    width: var(--big-width);
+    height: var(--galerie-grid-height);
+    overflow: hidden;
+    margin-inline: auto;
+    -webkit-mask-image: -webkit-linear-gradient(to right, transparent, black 25%, black 75%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+
+.moving-gallery-wrapper {
+    height: 100%;
+    display: flex;
+    width: max-content;
+    gap: var(--mNormal);
+    animation: slide 32s linear infinite;
+}
+
+.moving-gallery-wrapper > img {
+    height: 100%;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+}
+
+@keyframes slide {
+    100% {
+        transform: translate(calc(-100% + var(--big-width)));
+    }
 }
 
 /*-------- ORT --------*/
