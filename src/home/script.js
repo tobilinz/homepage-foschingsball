@@ -95,8 +95,6 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
 }
 
 function loadMaps() {
-  const elements = document.getElementsByClassName('lazy-map');
-
   const observer = new IntersectionObserver(
     (entries, observer) => 
     entries.forEach(entry => {
@@ -112,5 +110,5 @@ function loadMaps() {
       }
     }));
 
-  elements.forEach(element => observer.observe(element));
+  Array.from(document.getElementsByClassName('lazy-map')).forEach(element => observer.observe(element));
 } 
