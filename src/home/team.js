@@ -54,7 +54,7 @@ async function selectTeam() {
     const a = document.createElement('a');
     a.ariaLabel = `Link zur von ${name} verlinkten webseite`;
 
-    if (isEmpty(member.link)) a.href = 'https://foschingsball.de/#team';
+    if (isEmpty(member.link)) a.href = '#team';
     else {
       a.target = '_blank';
       a.rel = 'noopener noreferrer';

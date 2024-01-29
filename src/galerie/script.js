@@ -1,5 +1,5 @@
-import {getMediaFromEndpoint} from "../../scripts/getMediaFromEndpoint";
-import {fetchJson} from "../../scripts/fetchJson";
+import {getMediaFromEndpoint} from "../scripts/getMediaFromEndpoint";
+import {fetchJson} from "../scripts/fetchJson";
 
 const endpoint = 'https://resources.foschingsball.de';
 const previewCount = 2;
