@@ -1,4 +1,4 @@
-setBackgroundImage();
+//setBackgroundImage();
 setVersion('1.6.0');
 blur(0.5);
 
