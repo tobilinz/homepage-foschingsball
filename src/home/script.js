@@ -112,5 +112,5 @@ function loadMaps() {
       }
     }));
 
-  elements.forEach(observer.observe);
+  elements.forEach(element => observer.observe(element));
 } 
