@@ -61,3 +61,43 @@
     top: 0;
     right: 0;
 }
+
+/*-------- GALERIE YEAR PREVIEW --------*/
+
+.galerie-grid {
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mNormal);
+    width: var(--big-width);
+}
+
+.galerie-grid > .img {
+    border-radius: var(--border-radius);
+    height: var(--galerie-grid-height);
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.more-images {
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: var(--galerie-grid-height);
+    aspect-ratio: 1;
+    background-color: var(--primary);
+    transition: background-color var(--transition-time) linear;
+}
+
+.more-images:hover {
+    background-color: var(--hover);
+}
+
+.more-images > i {
+    font-size: 150px;
+    color: var(--text);
+}
