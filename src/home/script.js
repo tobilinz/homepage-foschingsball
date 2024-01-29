@@ -4,6 +4,7 @@ blinking(
   1, 3,
   75, 25,
   'counter-frame');
+loadMaps();
 
 function countDown(year, month, day, hour, minute) {
   const days = document.getElementById('days');
@@ -92,3 +93,24 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
 
   blink();
 }
+
+function loadMaps() {
+  const elements = document.getElementsByClassName('lazy-map');
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => 
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const iframe = document.createElement('iframe');
+        iframe.src = entry.target.dataset.src;
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = 'no-referrer-when-downgrade';
+        iframe.title = entry.target.dataset.title;
+
+        entry.target.appendChild(iframe);
+        observer.unobserve(entry.target);
+      }
+    }));
+
+  elements.forEach(observer.observe);
+} 
