@@ -14,19 +14,15 @@
     <link href="style.css" rel="stylesheet">
 </head>
 
-<body id="body">
+<body>
 
-<!-- Landscape -->
-<img class="background" id="landscape" sizes="(orientation: landscape)"
-     srcset="../assets/background/qwqhd.webp 2560w, ../assets/background/qfhd.webp 1920w, ../assets/background/qhd.webp 1280w"
-     src="../assets/background/qhd.webp" alt="Background"/>
-
-<!-- Portrait -->
-<img class="background hidden" id="portrait" sizes="(orientation: portrait)"
-     srcset="../assets/background/hwqhd.webp 1440w, ../assets/background/hfhd.webp 1080w, ../assets/background/hhd.webp 720w"
-     src="../assets/background/hhd.webp" alt="Background"/>
-
-<div class="background-gradient"></div>
+<picture id="background">
+    <source media="(orientation: landscape)"
+            srcset="../assets/background/qhd.webp 1280w, ../assets/background/qfhd.webp 1920w, ../assets/background/qwqhd.webp 2560w">
+    <source media="(orientation: portrait)"
+            srcset="../assets/background/hhd.webp 720w, ../assets/background/hfhd.webp 1080w, ../assets/background/hwqhd.webp 1440w">
+    <img src="../assets/background/qwqhd.webp" alt="Background image fallback">
+</picture>
 
 <nav>
     <a href=".." class="nav-logo">

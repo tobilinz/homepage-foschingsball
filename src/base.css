@@ -88,54 +88,34 @@ body {
 
 /*-------- BACKGROUND --------*/
 
-.background {
+#background {
     position: fixed;
     top: 0;
     right: 0;
     width: 100vw;
     height: 100vh;
-    object-fit: cover;
-    z-index: -12;
-}
-
-.background-gradient {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 125vh;
-    background: radial-gradient(circle at center, #17267377, #04050ddd 90%);
     z-index: -11;
+    transition: filter 1s;
 }
 
-.blur-in {
-    animation-name: blur-in;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+#background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.blur-out {
-    animation-name: blur-out;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+#background::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #17267377, #04050ddd 90%);
 }
 
-@keyframes blur-in {
-    0% {
-        filter: blur(0);
-    }
-    100% {
-        filter: blur(4px);
-    }
-}
-
-@keyframes blur-out {
-    0% {
-        filter: blur(4px);
-    }
-    100% {
-        filter: blur(0);
-    }
+.blur {
+    filter: blur(4px);
 }
 
 /*-------- NAV --------*/

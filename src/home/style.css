@@ -138,7 +138,6 @@
     width: max-content;
     gap: var(--mNormal);
     animation: slide 32s linear infinite;
-    will-change: transform;
 }
 
 .moving-gallery-wrapper > img {

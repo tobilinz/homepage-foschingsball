@@ -22,12 +22,13 @@
 
 <body>
 
-<picture class="background">
-    <source media="(orientation: landscape)" srcset="assets/red.png 512w, assets/blue.png 1024w">
-    <source media="(orientation: portrait)" srcset="assets/green.png">
+<picture id="background">
+    <source media="(orientation: landscape)"
+            srcset="assets/background/qhd.webp 1280w, assets/background/qfhd.webp 1920w, assets/background/qwqhd.webp 2560w">
+    <source media="(orientation: portrait)"
+            srcset="assets/background/hhd.webp 720w, assets/background/hfhd.webp 1080w, assets/background/hwqhd.webp 1440w">
     <img src="assets/background/qwqhd.webp" alt="Background image fallback">
 </picture>
-<!--div class="background-gradient"></div-->
 
 <nav>
     <a href="." class="nav-logo">
@@ -132,11 +133,14 @@
     <h2>Galerie</h2>
     <div class="gallery-wrapper">
         <div class="moving-gallery-wrapper">
-            <img src="home/gallery-preview-images/1.webp" alt="Erstes preview Bild" height="200" width="300">
-            <img src="home/gallery-preview-images/2.webp" alt="Zweites preview Bild" height="200" width="300">
-            <img src="home/gallery-preview-images/3.webp" alt="Drittes preview Bild" height="200" width="300" loading="lazy">
-            <img src="home/gallery-preview-images/4.webp" alt="Viertes preview Bild" height="200" width="300" loading="lazy">
-            <img src="home/gallery-preview-images/5.webp" alt="Fünftes preview Bild" height="200" width="300" loading="lazy">
+            <img src="home/gallery-preview-images/1.webp" alt="Erstes preview Bild" height="600" width="900">
+            <img src="home/gallery-preview-images/2.webp" alt="Zweites preview Bild" height="600" width="900">
+            <img src="home/gallery-preview-images/3.webp" alt="Drittes preview Bild" height="600" width="900"
+                 loading="lazy">
+            <img src="home/gallery-preview-images/4.webp" alt="Viertes preview Bild" height="600" width="900"
+                 loading="lazy">
+            <img src="home/gallery-preview-images/5.webp" alt="Fünftes preview Bild" height="600" width="900"
+                 loading="lazy">
         </div>
     </div>
     <a href="galerie">Zur Galerie ></a>
@@ -160,7 +164,7 @@
 
 <section id="ort">
     <h2>Ort</h2>
-    <div class="main-map-wrapper lazy-map" 
+    <div class="main-map-wrapper lazy-map"
          data-src="https://google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde"
          data-title="Kleine Jurahalle - Festplatz 2, 92318 Neumarkt in der Oberpfalz">
         <img class="fallback-image" src="home/map-placeholders/main-map-placeholder.webp" loading="lazy"
