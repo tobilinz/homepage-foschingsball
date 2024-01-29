@@ -110,7 +110,7 @@ const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async 
     if (currentDiv.children.length === 0) loadImages();
   };
 
-  button.innerText = '...';
+  button.innerText = '···';
 
   const gallerySection = createGallerySection(year, year, ...previewElements, button);
   return [year - from, gallerySection];

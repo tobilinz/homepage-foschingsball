@@ -91,13 +91,12 @@
     aspect-ratio: 1;
     background-color: var(--primary);
     transition: background-color var(--transition-time) linear;
+
+    font-size: 10rem;
+    font-weight: bold;
+    color: var(--text);
 }
 
 .more-images:hover {
     background-color: var(--hover);
-}
-
-.more-images > i {
-    font-size: 150px;
-    color: var(--text);
 }
