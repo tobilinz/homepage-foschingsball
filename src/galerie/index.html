@@ -32,7 +32,6 @@
     <div class="nav-links">
         <a href="..">Home</a>
         <span class="hidden" id="to-overview" onclick="back()">Übersicht</span>
-        <span class="hidden" id="more" onclick="loadImages()">Mehr</span>
     </div>
 </nav>
 
@@ -44,7 +43,7 @@
 
 <section id="big-view" class="hidden">
     <img id="big-image" src="" alt="Größere Einzelansicht des gerade angetippten Bildes">
-    <button id="previous">
+    <button id="previous" onclick="previousImage()">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
                 <path d="m14 7-5 5"/>
@@ -52,7 +51,7 @@
             </g>
         </svg>
     </button>
-    <button id="next">
+    <button id="next" onclick="nextImage()">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
                 <path d="m15 12-5 5"/>
@@ -60,7 +59,7 @@
             </g>
         </svg>
     </button>
-    <button id="close">
+    <button id="close" onclick="closeImage()">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
                 <path d="m17 7-10 10"/>

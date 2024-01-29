@@ -2,21 +2,16 @@ import {getMediaFromEndpoint} from "../scripts/getMediaFromEndpoint.js";
 import {fetchJson} from "../scripts/fetchJson.js";
 
 const endpoint = 'https://resources.foschingsball.de';
-const previewCount = 2;
-const from = 2023;
-const to = 2024;
-const batchSize = 32;
+loadGallery(2023, 2024, 2);
 
 const years = document.getElementById('years');
 const backButton = document.getElementById('to-overview');
 const moreButton = document.getElementById('more');
 
-let currentDiv = null;
-let currentYear = 0;
-let currentImages = [];
+let current = null;
 
+// Big view
 const nav = document.getElementsByTagName('nav')[0];
-const body = document.getElementById('body');
 const fullImage = document.getElementById('big-image');
 const fullImageView = document.getElementById('big-view');
 const nextButton = document.getElementById('next');
@@ -25,115 +20,134 @@ let currentShownImage = undefined;
 
 function updateButtons(i) {
   previousButton.disabled = i <= 0;
-  nextButton.disabled = i >= currentImages.length - 1
+  nextButton.disabled = i >= current.images.length - 1
 }
 
 function showImage(i) {
-  fullImage.src = `${endpoint}/${currentYear}/pictures/${currentImages[i]}`;
+  fullImage.src = `${endpoint}/${current.year}/pictures/${current.images[i]}`;
   currentShownImage = i;
 }
 
-const imageClickAction = (img, i) => {
-  img.addEventListener('click', () => {
-    body.style.overflow = 'hidden';
-    fullImageView.classList.remove('hidden');
-    nav.classList.add('hidden');
-    showImage(i);
-    updateButtons(i);
-  });
-}
-
-nextButton.addEventListener('click', () => {
+function nextImage() {
   const newImage = currentShownImage + 1;
-
-  if (newImage >= currentImages.length) return;
+  if (newImage >= current.images.length) return;
   updateButtons(newImage);
   showImage(newImage);
-});
+}
+window.nextImage = nextImage;
 
-previousButton.addEventListener('click', () => {
+function previousImage() {
   const newImage = currentShownImage - 1;
-
   if (newImage < 0) return;
   updateButtons(newImage);
   showImage(newImage);
-});
+}
+window.previousImage = previousImage;
 
-document.getElementById('close').addEventListener('click', () => {
+function closeImage() {
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
-  body.style.overflow = '';
   currentShownImage = undefined;
-});
+}
+window.closeImage = closeImage;
 
-const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async () => {
-  const year = from + index;
+// Gallery Loading
+function loadGallery(from, to, previewCount) {
+  const sectionsToLoad = Array.from({length: to - from + 1}, (_, index) => (async () => {
+    const currentYear = from + index;
+    const currentEndpoint = `${endpoint}/${currentYear}/pictures`;
 
-  let images;
-  try {
-    images = await fetchJson(`${endpoint}/${year}/pictures/content.json`, `die Bilder der Galerie`);
-  } catch (error) {
-    return [year, undefined];
-  }
+    let imageList;
+    try {
+      imageList = await fetchJson(currentEndpoint + '/content.json', 'die Bilder der Galerie');
+    } catch (error) {
+      return [currentYear, undefined];
+    }
 
-  const start = Math.floor(Math.random() * (images.length - previewCount))
-  const previewElements = getMediaFromEndpoint(`${endpoint}/${year}/pictures`, images, start, previewCount);
+    const fullGallerySection = createGallerySection(currentYear, currentYear.toString() + '-full');
+    fullGallerySection.classList.add('hidden');
+    const allImages = getMediaFromEndpoint(currentEndpoint, imageList, 0, imageList.length);
+    Array.from(allImages).forEach((image, index) => image.onclick = () => {
+      fullImageView.classList.remove('hidden');
+      nav.classList.add('hidden');
+      showImage(index);
+      updateButtons(index);
+    });
+    fullGallerySection.lastChild.append(...allImages);
+      years.append(fullGallerySection);
 
-  const button = document.createElement('button');
+    const start = Math.floor(Math.random() * (imageList.length - previewCount))
+    const previewElements = getMediaFromEndpoint(currentEndpoint, imageList, start, previewCount);
 
-  button.classList.add('more-images');
-  button.onclick = () => {
-    let found = false;
-    for (const child of years.children) {
-      if (child.id !== `${year}-full`) {
-        child.classList.add('hidden');
-        continue;
+    const button = createMoreButton(imageList, currentYear);
+
+    const gallerySection = createGallerySection(currentYear, currentYear, ...previewElements, button);
+
+    return [currentYear - from, gallerySection];
+  })());
+
+  function createMoreButton(images, year) {
+    const button = document.createElement('button');
+
+    button.classList.add('more-images');
+
+    button.onclick = () => {
+      let currentDiv = null;
+      for (const child of years.children) {
+        if (child.id !== `${year}-full`) {
+          child.classList.add('hidden');
+          continue;
+        }
+
+        currentDiv = child.lastChild;
+        child.classList.remove('hidden');
       }
 
-      found = true;
-      currentDiv = child.lastChild;
-      child.classList.remove('hidden');
-    }
+      current = {
+        div: currentDiv,
+        year: year,
+        images: images
+      };
 
-    if (found === false) {
-      const fullSection = createGallerySection(year, year.toString() + '-full');
-      years.appendChild(fullSection);
-      currentDiv = fullSection.lastChild;
-    }
+      backButton.classList.remove('hidden');
+    };
 
-    currentImages = images;
-    currentYear = year;
-    backButton.classList.remove('hidden');
+    button.innerText = '···';
 
-    if (images.length > currentDiv.children.length) moreButton.classList.remove('hidden');
+    return button;
+  }
+  function createGallerySection(header, id, ...children) {
+    const section = document.createElement('section');
+    section.id = id;
 
-    if (currentDiv.children.length === 0) loadImages();
-  };
+    const headerText = document.createElement('h2');
+    section.appendChild(headerText);
 
-  button.innerText = '···';
+    headerText.textContent = header;
 
-  const gallerySection = createGallerySection(year, year, ...previewElements, button);
-  return [year - from, gallerySection];
-})());
+    const div = document.createElement('div');
+    section.appendChild(div);
 
-Promise.all(sectionsToLoad).then(result => {
-  const length = to - from;
-  const sorted = Array.from({length: length + 1});
+    div.classList.add('galerie-grid');
 
-  for (const element of result) sorted[length - element[0]] = element[1];
+    div.append(...children);
 
-  years.append(...sorted.filter((value) => value !== undefined));
-});
+    return section;
+  }
 
-function loadImages() {
-  const images = getMediaFromEndpoint(`${endpoint}/${currentYear}/pictures`, currentImages, currentDiv.children.length, Math.min(batchSize, currentImages.length - currentDiv.children.length), imageClickAction);
-  currentDiv.append(...images);
+  Promise.all(sectionsToLoad).then(result => {
+    const length = to - from;
+    const sorted = Array.from({length: length + 1});
 
-  if (currentDiv.children.length >= currentImages.length) moreButton.classList.add('hidden');
+    for (const element of result) sorted[length - element[0]] = element[1];
+
+    years.append(...sorted.filter((value) => value !== undefined));
+  });
 }
 
+// Other Events
 function back() {
-  currentDiv = null;
+  current = null;
 
   for (const child of years.children) {
     if (child.id.endsWith('-full')) {
@@ -147,22 +161,4 @@ function back() {
   backButton.classList.add('hidden');
   moreButton.classList.add('hidden');
 }
-
-function createGallerySection(header, id, ...children) {
-  const section = document.createElement('section');
-  section.id = id;
-  
-  const headerText = document.createElement('h2');
-  section.appendChild(headerText);
-
-  headerText.textContent = header;
-
-  const div = document.createElement('div');
-  section.appendChild(div);
-
-  div.classList.add('galerie-grid');
-  
-  div.append(...children);
-
-  return section;
-}
+window.back = back;
