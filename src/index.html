@@ -10,14 +10,14 @@
     <meta content="FOSchingsball, Faschingsball, AktiveFOSBOSNeumarkt.EV, AktiveFOSBOS, Neumarkt, Feier, Fest, Fasching, Ball, Verkleiden, Fasching, Karneval, Party, Veranstaltung, Kostüme, Maskenball, Tanzen, Musik, Faschingsfeier, lokale Events, Faschingsparty, Jurahalle, FOS, BOS, Generell, Video, Fotos, Bilder, Galerie, Geschichte, Verein, Maximilian, Kolbe, Schule, Maximilian-Kolbe-Schule"
           name="keywords">
     <meta content="AktiveFOSBOSNeumarkt.EV" name="author">
-    <link rel="shortcut icon" href="assets/logo/logo.png" type="image/png">
+    <link rel="icon" href="assets/logo/logo.png" type="image/png">
     <title>Home - FOSchingsball Neumarkt i.d. OPf.</title>
     <link rel="preload" href="assets/courgette/font.ttf" as="font" type="font/ttf"/>
     <link rel="preconnect" href="https://google.com/maps/">
     <link rel="preload" href="assets/logo/logo.webp" as="image" type="image/webp"/>
-    <link rel="preload" href="pages/home/video-poster.webp" as="image" type="image/webp"/>
-    <link href="assets/base.css" rel="stylesheet" type="text/css">
-    <link href="pages/home/style.css" rel="stylesheet" type="text/css">
+    <link rel="preload" href="home/video-poster.webp" as="image" type="image/webp"/>
+    <link href="base.css" rel="stylesheet" type="text/css">
+    <link href="home/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -35,24 +35,24 @@
 <div class="background-gradient"></div>
 
 <nav>
-    <a href="https://foschingsball.de/" class="nav-logo">
+    <a href="" class="nav-logo">
         <img src="assets/logo/logo.webp" alt="FOSchingsball Logo">
         <span>FOSchingsball</span>
     </a>
     <div class="nav-links">
-        <a href="https://foschingsball.de/#video" class="nav-no-narrow">Video</a>
-        <a href="https://foschingsball.de/#galerie">Galerie</a>
-        <a href="https://foschingsball.de/#datum" class="nav-no-wide">Infos</a>
-        <a href="https://foschingsball.de/#datum" class="nav-no-narrow">Datum</a>
-        <a href="https://foschingsball.de/#alter" class="nav-no-narrow">Alter</a>
-        <a href="https://foschingsball.de/#ort" class="nav-no-narrow">Ort</a>
-        <a href="https://foschingsball.de/#tickets">Tickets</a>
-        <a href="https://foschingsball.de/#geschichte" class="nav-no-narrow">Geschichte</a>
+        <a href="#video" class="nav-no-narrow">Video</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#datum" class="nav-no-wide">Infos</a>
+        <a href="#datum" class="nav-no-narrow">Datum</a>
+        <a href="#alter" class="nav-no-narrow">Alter</a>
+        <a href="#ort" class="nav-no-narrow">Ort</a>
+        <a href="#tickets">Tickets</a>
+        <a href="#geschichte" class="nav-no-narrow">Geschichte</a>
     </div>
 </nav>
 
 <section id="hero">
-    <a href="https://foschingsball.de/#tickets" class="vk-banner ignore">
+    <a href="#tickets" class="vk-banner ignore">
         DER VORVERKAUF LÄUFT BEREITS<br>
         Nur solange der Vorrat reicht!
     </a>
@@ -123,14 +123,13 @@
 
 <section id="video">
     <h2>Video</h2>
-    <video controls class="video-player" preload="none" poster="pages/home/video-poster.webp">
+    <video controls class="video-player" preload="none" poster="home/video-poster.webp">
         <source src="https://resources.foschingsball.de/2023/videos/video-2023-h264-aac.mp4"
                 type="video/mp4">
         <meta content="FOSchingsball 2023" itemprop="name">
         <meta content="Video, dass den Aufbau und die Feier vom FOSchingsball aus dem Jahr 2023 zeigt."
               itemprop="description">
         <meta content="PT4M53S" itemprop="duration">
-        <meta content="home/video-poster.webp" itemprop="thumbnail">
     </video>
 </section>
 
@@ -138,14 +137,14 @@
     <h2>Galerie</h2>
     <div class="gallery-wrapper">
         <div class="moving-gallery-wrapper">
-            <img src="pages/home/gallery-preview-images/1.webp" alt="Erstes preview Bild" height="200" width="300">
-            <img src="pages/home/gallery-preview-images/2.webp" alt="Zweites preview Bild" height="200" width="300">
-            <img src="pages/home/gallery-preview-images/3.webp" alt="Drittes preview Bild" height="200" width="300" loading="lazy">
-            <img src="pages/home/gallery-preview-images/4.webp" alt="Viertes preview Bild" height="200" width="300" loading="lazy">
-            <img src="pages/home/gallery-preview-images/5.webp" alt="Fünftes preview Bild" height="200" width="300" loading="lazy">
+            <img src="home/gallery-preview-images/1.webp" alt="Erstes preview Bild" height="200" width="300">
+            <img src="home/gallery-preview-images/2.webp" alt="Zweites preview Bild" height="200" width="300">
+            <img src="home/gallery-preview-images/3.webp" alt="Drittes preview Bild" height="200" width="300" loading="lazy">
+            <img src="home/gallery-preview-images/4.webp" alt="Viertes preview Bild" height="200" width="300" loading="lazy">
+            <img src="home/gallery-preview-images/5.webp" alt="Fünftes preview Bild" height="200" width="300" loading="lazy">
         </div>
     </div>
-    <a href="https://foschingsball.de/galerie">Zur Galerie ></a>
+    <a href="galerie">Zur Galerie ></a>
 </section>
 
 <section id="datum">
@@ -167,7 +166,7 @@
 <section id="ort">
     <h2>Ort</h2>
     <div class="main-map-wrapper">
-        <img class="fallback-image" src="pages/home/map-placeholders/main-map-placeholder.webp" loading="lazy"
+        <img class="fallback-image" src="home/map-placeholders/main-map-placeholder.webp" loading="lazy"
              alt="Ersatzbild für die Hauptkarte"/>
         <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"
                 src="https://google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde"
@@ -196,7 +195,7 @@
     <div class="vorverkaufsorte-grid">
         <div class="vorverkaufsort">
             <div>
-                <img class="fallback-image" src="pages/home/map-placeholders/tourist-map-placeholder.webp" loading="lazy"
+                <img class="fallback-image" src="home/map-placeholders/tourist-map-placeholder.webp" loading="lazy"
                      alt="Ersatzbild für die Tourist Information Neumarkt Karte"/>
                 <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"
                         src="https://google.com/maps/embed?pb=!1m18!1m12!1m3!1d2416.402896822465!2d11.458414800000002!3d49.2801596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f644ceb39721d%3A0xeaafbcd9beddf099!2sTourist-Information%20der%20Stadt%20Neumarkt%20i.d.OPf.!5e1!3m2!1sde!2sde!4v1704888698803!5m2!1sde!2sde"
@@ -208,7 +207,7 @@
         </div>
         <div class="vorverkaufsort">
             <div>
-                <img class="fallback-image" src="pages/home/map-placeholders/fos-map-placeholder.webp" loading="lazy"
+                <img class="fallback-image" src="home/map-placeholders/fos-map-placeholder.webp" loading="lazy"
                      alt="Ersatzbild für die FOS Karte"/>
                 <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"
                         src="https://google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.240409585188!2d11.469261899999998!3d49.2630645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6fde07078387%3A0x608baab947ae1d4d!2sMaximilian-Kolbe-Schule%20Neumarkt%20(staatliche%20FOS%2FBOS)!5e1!3m2!1sde!2sde!4v1704888746853!5m2!1sde!2sde"
@@ -221,7 +220,7 @@
         </div>
         <div class="vorverkaufsort">
             <div>
-                <img class="fallback-image" src="pages/home/map-placeholders/ticket-map-placeholder.webp" loading="lazy"
+                <img class="fallback-image" src="home/map-placeholders/ticket-map-placeholder.webp" loading="lazy"
                      alt="Ersatzbild für die Neumarkter Wochenblatt Ticketshop Karte"/>
                 <iframe allowfullscreen referrerpolicy="no-referrer-when-downgrade" loading="lazy"
                         src="https://google.com/maps/embed?pb=!1m18!1m12!1m3!1d2416.3311340229598!2d11.457017700000002!3d49.2816242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6ff3d5d0619b%3A0xf7c1ae408d4dfebd!2sNeumarkter%20Wochenblatt%20Ticketshop!5e1!3m2!1sde!2sde!4v1706030558511!5m2!1sde!2sde"
@@ -274,7 +273,7 @@
 
 <section id="footer">
     <div>
-        <a href="pages/impressum" class="link">
+        <a href="impressum" class="link">
             Impressum
         </a>
         <a href="https://fosbos-neumarkt.de/" rel="noopener noreferrer" target="_blank" class="link">
@@ -290,7 +289,7 @@
 </section>
 
 <script defer src="scripts/base.js" type="text/javascript"></script>
-<script defer src="pages/home/script.js" type="text/javascript"></script>
+<script defer src="home/script.js" type="text/javascript"></script>
 
 </body>
 
