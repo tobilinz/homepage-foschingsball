@@ -141,6 +141,7 @@
 }
 
 .moving-gallery-wrapper > img {
+    width: auto;
     height: 100%;
     object-fit: contain;
     border-radius: var(--border-radius);
