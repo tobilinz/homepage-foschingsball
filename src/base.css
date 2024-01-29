@@ -174,7 +174,7 @@ nav::before {
     height: 100%;
     display: inline-flex;
     align-items: center;
-    border: 1px #fff2 solid;
+    border: 1px #ffffff17 solid;
     background-color: #0007;
     border-radius: var(--border-radius);
     margin-inline: auto;
