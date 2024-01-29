@@ -109,11 +109,21 @@
 
 /*-------- VIDEO --------*/
 
-.video-player {
+.video-wrapper {
     margin-inline: auto;
     width: var(--big-width);
-    border-radius: var(--border-radius);
     aspect-ratio: 16 / 9;
+    height: auto;
+    position: relative;
+}
+
+.video-wrapper > video {
+    position: absolute;
+    border-radius: var(--border-radius);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /*-------- GALERIE --------*/
