@@ -1,0 +1,92 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="linearGradient1657" x1="2.56e-7" x2="100" y1=".0691" y2="100" gradientTransform="matrix(.988 0 0 .988 .593 .593)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#2639fd" stop-opacity=".2" offset="0"/>
+<stop stop-color="#20c8eb" stop-opacity=".2" offset=".499"/>
+<stop stop-color="#2639fd" stop-opacity=".2" offset="1"/>
+</linearGradient>
+<linearGradient id="linearGradient7510" x1=".196" x2="99.9" y1=".32" y2="99.9" gradientUnits="userSpaceOnUse">
+<stop stop-color="#030303" offset="0"/>
+<stop stop-color="#313131" offset=".499"/>
+<stop offset="1"/>
+</linearGradient>
+<filter id="filter3066" x="-.536" y="-1.19" width="2.07" height="3.37" color-interpolation-filters="sRGB">
+<feFlood flood-color="rgb(0,149,255)" flood-opacity=".502" result="flood"/>
+<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1"/>
+<feGaussianBlur in="composite1" result="blur" stdDeviation="2"/>
+<feOffset dx="0" dy="0" result="offset"/>
+<feComposite in="SourceGraphic" in2="offset" result="fbSourceGraphic"/>
+<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
+<feFlood flood-color="rgb(0,149,255)" flood-opacity=".502" in="fbSourceGraphic" result="flood"/>
+<feComposite in="flood" in2="fbSourceGraphic" operator="in" result="composite1"/>
+<feGaussianBlur in="composite1" result="blur" stdDeviation="2"/>
+<feOffset dx="0" dy="0" result="offset"/>
+<feComposite in="fbSourceGraphic" in2="offset" result="fbSourceGraphic"/>
+<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
+<feFlood flood-color="rgb(0,149,255)" flood-opacity=".502" in="fbSourceGraphic" result="flood"/>
+<feComposite in="flood" in2="fbSourceGraphic" operator="in" result="composite1"/>
+<feGaussianBlur in="composite1" result="blur" stdDeviation="4"/>
+<feOffset dx="0" dy="0" result="offset"/>
+<feComposite in="fbSourceGraphic" in2="offset" result="fbSourceGraphic"/>
+<feColorMatrix in="fbSourceGraphic" result="fbSourceGraphicAlpha" values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"/>
+<feFlood flood-color="rgb(0,149,255)" flood-opacity=".502" in="fbSourceGraphic" result="flood"/>
+<feComposite in="flood" in2="fbSourceGraphic" operator="in" result="composite1"/>
+<feGaussianBlur in="composite1" result="blur" stdDeviation="8"/>
+<feOffset dx="0" dy="0" result="offset"/>
+<feComposite in="fbSourceGraphic" in2="offset" result="composite2"/>
+</filter>
+<linearGradient id="linearGradient4428" x1="34.7" x2="64.2" y1="35.5" y2="64.2" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-opacity="0" offset=".261"/>
+<stop stop-opacity="0" offset=".742"/>
+<stop stop-color="#fff" offset="1"/>
+</linearGradient>
+<linearGradient id="linearGradient4567" x1="34.7" x2="64.2" y1="35.5" y2="64.2" gradientTransform="translate(.000409)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-opacity="0" offset=".261"/>
+<stop stop-opacity="0" offset=".745"/>
+<stop stop-color="#fff" offset="1"/>
+</linearGradient>
+<linearGradient id="linearGradient4611" x1="34.7" x2="64.2" y1="35.5" y2="64.2" gradientTransform="translate(5.51e-7 -.00041)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-opacity="0" offset=".264"/>
+<stop stop-opacity="0" offset=".742"/>
+<stop stop-color="#fff" offset="1"/>
+</linearGradient>
+<linearGradient id="linearGradient4653" x1="34.7" x2="64.2" y1="35.5" y2="64.2" gradientTransform="translate(2.1e-6 -.000411)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-opacity="0" offset=".261"/>
+<stop stop-opacity="0" offset=".742"/>
+<stop stop-color="#fff" offset="1"/>
+</linearGradient>
+<linearGradient id="linearGradient4695" x1="34.7" x2="64.2" y1="35.5" y2="64.2" gradientTransform="translate(1.77e-6 -.000411)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-opacity="0" offset=".264"/>
+<stop stop-opacity="0" offset=".742"/>
+<stop stop-color="#fff" offset="1"/>
+</linearGradient>
+<linearGradient id="linearGradient4794" x1="34.7" x2="64.2" y1="35.5" y2="64.2" gradientTransform="translate(1.32e-6 -.000411)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#fff" offset="0"/>
+<stop stop-opacity="0" offset=".261"/>
+<stop stop-opacity="0" offset=".742"/>
+<stop stop-color="#fff" offset="1"/>
+</linearGradient>
+</defs>
+<g>
+<circle cx="50" cy="50" r="49.4" fill="url(#linearGradient1657)" stroke="#bfbfbf" stroke-width="1.19" style="paint-order:markers stroke fill"/>
+</g>
+<g>
+<circle cx="50" cy="50" r="35" fill="url(#linearGradient7510)" stroke="#bfbfbf" stroke-width="1.2" style="paint-order:markers stroke fill"/>
+</g>
+<g fill-opacity="0" stroke-width=".5">
+<circle cx="49.8" cy="49.8" r="30" stroke="url(#linearGradient4428)" style="paint-order:normal"/>
+<circle cx="49.8" cy="49.8" r="27.5" stroke="url(#linearGradient4567)" style="paint-order:normal"/>
+<circle cx="49.8" cy="49.8" r="25" stroke="url(#linearGradient4611)" style="paint-order:normal"/>
+<circle cx="49.8" cy="49.8" r="22.5" stroke="url(#linearGradient4653)" style="paint-order:normal"/>
+<circle cx="49.8" cy="49.8" r="20" stroke="url(#linearGradient4695)" style="paint-order:normal"/>
+<circle cx="49.8" cy="49.8" r="17.5" stroke="url(#linearGradient4794)" style="paint-order:normal"/>
+</g>
+<g>
+<text x="13.634246" y="65.765694" fill="#e4f8ff" filter="url(#filter3066)" font-size="42.3px" stroke-width="1.2" style="paint-order:markers stroke fill" xml:space="preserve"><tspan x="13.634246" y="65.765694" fill="#e4f8ff" font-family="Courgette" font-size="42.3px" stroke-width="1.2">FOS</tspan></text>
+</g>
+</svg>
