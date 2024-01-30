@@ -34,7 +34,7 @@ function nextImage() {
   updateButtons(newImage);
   showImage(newImage);
 }
-window.nextImage = nextImage;
+document.getElementById('next').addEventListener('click', nextImage);
 
 function previousImage() {
   const newImage = currentShownImage - 1;
@@ -42,14 +42,14 @@ function previousImage() {
   updateButtons(newImage);
   showImage(newImage);
 }
-window.previousImage = previousImage;
+document.getElementById('previous').addEventListener('click', previousImage);
 
 function closeImage() {
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
   currentShownImage = undefined;
 }
-window.closeImage = closeImage;
+document.getElementById('close').addEventListener('click', closeImage);
 
 // Gallery Loading
 function loadGallery(from, to, previewCount) {
@@ -161,4 +161,4 @@ function back() {
   backButton.classList.add('hidden');
   moreButton.classList.add('hidden');
 }
-window.back = back;
+document.getElementById('to-overview').addEventListener('click', back);
