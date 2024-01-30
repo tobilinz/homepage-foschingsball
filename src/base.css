@@ -152,6 +152,7 @@ nav::before {
 .nav-logo {
     display: inline-flex;
     height: 100%;
+    aspect-ratio: 1;
     overflow: hidden;
     align-items: center;
     gap: var(--mNormal);
