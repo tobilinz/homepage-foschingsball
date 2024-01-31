@@ -137,7 +137,7 @@
     display: flex;
     width: max-content;
     gap: var(--mNormal);
-    animation: slide 32s linear infinite;
+    animation: slide 24s linear infinite;
 }
 
 .moving-gallery-wrapper > img {
