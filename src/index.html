@@ -15,42 +15,42 @@
     <meta content="AktiveFOSBOSNeumarkt.EV" name="author">
 
     <!-- Favicon Generator -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/logo/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/logo/favicon-16x16.png">
-    <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="manifest" href="../assets/logo/site.webmanifest">
-    <link rel="mask-icon" href="../assets/logo/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16x16.png">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="assets/logo/site.webmanifest">
+    <link rel="mask-icon" href="assets/logo/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="apple-mobile-web-app-title" content="FOSchingsball">
     <meta name="application-name" content="FOSchingsball">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="msapplication-config" content="assets/logo/browserconfig.xml">
 
     <!-- Preloading -->
-    <link rel="preload" href="../assets/courgette/font.ttf" as="font" crossorigin>
-    <link rel="preload" href="video-poster.webp" as="image">
+    <link rel="preload" href="assets/courgette/font.ttf" as="font" crossorigin>
+    <link rel="preload" href="home/video-poster.webp" as="image">
 
     <!-- Preconnecting -->
     <link rel="preconnect" href="https://google.com/maps/">
 
     <!-- Styles -->
-    <link href="../base.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link href="base.css" rel="stylesheet">
+    <link href="home/style.css" rel="stylesheet">
 </head>
 
 <body>
 
 <picture id="background">
     <source media="(orientation: landscape)"
-            srcset="../assets/background/qhd.webp 1280w, ../assets/background/qfhd.webp 1920w, ../assets/background/qwqhd.webp 2560w">
+            srcset="assets/background/qhd.webp 1280w, assets/background/qfhd.webp 1920w, assets/background/qwqhd.webp 2560w">
     <source media="(orientation: portrait)"
-            srcset="../assets/background/hhd.webp 720w, ../assets/background/hfhd.webp 1080w, ../assets/background/hwqhd.webp 1440w">
-    <img src="../assets/background/qwqhd.webp" alt="Background image fallback">
+            srcset="assets/background/hhd.webp 720w, assets/background/hfhd.webp 1080w, assets/background/hwqhd.webp 1440w">
+    <img src="assets/background/qwqhd.webp" alt="Background image fallback">
 </picture>
 
 <nav>
-    <a href=".." class="nav-logo">
-        <img src="../assets/logo/logo.svg" alt="FOSchingsball Logo" loading="lazy">
+    <a href="" class="nav-logo">
+        <img src="assets/logo/logo.svg" alt="FOSchingsball Logo" loading="lazy">
         <span>FOSchingsball</span>
     </a>
     <div class="nav-links">
@@ -137,7 +137,7 @@
 
 <section id="video">
     <h2>Video</h2>
-    <video class="main-video" controls preload="none" poster="video-poster.webp">
+    <video class="main-video" controls preload="none" poster="home/video-poster.webp">
         <source src="https://resources.foschingsball.de/2023/videos/video-2023-h264-aac.mp4"
                 type="video/mp4">
         <meta content="FOSchingsball 2023" itemprop="name">
@@ -151,19 +151,19 @@
     <h2>Galerie</h2>
     <div class="gallery-wrapper">
         <div class="moving-gallery-wrapper">
-            <img src="gallery-preview-images/1.webp" alt="Erstes preview Bild" height="400" width="600"
+            <img src="home/gallery-preview-images/1.webp" alt="Erstes preview Bild" height="400" width="600"
                  loading="lazy">
-            <img src="gallery-preview-images/2.webp" alt="Zweites preview Bild" height="400" width="515"
+            <img src="home/gallery-preview-images/2.webp" alt="Zweites preview Bild" height="400" width="515"
                  loading="lazy">
-            <img src="gallery-preview-images/3.webp" alt="Drittes preview Bild" height="400" width="600"
+            <img src="home/gallery-preview-images/3.webp" alt="Drittes preview Bild" height="400" width="600"
                  loading="lazy">
-            <img src="gallery-preview-images/4.webp" alt="Viertes preview Bild" height="400" width="600"
+            <img src="home/gallery-preview-images/4.webp" alt="Viertes preview Bild" height="400" width="600"
                  loading="lazy">
-            <img src="gallery-preview-images/5.webp" alt="Fünftes preview Bild" height="400" width="600"
+            <img src="home/gallery-preview-images/5.webp" alt="Fünftes preview Bild" height="400" width="600"
                  loading="lazy">
         </div>
     </div>
-    <a href="../galerie">Zur Galerie ></a>
+    <a href="galerie">Zur Galerie ></a>
 </section>
 
 <section id="datum">
@@ -187,7 +187,7 @@
     <div class="main-map-wrapper lazy-map"
          data-src="https://google.com/maps/embed?pb=!1m14!1m8!1m3!1d4832.9351070544835!2d11.447261!3d49.27884!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6f8e884c5485%3A0x20da06e2e28e49a3!2sKleine%20Jurahalle!5e1!3m2!1sde!2sde!4v1702989223575!5m2!1sde!2sde"
          data-title="Kleine Jurahalle - Festplatz 2, 92318 Neumarkt in der Oberpfalz">
-        <img class="fallback-image" src="map-placeholders/main-map-placeholder.webp" loading="lazy"
+        <img class="fallback-image" src="home/map-placeholders/main-map-placeholder.webp" loading="lazy"
              alt="Ersatzbild für die Hauptkarte"/>
     </div>
 </section>
@@ -214,7 +214,7 @@
             <div class="lazy-map"
                  data-src="https://google.com/maps/embed?pb=!1m18!1m12!1m3!1d2416.402896822465!2d11.458414800000002!3d49.2801596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f644ceb39721d%3A0xeaafbcd9beddf099!2sTourist-Information%20der%20Stadt%20Neumarkt%20i.d.OPf.!5e1!3m2!1sde!2sde!4v1704888698803!5m2!1sde!2sde"
                  data-title="Tourist-Information der Stadt Neumarkt i.d.OPf.">
-                <img class="fallback-image" src="map-placeholders/tourist-map-placeholder.webp" loading="lazy"
+                <img class="fallback-image" src="home/map-placeholders/tourist-map-placeholder.webp" loading="lazy"
                      alt="Ersatzbild für die Tourist Information Neumarkt Karte"/>
             </div>
             <p>
@@ -225,7 +225,7 @@
             <div class="lazy-map"
                  data-src="https://google.com/maps/embed?pb=!1m18!1m12!1m3!1d2417.240409585188!2d11.469261899999998!3d49.2630645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6fde07078387%3A0x608baab947ae1d4d!2sMaximilian-Kolbe-Schule%20Neumarkt%20(staatliche%20FOS%2FBOS)!5e1!3m2!1sde!2sde!4v1704888746853!5m2!1sde!2sde"
                  data-title="Maximilian-Kolbe-Schule Neumarkt i.d.OPf.">
-                <img class="fallback-image" src="map-placeholders/fos-map-placeholder.webp" loading="lazy"
+                <img class="fallback-image" src="home/map-placeholders/fos-map-placeholder.webp" loading="lazy"
                      alt="Ersatzbild für die FOS Karte"/>
             </div>
             <p>
@@ -237,7 +237,7 @@
             <div class="lazy-map"
                  data-src="https://google.com/maps/embed?pb=!1m18!1m12!1m3!1d2416.3311340229598!2d11.457017700000002!3d49.2816242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f6ff3d5d0619b%3A0xf7c1ae408d4dfebd!2sNeumarkter%20Wochenblatt%20Ticketshop!5e1!3m2!1sde!2sde!4v1706030558511!5m2!1sde!2sde"
                  data-title="Neumarkter Wochenblatt Ticketshop">
-                <img class="fallback-image" src="map-placeholders/ticket-map-placeholder.webp" loading="lazy"
+                <img class="fallback-image" src="home/map-placeholders/ticket-map-placeholder.webp" loading="lazy"
                      alt="Ersatzbild für die Neumarkter Wochenblatt Ticketshop Karte"/>
             </div>
             <p>
@@ -287,7 +287,7 @@
 
 <section id="footer">
     <div>
-        <a href="../impressum" class="link">
+        <a href="impressum" class="link">
             Impressum
         </a>
         <a href="https://fosbos-neumarkt.de/" rel="noopener noreferrer" target="_blank" class="link">
@@ -302,8 +302,8 @@
     </div>
 </section>
 
-<script defer src="../scripts/base.js"></script>
-<script defer src="script.js"></script>
+<script defer src="scripts/base.js"></script>
+<script defer src="home/script.js"></script>
 
 </body>
 
