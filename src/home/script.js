@@ -16,20 +16,20 @@ function countDown(year, month, day, hour, minute) {
 
   const diff = date - Date.now();
 
+  function hideCounter() {
+    
+  }
+
   /* When too much time is left, the day count has three digits.
      This causes the day counter to overflow out of its border.
      When no time is left, the counter is useless.
   */
   const hundredDaysInMS = 100 * 24 * 60 * 60 * 1000;
-  if (diff < 0 || diff > hundredDaysInMS) {
+  if (diff > hundredDaysInMS) {
     const over = document.getElementById('counter-over');
-    over.innerText = `Der FOSchingsball ${year - 1} ist vorbei.
-Komm ein anderes Mal wieder.`;
     over.classList.remove('hidden');
-    return;
+    document.getElementById('counter').classList.remove('hidden');
   }
-
-  document.getElementById('counter').classList.remove('hidden');
 
   function updateCounter() {
     const timeLeft = date - Date.now();
