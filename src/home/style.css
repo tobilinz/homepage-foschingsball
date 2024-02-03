@@ -121,7 +121,7 @@
 
 .gallery-wrapper {
     width: var(--big-width);
-    height: var(--galerie-grid-height);
+    height: var(--grid-height);
     overflow: hidden;
     margin-inline: auto;
     -webkit-mask-image: -webkit-linear-gradient(to right, transparent, black 25%, black 75%, transparent);
@@ -151,6 +151,41 @@
     100% {
         transform: translateZ(0px) translate(calc(-100% + var(--big-width)));
     }
+}
+
+/*-------- BEWERTUNGEN --------*/
+
+.rating-wrapper {
+    height: var(--grid-height);
+    width: var(--big-width);
+    margin-inline: auto;
+    -webkit-mask-image: -webkit-linear-gradient(to right, transparent, black 25%, black 75%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    overflow: scroll;
+    padding-bottom: var(--mNormal);
+}
+
+.rating-grid {
+    margin-inline: 10%;
+    display: flex;
+    height: 100%;
+    width: max-content;
+    gap: var(--mNormal);
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    padding: var(--mNormal);
+    height: 100%;
+    aspect-ratio: 1.25;
+    border-radius: var(--border-radius);
+    border: 1px #ffffff17 solid;
+    background-color: #0003;
+}
+
+.rating-text {
+    margin-block: auto;
 }
 
 /*-------- ORT --------*/

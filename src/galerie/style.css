@@ -75,7 +75,7 @@
 
 .galerie-grid > .img {
     border-radius: var(--border-radius);
-    height: var(--galerie-grid-height);
+    height: var(--grid-height);
     object-fit: cover;
     overflow: hidden;
 }
@@ -87,7 +87,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    width: var(--galerie-grid-height);
+    width: var(--grid-height);
     aspect-ratio: 1;
     background-color: var(--primary);
     transition: background-color var(--transition-time) linear;

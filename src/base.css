@@ -39,7 +39,7 @@
     --big-width: min(100% - var(--mNormal) * 2, var(--big-max-width));
     --small-width: min(100% - var(--mNormal) * 2, 500px);
 
-    --galerie-grid-height: 200px;
+    --grid-height: 200px;
 
 }
 
@@ -207,7 +207,7 @@ nav::before {
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     .nav-no-narrow {
         display: none;
     }
