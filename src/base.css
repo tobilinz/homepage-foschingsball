@@ -34,7 +34,7 @@
 
     /*===== OTHER =====*/
     --border-radius: 18px;
-    --big-max-width: 600px;
+    --big-max-width: 650px;
 
     --big-width: min(100% - var(--mNormal) * 2, var(--big-max-width));
     --small-width: min(100% - var(--mNormal) * 2, 500px);
