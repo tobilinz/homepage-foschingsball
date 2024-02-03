@@ -50,7 +50,17 @@
 
 #counter > div {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     aspect-ratio: 1;
+}
+
+#counter > div > span {
+    color: var(--text);
+    font-size: var(--header);
+    font-family: Courgette, sans-serif;
+    text-align: center;
 }
 
 .counter-frame {
@@ -67,21 +77,6 @@
     transition: var(--glow-animation);
 }
 
-.counter-span-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.counter-span-container > span {
-    color: var(--text);
-    font-size: var(--header);
-    font-family: Courgette, sans-serif;
-    text-align: center;
-}
-
 /*---- SOCIAL ----*/
 
 .social-wrapper {
@@ -95,6 +90,7 @@
     margin-inline: auto;
     aspect-ratio: 1;
     height: calc(var(--header) * 1.25);
+    transition: filter var(--transition-time) linear;
 }
 
 .social-wrapper > a > svg {

@@ -22,8 +22,6 @@ function countDown(year, month, day, hour, minute) {
   const hundredDaysInMS = 100 * 24 * 60 * 60 * 1000;
   if (timeLeft > hundredDaysInMS || timeLeft <= 0) return;
 
-  document.getElementById('counter').classList.remove('hidden');
-  
   function updateCounter() {
     const daysLeft = timeLeft / (1000 * 60 * 60 * 24);
     days.textContent = Math.floor(daysLeft).toString();
