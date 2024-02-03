@@ -14,28 +14,17 @@ function countDown(year, month, day, hour, minute) {
 
   const date = Date.parse(`${year}-${month}-${day}T${hour}:${minute}:00.000+01:00`);
 
-  const diff = date - Date.now();
-
-  function hideCounter() {
-    
-  }
-
   /* When too much time is left, the day count has three digits.
      This causes the day counter to overflow out of its border.
      When no time is left, the counter is useless.
   */
+  let timeLeft = date - Date.now();
   const hundredDaysInMS = 100 * 24 * 60 * 60 * 1000;
-  if (diff > hundredDaysInMS) {
-    const over = document.getElementById('counter-over');
-    over.classList.remove('hidden');
-    document.getElementById('counter').classList.remove('hidden');
-  }
+  if (timeLeft > hundredDaysInMS || timeLeft <= 0) return;
 
+  document.getElementById('counter').classList.remove('hidden');
+  
   function updateCounter() {
-    const timeLeft = date - Date.now();
-
-    if (timeLeft <= 0) return false;
-
     const daysLeft = timeLeft / (1000 * 60 * 60 * 24);
     days.textContent = Math.floor(daysLeft).toString();
     const daysRest = daysLeft % 1;
@@ -47,21 +36,19 @@ function countDown(year, month, day, hour, minute) {
     const minutesRest = minutesLeft % 1;
     const secondsLeft = minutesRest * 60;
     seconds.textContent = Math.floor(secondsLeft).toString();
-
-    return true;
   }
-
-  if (!updateCounter()) return;
-
+  
+  updateCounter()
   const countdownTimer = setInterval(() => {
-    if (updateCounter()) return;
+    timeLeft = date - Date.now();
 
-    clearInterval(countdownTimer);
-    days.textContent = "0";
-    hours.textContent = "0";
-    minutes.textContent = "0";
-    seconds.textContent = "0";
-  }, 1000);
+    if (timeLeft <= 0) {
+      clearInterval(countdownTimer);
+      return;
+    }
+    
+    updateCounter();
+  }, 1000, { });
 }
 
 function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, minOnOffDelay, onOffDelayRange, ...classNames) {
@@ -96,19 +83,19 @@ function blinking(minInterval, intervalRange, minBlinkTimes, blinkTimesRange, mi
 
 function loadMaps() {
   const observer = new IntersectionObserver(
-    (entries, observer) => 
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const iframe = document.createElement('iframe');
-        iframe.src = entry.target.dataset.src;
-        iframe.allowFullscreen = true;
-        iframe.referrerPolicy = 'no-referrer-when-downgrade';
-        iframe.title = entry.target.dataset.title;
+    (entries, observer) =>
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const iframe = document.createElement('iframe');
+          iframe.src = entry.target.dataset.src;
+          iframe.allowFullscreen = true;
+          iframe.referrerPolicy = 'no-referrer-when-downgrade';
+          iframe.title = entry.target.dataset.title;
 
-        entry.target.appendChild(iframe);
-        observer.unobserve(entry.target);
-      }
-    }));
+          entry.target.appendChild(iframe);
+          observer.unobserve(entry.target);
+        }
+      }));
 
   Array.from(document.getElementsByClassName('lazy-map')).forEach(element => observer.observe(element));
 } 
