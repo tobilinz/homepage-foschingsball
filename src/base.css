@@ -285,6 +285,11 @@ section a:not(.ignore) {
     text-decoration: underline;
     color: var(--text);
     font-size: var(--normal);
+    transition: color var(--transition-time) linear;
+}
+
+section a:not(.ignore):hover {
+    color: var(--text-hover);
 }
 
 /*-------- TITLES --------*/

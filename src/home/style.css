@@ -171,6 +171,12 @@
     height: 100%;
     aspect-ratio: 1.25;
     text-decoration: none;
+    color: var(--text);
+    transition: color var(--transition-time) linear;
+}
+
+.rating:hover {
+    color: var(--text-hover);
 }
 
 .rating::before {
@@ -187,12 +193,14 @@
 
 .rating-text {
     margin-block: auto;
+    text-align: center;
+    line-height: 1.3;
+    font-size: var(--normal);
 }
 
 .rating-source {
     font-style: italic;
     margin-inline: auto;
-    color: var(--text);
     font-size: 0.95rem;
 }
 
