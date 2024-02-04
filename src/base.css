@@ -85,6 +85,25 @@ body {
     width: 1px;
 }
 
+/*-------- SCROLLBAR --------*/
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
 
 /*-------- BACKGROUND --------*/
 
