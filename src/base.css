@@ -7,17 +7,16 @@
 :root {
     /*===== Colors =====*/
     --text: #eceef9;
-    --gray-text: #b6b7bf;
+    --text-hover: #b6b7bf;
     --red-text: #ec1f13;
-    --background: #191c31;
-    --primary: #ffffff22;
-    --hover: #ffffff44;
-    --glowbase: #8dcfff;
-    --glowcolor: #0095ff;
+    --background: #0007;
 
     /*===== EFFECTS =====*/
+    --glowbase: #8dcfff;
+    --glowcolor: #0095ff;
     --glow: drop-shadow(0px 0px 2px var(--glowcolor)) drop-shadow(0px 0px 4px var(--glowcolor)) drop-shadow(0px 0px 8px var(--glowcolor));
-    --shadow: drop-shadow(0px 0px 2px var(--background)) drop-shadow(0px 0px 4px var(--background)) drop-shadow(0px 0px 8px var(--background));
+    --shadow-color: #191c31;
+    --shadow: drop-shadow(0px 0px 2px var(--shadow-color)) drop-shadow(0px 0px 4px var(--shadow-color)) drop-shadow(0px 0px 8px var(--shadow-color));
     --glow-animation: filter 50ms;
     --transition-time: 75ms;
 
@@ -34,6 +33,7 @@
 
     /*===== OTHER =====*/
     --border-radius: 18px;
+    --border: 1px #ffffff17 solid;
     --big-max-width: 650px;
 
     --big-width: min(100% - var(--mNormal) * 2, var(--big-max-width));
@@ -97,12 +97,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #555;
+    background-color: var(--text);
     border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #999;
+    background-color: var(--text-hover);
 }
 
 /*-------- BACKGROUND --------*/
@@ -194,8 +194,8 @@ nav::before {
     height: 100%;
     display: inline-flex;
     align-items: center;
-    border: 1px #ffffff17 solid;
-    background-color: #0007;
+    border: var(--border);
+    background-color: var(--background);
     border-radius: var(--border-radius);
     margin-inline: auto;
 }
@@ -217,16 +217,16 @@ nav::before {
 }
 
 .nav-links > *:hover {
-    color: var(--gray-text);
+    color: var(--text-hover);
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1300px) {
     .nav-logo > span {
         display: none;
     }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
     .nav-no-narrow {
         display: none;
     }

@@ -89,7 +89,7 @@
     text-decoration: none;
     width: var(--grid-height);
     aspect-ratio: 1;
-    background-color: var(--primary);
+    background-color: var(--background);
     transition: background-color var(--transition-time) linear;
 
     font-size: 10rem;
@@ -98,5 +98,5 @@
 }
 
 .more-images:hover {
-    background-color: var(--hover);
+    background-color: var(--text-hover);
 }

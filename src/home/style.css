@@ -28,12 +28,6 @@
 
 /*---- COUNTER ----*/
 
-#counter-over {
-    color: var(--red-text);
-    font-weight: bold;
-    text-align: center;
-}
-
 #counter {
     margin-inline: auto;
     width: var(--big-width);
@@ -115,10 +109,6 @@
 
 /*-------- GALERIE --------*/
 
-#galerie > a {
-    margin-inline: auto;
-}
-
 .gallery-wrapper {
     width: var(--big-width);
     height: var(--grid-height);
@@ -162,7 +152,7 @@
     -webkit-mask-image: -webkit-linear-gradient(to right, transparent, black 25%, black 75%, transparent);
     mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
     overflow-x: scroll;
-    padding-bottom: var(--mNormal);
+    padding-block: var(--mNormal);
 }
 
 .rating-grid {
@@ -174,18 +164,36 @@
 }
 
 .rating {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: var(--mNormal);
     height: 100%;
     aspect-ratio: 1.25;
+    text-decoration: none;
+}
+
+.rating::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: var(--border-radius);
-    border: 1px #ffffff17 solid;
-    background-color: #0003;
+    border: solid 4px var(--glowbase);
+    filter: var(--glow);
 }
 
 .rating-text {
     margin-block: auto;
+}
+
+.rating-source {
+    font-style: italic;
+    margin-inline: auto;
+    color: var(--text);
+    font-size: 0.95rem;
 }
 
 /*-------- ORT --------*/
@@ -258,67 +266,62 @@
 }
 
 .vorverkaufsort > p {
-    color: var(--text);
-    text-align: center;
     margin: var(--mNormal) 0;
 }
 
-.vorverkaufsort > p > a {
-    color: var(--text);
-}
-
-/*-------- TEAM --------*
+/*-------- TEAM --------*/
 
 #team-loading-error {
     color: var(--red-text);
-    text-align: center;
-    margin-inline: auto;
-    width: var(--small-width);
 }
 
-/*---- SELECT ----*
+/*---- SELECT ----*/
 
-#custom-team-selector {
-    display: inline-block;
+#team-selector-wrapper {
+    margin-inline: auto;
     position: relative;
 }
 
-#custom-team-selector > label {
-    display: none;
-}
-
-#custom-team-selector > svg {
+#team-selector-wrapper > svg {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
-    display: block;
-    padding: 1.1rem 1rem 0 1rem;
-    text-align: center;
+    height: 100%;
+    padding: 4px var(--mNormal) 0 0;
     pointer-events: none;
-    width: 30px;
+    width: 40px;
+}
+
+#team-selector-wrapper > svg > g {
+    stroke: var(--text);
+    transition: stroke var(--transition-time) linear;
 }
 
 #team-selector {
     color: var(--text);
-    padding: 1rem 3.5rem 1rem 1rem;
+    padding: var(--mNormal) calc(var(--mNormal) * 0.5 + 40px) var(--mNormal) var(--mNormal);
     border-radius: var(--border-radius);
-    background-color: var(--primary);
+    background-color: var(--background);
+    border: var(--border);
     appearance: none;
     -webkit-appearance: none;
-    transition: background-color var(--transition-time) linear;
-    font-weight: bold;
+    transition: color var(--transition-time) linear;
+    font-size: 1rem;
 }
 
-#team-selector:hover {
-    background-color: var(--hover);
+#team-selector-wrapper:hover > select {
+    color: var(--text-hover);
+}
+
+#team-selector-wrapper:hover > svg > g {
+    stroke: var(--text-hover);
 }
 
 #team-selector > option {
     background: var(--background);
 }
 
-/*---- LIST ----*
+/*---- LIST ----*/
 
 #member-grid {
     display: flex;
@@ -348,6 +351,11 @@
     color: var(--text);
     width: 100%;
     text-align: center;
+    transition: color var(--transition-time) linear;
+}
+
+#member-grid > a:hover > p {
+    color: var(--text-hover);
 }
 
 /*----*/
