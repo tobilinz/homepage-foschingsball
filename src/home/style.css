@@ -232,7 +232,7 @@
     width: var(--big-width);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
     .tickets-info {
         grid-template-columns: auto;
         grid-template-rows: auto auto;
