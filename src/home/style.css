@@ -261,7 +261,7 @@
 }
 
 .sold-out > div {
-    border: 1px var(--text-red) solid;
+    border: 2px var(--text-red) solid;
 }
 
 .sold-out > div > * {
