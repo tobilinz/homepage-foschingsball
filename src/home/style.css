@@ -365,7 +365,7 @@
 }
 
 #member-grid > a {
-    width: 120px;
+    width: calc((var(--big-max-width) - 4 * var(--mNormal)) / 5);
     text-decoration: none;
 }
 
