@@ -98,5 +98,5 @@
 }
 
 .more-images:hover {
-    background-color: var(--text-hover);
+    background-color: var(--text-gray);
 }

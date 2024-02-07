@@ -7,8 +7,8 @@
 :root {
     /*===== Colors =====*/
     --text: #eceef9;
-    --text-hover: #b6b7bf;
-    --red-text: #ec1f13;
+    --text-gray: #b6b7bf;
+    --text-red: #ec1f13;
     --background: #0007;
 
     /*===== EFFECTS =====*/
@@ -102,7 +102,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--text-hover);
+    background-color: var(--text-gray);
 }
 
 /*-------- BACKGROUND --------*/
@@ -217,7 +217,7 @@ nav::before {
 }
 
 .nav-links > *:hover {
-    color: var(--text-hover);
+    color: var(--text-gray);
 }
 
 @media screen and (max-width: 1300px) {
@@ -289,7 +289,7 @@ section a:not(.ignore) {
 }
 
 section a:not(.ignore):hover {
-    color: var(--text-hover);
+    color: var(--text-gray);
 }
 
 /*-------- TITLES --------*/

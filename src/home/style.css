@@ -176,7 +176,7 @@
 }
 
 .rating:hover {
-    color: var(--text-hover);
+    color: var(--text-gray);
 }
 
 .rating::before {
@@ -243,7 +243,7 @@
 }
 
 #vorverkauf-warning {
-    color: var(--red-text);
+    color: var(--text-red);
     font-weight: bold;
 }
 
@@ -257,7 +257,7 @@
 }
 
 .sold-out > div {
-    border: 1px var(--red-text) solid;
+    border: 1px var(--text-red) solid;
 }
 
 .sold-out > div > * {
@@ -265,12 +265,12 @@
 }
 
 .sold-out > p {
-    --text: var(--text-hover);
+    --text: var(--text-gray);
     font-style: italic;
 }
 
 .sold-out > p > span {
-    color: var(--red-text);
+    color: var(--text-red);
 }
 
 .vorverkaufsort {
@@ -300,7 +300,7 @@
 /*-------- TEAM --------*/
 
 #team-loading-error {
-    color: var(--red-text);
+    color: var(--text-red);
 }
 
 /*---- SELECT ----*/
@@ -338,11 +338,11 @@
 }
 
 #team-selector-wrapper:hover > select {
-    color: var(--text-hover);
+    color: var(--text-gray);
 }
 
 #team-selector-wrapper:hover > svg > g {
-    stroke: var(--text-hover);
+    stroke: var(--text-gray);
 }
 
 #team-selector > option {
@@ -383,7 +383,7 @@
 }
 
 #member-grid > a:hover > p {
-    color: var(--text-hover);
+    color: var(--text-gray);
 }
 
 /*----*/
