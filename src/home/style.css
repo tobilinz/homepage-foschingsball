@@ -252,6 +252,23 @@
     width: var(--big-width);
 }
 
+.sold-out > div {
+    border: 1px var(--red-text) solid;
+}
+
+.sold-out > div > * {
+    filter: grayscale(100%);
+}
+
+.sold-out > p {
+    --text: var(--text-hover);
+    font-style: italic;
+}
+
+.sold-out > p > span {
+    color: var(--red-text);
+}
+
 .vorverkaufsort {
     max-width: calc(0.5 * (var(--big-max-width) - var(--mNormal)));
     width: 100%;
