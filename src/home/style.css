@@ -227,12 +227,16 @@
     margin: var(--mNormal) auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     gap: var(--mNormal);
     width: var(--big-width);
 }
 
-@media screen and (max-width: 500px) {
-    
+@media screen and (max-width: 450px) {
+    .tickets-info {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
 }
 
 .tickets-info > div {
