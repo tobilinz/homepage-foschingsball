@@ -3,7 +3,7 @@ name: Test Deploy
 on:
   push:
     branches:
-      - main
+      - '*'
 
 defaults:
   run:
@@ -16,9 +16,6 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v4.1.1
 
-      - name: Edit all files to use test.foschingsball.de instead of foschingsball.de
-        run: find . -type f -exec perl -pe 's/(?<!\w\.)foschingsball\.de/test\.foschingsball\.de/g' -i {} \;
-
       - name: Upload to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -27,4 +24,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./src/
-          server-dir: public_html/test/
+          server-dir: public_html/test/${{ github.ref_name }}/
