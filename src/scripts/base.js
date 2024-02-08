@@ -1,4 +1,4 @@
-setVersion('1.6.5');
+setVersion('1.6.6');
 blur(0.5);
 
 function setVersion(version) {
