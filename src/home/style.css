@@ -240,6 +240,95 @@
     margin: var(--mNormal) 0;
 }
 
+/*-------- TEAM --------*/
+
+#team-loading-error {
+    color: var(--text-red);
+}
+
+/*---- SELECT ----*/
+
+#team-selector-wrapper {
+    margin-inline: auto;
+    position: relative;
+}
+
+#team-selector-wrapper > svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 4px var(--mNormal) 0 0;
+    pointer-events: none;
+    width: 40px;
+}
+
+#team-selector-wrapper > svg > g {
+    stroke: var(--text);
+    transition: stroke var(--transition-time) linear;
+}
+
+#team-selector {
+    color: var(--text);
+    padding: var(--mNormal) calc(var(--mNormal) * 0.5 + 40px) var(--mNormal) var(--mNormal);
+    border-radius: var(--border-radius);
+    background-color: var(--background);
+    border: var(--border);
+    appearance: none;
+    -webkit-appearance: none;
+    transition: color var(--transition-time) linear;
+    font-size: 1rem;
+}
+
+#team-selector-wrapper:hover > select {
+    color: var(--text-gray);
+}
+
+#team-selector-wrapper:hover > svg > g {
+    stroke: var(--text-gray);
+}
+
+#team-selector > option {
+    background: var(--background);
+}
+
+/*---- LIST ----*/
+
+#member-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--mNormal);
+    margin-inline: auto;
+    width: var(--big-width);
+}
+
+#member-grid > a {
+    width: calc((var(--big-max-width) - 4 * var(--mNormal)) / 5);
+    text-decoration: none;
+}
+
+#member-grid > a > img {
+    display: block;
+    border-radius: var(--border-radius);
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#member-grid > a > p {
+    margin: var(--mNormal) 0;
+    color: var(--text);
+    width: 100%;
+    text-align: center;
+    transition: color var(--transition-time) linear;
+}
+
+#member-grid > a:hover > p {
+    color: var(--text-gray);
+}
+
 /*----*/
 
 .fallback-image {

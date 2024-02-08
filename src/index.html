@@ -61,6 +61,7 @@
         <a href="#alter" class="nav-no-narrow">Alter</a>
         <a href="#ort" class="nav-no-narrow">Ort</a>
         <a href="#tickets">Tickets</a>
+        <a href="#team" class="nav-no-narrow">Team</a>
         <a href="#geschichte" class="nav-no-narrow">Geschichte</a>
     </div>
 </nav>
@@ -239,6 +240,22 @@
     </div>
 </section>
 
+<section id="team">
+    <h2><label for="team-selector">Team</label></h2>
+    <p class="hidden" id="team-loading-error"></p>
+    <div class="hidden" id="team-selector-wrapper">
+        <select id="team-selector"></select>
+        <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+               transform="translate(-2,-2.5)">
+                <path d="m19 12-5 5"/>
+                <path d="m9 12 5 5"/>
+            </g>
+        </svg>
+    </div>
+    <div id="member-grid"></div>
+</section>
+
 <section id="geschichte">
     <h2>Geschichte</h2>
     <p>
@@ -278,6 +295,7 @@
 <script defer src="scripts/base.js"></script>
 <script defer src="home/scripts/countDown.js"></script>
 <script defer src="home/scripts/loadMaps.js"></script>
+<script defer src="home/scripts/loadTeam.js" type="module"></script>
 <script defer src="home/scripts/blinking.js"></script>
 
 </body>
