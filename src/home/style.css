@@ -26,7 +26,7 @@
 
 /*-------- HERO --------*/
 
-/*---- COUNTER ----*/
+/*---- COUNTER ----*
 
 #counter {
     margin-inline: auto;
@@ -143,7 +143,7 @@
     }
 }
 
-/*-------- ORT --------*/
+/*-------- ORT --------*
 
 .main-map-wrapper {
     margin-inline: auto;
@@ -160,7 +160,7 @@
     height: 100%;
 }
 
-/*-------- TICKETS --------*/
+/*-------- TICKETS --------*
 
 .tickets-info {
     margin: var(--mNormal) auto;
