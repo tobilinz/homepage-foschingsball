@@ -3,13 +3,22 @@
 :toc-title: Inhaltsverzeichnis
 :toc-placement: preamble
 :toc-text-decoration: none
-:toclevels: 3
+:toclevels: 16
+
 :asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
 
 Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
 
-== Hetzner
+== Funktionsweise
+
+Alle Daten, die zur Webseite gehören, werden auf einem Server in verschieden Ordnern gespeichert. Wenn jemand die Webseite öffnet, dann erhält die Person diese Dateien und sie werden in Form einer Webseite angezeigt. +
+ +
+Im Folgenden wird das Tool KonsoleH von Hetzner erklärt. +
+Dann Folgt eine Schritt für Schritt Anleitung zur Aktualisierung der Webseite.
+
+
+== Hetzner KonsoleH
 
 Die Webseite wird mithilfe von Hetzner bereit gestellt. +
 
@@ -35,7 +44,81 @@ Die Webseite wird mithilfe von Hetzner bereit gestellt. +
 
 Das Menü sieht wie Folgt aus:
 
-image::{asset}konsoleh-menu.jpeg[]
+image::{asset}konsoleh-menu.jpeg["KonesoleH Menü", width=850]
+
+Falls ein anderes Menü angezeigt wird, dann ist die Webseite falsch. Hetzner bietet noch viele andere Dienste an, wie Cloud, DNS und Robot. +
+
+Am wichtigsten ist das Menü "Einstellungen". Im Folgenden werden alle Menüpunkte des Einstellungsmenüs beschrieben.
+
+
+==== Zugangsdetails 
+
+
+===== Logindaten
+
+Am wichtigsten ist das Untermenü "FTP-Hauptbenutzer". Dort können Server-Domain, Loginname, Passwort und noch mehr eingesehen werden. + 
+Die Sektion <<GitHub Actions>> beschreibt, wie der FTP Server verwendet werden kann, um mit GitHub Änderungen automatisch auf die Webseite hoch zu laden.
+
+
+==== Konfiguration
+
+
+===== Serverkonfiguration
+
+Hier werden die wichtigsten Einstellungen vorgenommen. +
+ +
+Es kann festgelegt werden, welcher Ordner angezeigt wird, wenn https://foschingsball.de aufgerufen wird. (Startverzeichnis) +
+ +
+Außerdem kann hier auch die `.htaccess` Datei bearbeitet werden. Diese zu konfigurieren ist nicht notwendig, aber empfohlen. Sie beinhaltet sämtliche Einstellungen, mit denen die Sicherheit der Webseite beeinflusst werden kann. Zum Beispiel können Header bearbeitet werden. Die `.htaccess` Datei in den `2024` und `resources` Ordnern können als Beispiele herangenommen werden. +
+Ob die Header richtig konfiguriert sind, kann auf https://securityheaders.com überprüft werden.
+
+
+===== Subdomains
+
+Hier können neue Subdomains hinzugefügt werden, die die Inhalte bestimmter Ordner anzeigen Auf diese Weise kann zum Beispiel die Hauptseite unter `https://foschingsball.de` angezeigt werden`und zusätzlich könnte eine Testseite zum Testen von neuen Funktionen, bevor sie veröffentlicht werden, unter `https://test.foschingsball.de` angezeigt werden. Aktuelle Konfiguration:
+
+[%header, cols="1,1,1"]
+|===
+
+| Ordnername
+| Zielordner
+| Verwendung
+
+| 2024
+| /2024
+| Aktuelle Hauptseite
+
+| resources
+| /resources
+| Hier werden Resourcen gespeichert, die von den verschiedenen Webseiten aller Jahrgänge (2024, 2025, 2026, ...) verwendet werden können, wie Bilder, Videos und mehr. Es ist besser, diese Resourcen NICHT bei jedem Ordner für jeden Jahrgang zu speichern, da sonst die 10GB Speicher schnell voll sein können. Ziel ist, dass alte Resourcen auch in weiter Zukunft noch zum Abrufen verfügbar sein können.
+
+| test
+| /test
+| Testseite, auf der neue Funktionen auf verschiedenen Geräten getestet werden können, bevor diese veröffentlicht werden.
+
+|===
+
+
+==== Extras
+
+
+===== WebFTP
+
+Hier kann auf die Dateien und Ordner der Webseite zugegriffen werden. Die Inhalte dieser Ordner werden den Nutzern angezeigt.
+
+
+===== SSL Manager
+
+Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen sicheren Datenverkehr zwischen Webseite und Nutzer zu gewährleisten.
+
+
+== Schritt für Schritt Anleitung
+
+
+== Tipps
+
+
+=== Bilder und Videos komprimieren
 
 
 == Verwendete Resourcen
