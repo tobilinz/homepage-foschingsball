@@ -3,13 +3,40 @@
 :toc-title: Inhaltsverzeichnis
 :toc-placement: preamble
 :toc-text-decoration: none
-:toclevels: 2
+:toclevels: 3
+:asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
 
 Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
-== Wichtigstes
 
-Hier eine Zusammenfassung der wichtigsten Informationen: +
+== Hetzner
+
+Die Webseite wird mithilfe von Hetzner bereit gestellt. +
+
+
+=== Login
+
+[cols="1,1"]
+|===
+
+| Webseite 
+| https://konsoleh.hetzner.com
+
+| E-Mail Adresse
+| AktiveFOSBOSNeumarkt.eV@fosbos-neumarkt.de
+
+| Passwort
+| Frau Graf fragen
+
+|===
+
+
+=== Verwendung
+
+Das Menü sieht wie Folgt aus:
+
+image::{asset}konsoleh-menu.jpeg[]
+
 
 == Verwendete Resourcen
 
