@@ -7,6 +7,10 @@
 
 Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
+== Wichtigstes
+
+Hier eine Zusammenfassung der wichtigsten Informationen: +
+
 == Verwendete Resourcen
 
 [%header, cols="1,1"]
