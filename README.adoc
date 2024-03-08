@@ -14,9 +14,7 @@ Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
 Alle Daten, die zur Webseite gehören, werden auf einem Server in verschieden Ordnern gespeichert. Wenn jemand die Webseite öffnet, dann erhält die Person diese Dateien und sie werden in Form einer Webseite angezeigt. +
  +
-Im Folgenden wird das Tool KonsoleH von Hetzner erklärt. +
-Dann Folgt eine Schritt für Schritt Anleitung zur Aktualisierung der Webseite.
-
+Ein GitHub Repository wie dieses hilft dabei, die Webseite zu programmieren, indem Änderungen an Code zwischen Geräten einfacher syncronisiert werden können. Damit fällt es einem Entwicklungsteam einfacher, gemeinsam an der Webseite zu arbeiten. Ein GitHub repository ist allerdings nicht notwendig.
 
 == Hetzner KonsoleH
 
@@ -112,7 +110,22 @@ Hier kann auf die Dateien und Ordner der Webseite zugegriffen werden. Die Inhalt
 Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen sicheren Datenverkehr zwischen Webseite und Nutzer zu gewährleisten.
 
 
+== GitHub
+
+Dieser Teil ist optional. GitHub kann allerdings bei der Entwicklung helfen. Es gibt viele Anleitungen im Internet, wie man diese Webseite verwendet, also folgt hier nur eine kurze Zusammenfassung. +
+ +
+Dieses Repository soll archiviert bleiben. Das heißt, dass hier keine Änderungen mehr vorgenommen werden können. Das Repository soll in Zukunkft als Zeitkapsel dienen. Um nun doch veränderungen für kommende Jahre vor zu nehmen, muss es geforkt werden. +
+ +
+Hierdurch wird eine Kopie angefertigt, die von zukünftigen Teams verwendet werden kann.
+
+
 == Schritt für Schritt Anleitung
+
+Diese ganzen Information wirken erst einmal überfordernd. Es war allerdings notwendig, diese zu vermitteln, damit keine Missverständnisse aufkommen. Im folgenden wird zuerst erklärt, wie der Code der Webseite auf einem PC bearbeitet werden kann. Anschließen Folgt eine Anleitung, wie die neuen Veränderungen auf Hetzner hochgeladen werden können. Nachdem die Grundlagen wiederholt wurden, folgt eine optinale Anleitung, wie GitHub eingerichtet werden kann, um die Arbeit an der Webseite zu erleichtern. Zum Schluss wird im Detail erklärt, welche Teile der Webseite zuerst aktualisiert werden müssen.
+
+=== Schritt 1: Code auf einem PC bearbeiten
+
+Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür https://code.visualstudio.com[Visual Studio Code]. Es gibt online viele Anleitungen, wie dieser Editor verwendet werden kann, also folgt hier nur eine kurze Zusammenfassung der wichtigsten Schritte. +
 
 
 == Tipps
@@ -121,7 +134,7 @@ Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen siche
 === Bilder und Videos komprimieren
 
 
-== Verwendete Resourcen
+== Für die Webseite verwendete Resourcen
 
 [%header, cols="1,1"]
 |===
