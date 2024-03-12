@@ -220,6 +220,8 @@ Es existieren ein paar GitHub workflows, die das Arbeiten mit der Webseite deutl
 
 === Javascript
 
+=== SEO
+
 
 == Für die Webseite verwendete Resourcen
 
