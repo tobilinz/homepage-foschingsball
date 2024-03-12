@@ -188,13 +188,37 @@ Es existieren ein paar GitHub workflows, die das Arbeiten mit der Webseite deutl
 
 == Anpassen der Webseite für kommende Jahre
 
+=== Countdown
+
+
+=== Video
+
+
+=== Galerie
+
+
+=== Veranstaltungsdatum
+
+
+=== Alter
+
+
+=== Veranstaltungsort
+
+
+=== Ticketinformationen
+
+
+=== Team Sektion erstellen
+
+
 == Erklärung des Quellcodes
 
+=== HTML
 
+=== CSS
 
-== Tipps
-
-=== Bilder und Videos komprimieren
+=== Javascript
 
 
 == Für die Webseite verwendete Resourcen
