@@ -102,12 +102,59 @@ Hier können neue Subdomains hinzugefügt werden, die die Inhalte bestimmter Ord
 
 ===== WebFTP
 
-Hier kann auf die Dateien und Ordner der Webseite zugegriffen werden. Die Inhalte dieser Ordner werden den Nutzern angezeigt.
+Hier kann auf die Dateien und Ordner der Webseite zugegriffen werden. Die Inhalte dieser Ordner werden den Nutzern, die die Webseite aufrufen, angezeigt.
 
 
 ===== SSL Manager
 
 Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen sicheren Datenverkehr zwischen Webseite und Nutzer zu gewährleisten.
+
+
+== VS Code
+
+Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür https://code.visualstudio.com[Visual Studio Code]. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
+
+
+=== Installation VS Code
+
+Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Download +
+
+
+=== Installation von Erweiterungen
+
+Um die Webentwicklung zu erleichern, wird die Erweiterung https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server] empfohlen.
+
+
+== Bearbeiten von Code
+
+=== Herunterladen des Codes
+
+Zuerst muss dieses Projekt heruntergeladen werden. Dafür muss auf der Hetzner KonsoleH Webseite das WebFTP tool geöffnet werden (<<WebFTP>>). Das Tool sieht wie folgt aus:
+
+image::{asset}webftp.jpeg["KonesoleH Menü", width=850]
+
+Danach muss der Ordner `public_html` geöffnet werden.
+Der Code der Webseite befindet sich im Ordner `2024`. Dieser muss heruntergeladen werden. 
+Auf dem PC wird dann eine `zip` Datei gespeichert. Es ist wichtig, diese zu einem Ordner zu entpacken, da in Visual Studio Code nur Ordner geöffnet werden können.
+Nun kann der Ordner In Visual Studio Code geöffnet werden und der Quellcode der Webseite kann bearbeitet werden. 
+
+
+=== Änderungen hochladen
+
+Nachdem die gewünschten Änderungen vorgenommen wurden, müssen die modifizierten Dateien wieder hochgeladen werden. 
+Hierfür muss zuerst wieder das WebFTP Portal, welches auch zum herunteralden der 'alten' Datein verwendet wurde, geöffnet werden.
+Im `public_html` Ordner muss nun ein neuer Ordner namens `2025` erstellt werden. Darin können die veränderten Dateien hochgeladen werden.
+
+Wichtig: Direkt im 2025 Ordner *MUSS* eine `index.html` Datei sein. Diese wird Nutzern am Ende angezeigt. Wenn sich dort keine `index.html` Dati befindet, dann wird Nutzern keine Webseite angezeigt. Die `index.html` Datei darf auch nicht in unterordnern sein. Sie muss sich direkt im `2025` Ordner befinden.
+
+
+=== Änderungen veröffentlichen
+
+Dieser Schritt muss nur einmal ausgeführt werden.
+Die Änderungen werden Nutzern unter foschingsball.de noch nicht angezeigt, da aktuell noch der Ordner `2024` als Startverzeichnis angezeigt wird.
+Das Startverzeichnis kann im Menü <<Serverkonfiguration>> geändert werden. 
+Dafür muss im kleien Fenster mit den Ordnernamen der Ordner `2025` ausgewählt werden. 
+Der Ordner kann nun als Startverzeichnis durch betätigung des Knopfes `Startverzeichnis setzen` geändert werden. Neben dem Ordner sollte nun ein kleines Haus icon erscheinen. Nun ist die neue Webseite unter foschingsball.de erreichbar.
 
 
 == GitHub
@@ -119,17 +166,8 @@ Dieses Repository soll archiviert bleiben. Das heißt, dass hier keine Änderung
 Hierdurch wird eine Kopie angefertigt, die von zukünftigen Teams verwendet werden kann.
 
 
-== Schritt für Schritt Anleitung
-
-Diese ganzen Information wirken erst einmal überfordernd. Es war allerdings notwendig, diese zu vermitteln, damit keine Missverständnisse aufkommen. Im folgenden wird zuerst erklärt, wie der Code der Webseite auf einem PC bearbeitet werden kann. Anschließen Folgt eine Anleitung, wie die neuen Veränderungen auf Hetzner hochgeladen werden können. Nachdem die Grundlagen wiederholt wurden, folgt eine optinale Anleitung, wie GitHub eingerichtet werden kann, um die Arbeit an der Webseite zu erleichtern. Zum Schluss wird im Detail erklärt, welche Teile der Webseite zuerst aktualisiert werden müssen.
-
-=== Schritt 1: Code auf einem PC bearbeiten
-
-Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür https://code.visualstudio.com[Visual Studio Code]. Es gibt online viele Anleitungen, wie dieser Editor verwendet werden kann, also folgt hier nur eine kurze Zusammenfassung der wichtigsten Schritte. +
-
-
 == Tipps
-
+Diese ganzen Informationen wirken erst einmal überfordernd. Es war allerdings notwendig, diese zu vermitteln, damit keine Missverständnisse aufkommen. Im folgenden wird zuerst erklärt, wie der Code der Webseite auf einem PC bearbeitet werden kann. Anschließen Folgt eine Anleitung, wie die neuen Veränderungen auf Hetzner hochgeladen werden können. Nachdem die Grundlagen wiederholt wurden, folgt eine optinale Anleitung, wie GitHub eingerichtet werden kann, um die Arbeit an der Webseite zu erleichtern. Zum Schluss wird im Detail erklärt, welche Teile der Webseite zuerst aktualisiert werden müssen.
 
 === Bilder und Videos komprimieren
 
