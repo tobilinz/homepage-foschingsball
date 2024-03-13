@@ -215,7 +215,7 @@ Die Bilder für die Galerie werden ausschließlich in WebFTP gespeichert (im `pu
  +
 Das hierfür zuständige Skript heißt `generate-content-file.yml`. Es muss nicht bearbeitet werden. Allerdings benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
  +
-Das Skript kann aktiviert werden, indem auf {mainpage} unter `Actions>Generate content file` auf `Run workflow` geclickt wird. Danach muss das Jahr eingetragen werden, für das die Datei aktualisiert werden soll (2023, 2024, 2025).
+Das Skript kann aktiviert werden, indem auf {mainpage} unter `Actions>Generate content file` auf `Run workflow` geclickt wird. Danach muss das Jahr eingetragen werden, für das die Datei aktualisiert werden soll (2023, 2024, 2025). Durch Betätigung des grünen `Run workflow` Knopf wird der Workflow schließlich ausgeführt.
 
 ==== GitHub Secrets eintragen
 
@@ -226,6 +226,8 @@ username: ${{ secrets.FTP_USERNAME }}
 password: ${{ secrets.FTP_PASSWORD }}
 ```
 Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden. Die Secrets müsse nur einmal hinzugefügt werden. Dann können alle Workflows auf die Secrets zugreifen. +
+
+
 
 
 == Anpassen der Webseite für kommende Jahre
