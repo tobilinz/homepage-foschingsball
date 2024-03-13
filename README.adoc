@@ -189,16 +189,10 @@ Es existieren ein paar GitHub workflows, die das Arbeiten mit der Webseite deutl
 
 ==== Automatisches hochladen von Änderungen auf eine Testseite
 
-Das hierfür zuständige Skript heißt `testdeploy.yml`. Es muss nicht bearbeitet werden. Allerdings benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. In der `testdeploy.yml` Datei sind die Logindaten wie folgt eingetragen:
-```yml
-server: ${{ secrets.FTP_SERVER }}
-username: ${{ secrets.FTP_USERNAME }}
-password: ${{ secrets.FTP_PASSWORD }}
-```
-Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden. +
+Das hierfür zuständige Skript heißt `testdeploy.yml`. Es muss nicht bearbeitet werden. Allerdings benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
  +
-Die Testseite ist unter `https://test.foschingsball.de/main/` verfügbar. Wenn mehrere Branches erstellt werden, sind zusätzliche Seiten unter `https://test.foschingsball.de/<branch name>/` verfügbar. Unter `test.foschingsball.de` wird eine Übersicht an Testseiten angezeigt. Diese muss allerdings manuell in WebFTP von Hetzner bearbeitet werden, falls neue Branches hinzukommen.
-
+Die Testseite ist unter `https://test.foschingsball.de/main/` verfügbar. Wenn mehrere Branches erstellt werden, sind zusätzliche Seiten unter `https://test.foschingsball.de/<branch name>/` verfügbar. Unter `test.foschingsball.de` wird eine Übersicht an Testseiten angezeigt. Diese muss allerdings manuell in WebFTP von Hetzner bearbeitet werden, falls neue Branches hinzukommen. +
+ +
 Die Testseite aktualisiert sich jedes mal, wenn neue Änderungen hochgeladen werden.
 
 ==== Automatisches hochladen von Änderungen auf die Hauptseite
@@ -209,28 +203,29 @@ Hier muss unter
 env:
   YEAR: 2024
 ```
-das Jahr auf `2025` korrigiert werden.
+das Jahr auf `2025` korrigiert werden. +
+ +
+Außerdem benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
+ +
+Die Hauptseite aktualisiert sich jedes mal, wenn ein neuer `Release` in {mainpage} erstellt wird.
 
-Außerdem benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. In der `releasedeploy.yml` Datei sind die Logindaten wie folgt eingetragen:
+==== Content-Datei Generator
+
+Die Bilder für die Galerie werden ausschließlich in WebFTP gespeichert (im `public_html/resources/<Jahr>/pictures/` Ordner). Wenn jemand wie Galerie aufruft, werden diese von Hetzner geladen. Damit die Webseite weiß, welche Dateien sie laden soll, existiert in diesen `pictures` Ordnern eine `content.json` Datei mit allen Namen der Dateien, die in den `pictures` Ordnern sind. Wenn neue Bilder hochgeladen werden sollen, müssen die Dateien in diese Ordner hochgeladen werden. Anschließend muss in der `content.json` der Name der neuen Datei hinzugefügt werden. Vor allem, wenn viele Bilder hochgeladen werden, ist das nerfig. Das `generate-content-file.yml` Skript übernimmt diese Arbeit. +
+ +
+Das hierfür zuständige Skript heißt `generate-content-file.yml`. Es muss nicht bearbeitet werden. Allerdings benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
+ +
+Das Skript kann aktiviert werden, indem auf {mainpage} unter `Actions>Generate content file` auf `Run workflow` geclickt wird. Danach muss das Jahr eingetragen werden, für das die Datei aktualisiert werden soll (2023, 2024, 2025).
+
+==== GitHub Secrets eintragen
+
+GitHub benötigt für einige Workflows die Zugangsdaten für WebFTP von Hetzner. In den Workflow Skripten sind die Logindaten wie folgt eingetragen:
 ```yml
 server: ${{ secrets.FTP_SERVER }}
 username: ${{ secrets.FTP_USERNAME }}
 password: ${{ secrets.FTP_PASSWORD }}
 ```
-Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. 
-
-CAUTION: Wenn die Secrets für die Testdeploy Datei schon eingetragen wurden, dann muss dieser Schritt nicht nochmal wiederholt werden.
-
-Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden.
-
-Die Hauptseite aktualisiert sich jedes mal, wenn ein neuer `Release` in {mainpage} erstellt wird.
-
-==== Content-Datei Generator
-
-Die Bilder für die Galerie werden ausschließlich in WebFTP gespeichert (im `public_html/resources/<Jahr>/pictures/` Ordner). Wenn jemand wie Galerie aufruft, werden diese von Hetzner geladen. Damit die Webseite weiß, welche Dateien sie laden soll, existiert in diesen `pictures` Ordnern eine `content.json` Datei mit allen Namen der Dateien, die in den `pictures` Ordnern sind. Wenn neue Bilder hochgeladen werden sollen, müssen die Dateien in diese Ordner hochgeladen werden. Anschließend muss in der `content.json` der Name der neuen Datei hinzugefügt werden. Vor allem, wenn viele Bilder hochgeladen werden, ist das nerfig. Das `generate-content-file.yml` Skript übernimmt diese Arbeit.
-
-
-
+Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden. Die Secrets müsse nur einmal hinzugefügt werden. Dann können alle Workflows auf die Secrets zugreifen. +
 
 
 == Anpassen der Webseite für kommende Jahre
