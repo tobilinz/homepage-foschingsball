@@ -199,6 +199,8 @@ Die benötigten Informationen, wie `server`, `username` und `password` sind hier
  +
 Die Testseite ist unter `https://test.foschingsball.de/main/` verfügbar. Wenn mehrere Branches erstellt werden, sind zusätzliche Seiten unter `https://test.foschingsball.de/<branch name>/` verfügbar. Unter `test.foschingsball.de` wird eine Übersicht an Testseiten angezeigt. Diese muss allerdings manuell in WebFTP von Hetzner bearbeitet werden, falls neue Branches hinzukommen.
 
+Die Testseite aktualisiert sich jedes mal, wenn neue Änderungen hochgeladen werden.
+
 ==== Automatisches hochladen von Änderungen auf die Hauptseite
 
 Das hierfür zuständige Skript heißt `releasedeploy.yml`.
@@ -221,9 +223,13 @@ CAUTION: Wenn die Secrets für die Testdeploy Datei schon eingetragen wurden, da
 
 Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden.
 
+Die Hauptseite aktualisiert sich jedes mal, wenn ein neuer `Release` in {mainpage} erstellt wird.
+
 ==== Content-Datei Generator
 
-Die Bilder für die Galerie werden ausschließlich in WebFTP gespeichert (im `public_html/resources/<Jahr>/pictures/` Ordner). Wenn jemand wie Galerie aufruft, werden diese von Hetzner geladen. Damit die Webseite weiß, welche Dateien sie laden soll, existiert in diesen `pictures` Ordnern eine `content.json` Datei mit allen Dateinamen in diesen Ordner. Wenn neue Bilder hochgeladen werden sollen, müssen die Dateien in diese Ordner hochgeladen werden. Anschließend muss in der `content.json` der Name der neuen Datei hinzugefügt werden. Vor allem, wenn viele Bilder hochgeladen werden, ist das nerfig. Das `generate-content-file.yml` Skript übernimmt diese Arbeit.
+Die Bilder für die Galerie werden ausschließlich in WebFTP gespeichert (im `public_html/resources/<Jahr>/pictures/` Ordner). Wenn jemand wie Galerie aufruft, werden diese von Hetzner geladen. Damit die Webseite weiß, welche Dateien sie laden soll, existiert in diesen `pictures` Ordnern eine `content.json` Datei mit allen Namen der Dateien, die in den `pictures` Ordnern sind. Wenn neue Bilder hochgeladen werden sollen, müssen die Dateien in diese Ordner hochgeladen werden. Anschließend muss in der `content.json` der Name der neuen Datei hinzugefügt werden. Vor allem, wenn viele Bilder hochgeladen werden, ist das nerfig. Das `generate-content-file.yml` Skript übernimmt diese Arbeit.
+
+
 
 
 
