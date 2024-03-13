@@ -6,8 +6,11 @@
 :toclevels: 16
 
 :asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
+:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:[https://github.com/tobilinz/homepage-foschingsball]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
+
+
 
 
 == Funktionsweise
@@ -15,6 +18,9 @@ Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 Alle Daten, die zur Webseite gehören, werden auf einem Server in verschieden Ordnern gespeichert. Wenn jemand die Webseite öffnet, dann erhält die Person diese Dateien und sie werden in Form einer Webseite angezeigt. +
  +
 Ein GitHub Repository wie dieses hilft dabei, die Webseite zu programmieren, indem Änderungen an Code zwischen Geräten einfacher syncronisiert werden können. Damit fällt es einem Entwicklungsteam einfacher, gemeinsam an der Webseite zu arbeiten. Ein GitHub repository ist allerdings nicht notwendig.
+
+
+
 
 == Hetzner KonsoleH
 
@@ -51,7 +57,6 @@ Am wichtigsten ist das Menü "Einstellungen". Im Folgenden werden alle Menüpunk
 
 === Zugangsdetails 
 
-
 ==== Logindaten
 
 Am wichtigsten ist das Untermenü "FTP-Hauptbenutzer". Dort können Server-Domain, Loginname, Passwort und noch mehr eingesehen werden. + 
@@ -59,7 +64,6 @@ Die Sektion <<GitHub Actions>> beschreibt, wie der FTP Server verwendet werden k
 
 
 === Konfiguration
-
 
 ==== Serverkonfiguration
 
@@ -69,7 +73,6 @@ Es kann festgelegt werden, welcher Ordner angezeigt wird, wenn https://foschings
  +
 Außerdem kann hier auch die `.htaccess` Datei bearbeitet werden. Diese zu konfigurieren ist nicht notwendig, aber empfohlen. Sie beinhaltet sämtliche Einstellungen, mit denen die Sicherheit der Webseite beeinflusst werden kann. Zum Beispiel können Header bearbeitet werden. Die `.htaccess` Datei in den `2024` und `resources` Ordnern können als Beispiele herangenommen werden. +
 Ob die Header richtig konfiguriert sind, kann auf https://securityheaders.com überprüft werden.
-
 
 ==== Subdomains
 
@@ -99,15 +102,15 @@ Hier können neue Subdomains hinzugefügt werden, die die Inhalte bestimmter Ord
 
 === Extras
 
-
 ==== WebFTP
 
 Hier kann auf die Dateien und Ordner der Webseite zugegriffen werden. Die Inhalte dieser Ordner werden den Nutzern, die die Webseite aufrufen, angezeigt.
 
-
 ==== SSL Manager
 
 Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen sicheren Datenverkehr zwischen Webseite und Nutzer zu gewährleisten.
+
+
 
 
 == VS Code
@@ -125,7 +128,10 @@ Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Downl
 Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
 
 
+
+
 == Quellcodebearbeitung
+
 
 === Herunterladen des Quellcodes
 
@@ -160,30 +166,65 @@ Dafür muss im kleien Fenster mit den Ordnernamen der Ordner `2025` ausgewählt 
 Der Ordner kann nun als Startverzeichnis durch betätigung des Knopfes `Startverzeichnis setzen` geändert werden. Neben dem Ordner sollte nun ein kleines Haus icon erscheinen. Nun ist die neue Webseite unter https://foschingsball.de erreichbar.
 
 
+
+
 == GitHub
 
-Dieser Teil ist optional. GitHub kann allerdings bei der Entwicklung helfen, da man mit diesem Werkzeug besser im Team arbeiten kann. Außerdem lässt sich das herunterladen des Quellcodes von WebFTP und das erneute Hochladen der Änderungen hiermit automatisieren. Da dieser Schritt optional ist, und im Internet viele gute Anleitungen vorhanden sind, folgt hier nur eine kurze Zusammenfassung. +
+Dieser Teil ist optional. GitHub kann allerdings bei der Entwicklung helfen, da man mit diesem Werkzeug besser im Team arbeiten kann. Außerdem lässt sich das herunterladen des Quellcodes von WebFTP und das erneute Hochladen der Änderungen hiermit automatisieren. Da dieser Schritt optional ist, und im Internet viele gute Anleitungen vorhanden sind, folgt hier nur eine kurze Zusammenfassung.
+
+
+=== Repository clonen
+
+Verschiedene Projekte werden in GitHub als Repositories gespeichert. Dieses Repository enthält den Code für die Webseite des FOSchingsballs von 2024. Es soll allerdings archiviert bleiben. Das heißt, dass hier keine Änderungen mehr vorgenommen werden können. Das Repository soll in Zukunkft als Zeitkapsel dienen. Um nun doch veränderungen für kommende Jahre vor zu nehmen, muss es geforkt werden.
+
+
+=== Verbinden mit VS Code
+
+Um die Entwicklung zu erleichtern kann Visual Studio Code auch mit GitHub verbunden werden. Somit können Änderungen direkt vom eigenen Computer aus hochgeladen und synchronisiert werden.
+
+
+=== Einrichtung der GitHub Workflows
+
+Es existieren ein paar GitHub workflows, die das Arbeiten mit der Webseite deutlich vereinfachen. Die Skripte für diese befinden sich unter `.github/workflows/`.
+
+==== Automatisches hochladen von Änderungen auf eine Testseite
+
+Das hierfür zuständige Skript heißt `testdeploy.yml`. Es muss nicht bearbeitet werden. Allerdings benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. In der `testdeploy.yml` Datei sind die Logindaten wie folgt eingetragen:
+```yml
+server: ${{ secrets.FTP_SERVER }}
+username: ${{ secrets.FTP_USERNAME }}
+password: ${{ secrets.FTP_PASSWORD }}
+```
+Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden. +
  +
-Verschiedene Projekte werden in GitHub als Repositories gespeichert. Dieses Repository enthält den Code für die Webseite des FOSchingsballs von 2024. Es soll allerdings archiviert bleiben. Das heißt, dass hier keine Änderungen mehr vorgenommen werden können. Das Repository soll in Zukunkft als Zeitkapsel dienen. Um nun doch veränderungen für kommende Jahre vor zu nehmen, muss es geforkt werden. +
+Die Testseite ist unter `https://test.foschingsball.de/main/` verfügbar. Wenn mehrere Branches erstellt werden, sind zusätzliche Seiten unter `https://test.foschingsball.de/<branch name>/` verfügbar. Unter `test.foschingsball.de` wird eine Übersicht an Testseiten angezeigt. Diese muss allerdings manuell in WebFTP von Hetzner bearbeitet werden, falls neue Branches hinzukommen.
 
+==== Automatisches hochladen von Änderungen auf die Hauptseite
 
-=== Ersteinrichtung
+Das hierfür zuständige Skript heißt `releasedeploy.yml`.
+Hier muss unter
+```yml
+env:
+  YEAR: 2024
+```
+das Jahr auf `2025` korrigiert werden.
 
-==== Forken
+Außerdem benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. In der `releasedeploy.yml` Datei sind die Logindaten wie folgt eingetragen:
+```yml
+server: ${{ secrets.FTP_SERVER }}
+username: ${{ secrets.FTP_USERNAME }}
+password: ${{ secrets.FTP_PASSWORD }}
+```
+Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. 
 
-Durch Forken wird eine Kopie angefertigt, die von zukünftigen Teams verwendet werden kann. Um das Repository zu forken, wird ein GitHub account benötigt. Außerdem brauchen alle Mitglieder, die am Projekt über GitHub arbeiten wollen, einen GitHub Account (es wäre auch möglich, einen GitHub Account untereinander zu teilen). Zum forken muss nur der `Fork` Knopf auf der link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:[https://github.com/tobilinz/homepage-foschingsball] betätigt werden. +
- +
-Dann kann das Projekt wie jedes andere verwendet und bearbeitet werden.
+CAUTION: Wenn die Secrets für die Testdeploy Datei schon eingetragen wurden, dann muss dieser Schritt nicht nochmal wiederholt werden.
 
+Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden.
 
-==== Verbinden von GitHub mit Visual Studio Code
+==== Content-Datei Generator
 
-GitHub kann nun mit Visual Studio Code verbunden werden. Dann können Änderungen am Quellcode direkt in Visual Studio Code auf GitHub hochgeladen werden.
+Die Bilder für die Galerie werden ausschließlich in WebFTP gespeichert (im `public_html/resources/<Jahr>/pictures/` Ordner). Wenn jemand wie Galerie aufruft, werden diese von Hetzner geladen. Damit die Webseite weiß, welche Dateien sie laden soll, existiert in diesen `pictures` Ordnern eine `content.json` Datei mit allen Dateinamen in diesen Ordner. Wenn neue Bilder hochgeladen werden sollen, müssen die Dateien in diese Ordner hochgeladen werden. Anschließend muss in der `content.json` der Name der neuen Datei hinzugefügt werden. Vor allem, wenn viele Bilder hochgeladen werden, ist das nerfig. Das `generate-content-file.yml` Skript übernimmt diese Arbeit.
 
-
-==== Einrichtung der GitHub Workflows
-
-Es existieren ein paar GitHub workflows, die das Arbeiten mit der Webseite deutlich vereinfachen. Einer davon lädt den Code des Repositoies beispielsweise direkt in WebFTP von Hetzner. Somit wird das veröffentlichen von Neuerungen sehr einfach.
 
 
 == Anpassen der Webseite für kommende Jahre
@@ -223,7 +264,7 @@ Es existieren ein paar GitHub workflows, die das Arbeiten mit der Webseite deutl
 === SEO
 
 
-== Für die Webseite verwendete Resourcen
+== Verwendete Resourcen
 
 [%header, cols="1,1"]
 |===
