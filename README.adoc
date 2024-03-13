@@ -50,7 +50,7 @@ Das Menü sieht wie Folgt aus:
 
 image::{asset}konsoleh-menu.jpeg["KonesoleH Menü", width=850]
 
-Falls ein anderes Menü angezeigt wird, dass inhaltlich nicht diesem ähnelt, dann ist die Webseite falsch, bzw. es wurde der falsche Dienst von Hetzner aufgerufen. Hetzner bietet noch viele andere Dienste an, wie Cloud, DNS und Robot. In diesem Fall wird geraten, den Webseitenlink noch einmal zu überpfügen. Das benötigte Tool heißt `KonsoleH` +
+Falls ein anderes Menü angezeigt wird, dass inhaltlich nicht diesem ähnelt, dann ist die Webseite falsch, bzw. es wurde der falsche Dienst von Hetzner aufgerufen. Hetzner bietet noch viele andere Dienste an, wie Cloud, DNS und Robot. In diesem Fall wird geraten, den Webseitenlink noch einmal zu überprüfen. Das benötigte Tool heißt `KonsoleH`. +
 
 Am wichtigsten ist das Menü "Einstellungen". Im Folgenden werden alle Menüpunkte des Einstellungsmenüs beschrieben.
 
