@@ -244,10 +244,33 @@ Danach muss im Skript `src/home/scripts/countDown.js` in der ersten Zeile das Da
 const date = Date.parse(`2024-02-09T19:00:00.000+01:00`);
 ----
 
-Das Datum ist wie folgt aufgebaut: `JAHR-MONAT-TAGTSTUNDE:...` Das `T` zwischen `TAG` und `STUNDE` muss da stehen. +
+Das Datum ist wie folgt aufgebaut: `jahr-monat-tagTstunde:...` Das `T` zwischen `tag` und `stunden` muss da stehen. +
 
 
 === Video
+
+Das Video kann aktualisiert werden, indem in WebFTP unter `public_html/resources/2024/videos/` ein neues Video hochgeladen wird. Wenn der Ordner Videos nicht existiert, dann kann einfach ein neuer erstellt werden. Danach muss unter `src/index.html` Die Sektion mit der id `video` bearbeitet werden.
+[source,html]
+----
+<section id="video">
+    <h2>Video</h2>
+    <video class="main-video" controls preload="none" poster="home/video-poster.webp">
+        <source src="https://resources.foschingsball.de/2023/videos/video-2023-h264-aac.mp4"
+                type="video/mp4">
+        <meta content="FOSchingsball 2023" itemprop="name">
+        <meta content="Video, dass den Aufbau und die Feier vom FOSchingsball aus dem Jahr 2023 zeigt."
+              itemprop="description">
+        <meta content="PT4M53S" itemprop="duration">
+    </video>
+</section>
+----
+
+Hier muss zuerst beim `source` Element der `src` Tag bearbeitet werden. Es muss nur `2023` durch `2024` ersetzt werden und `video-2023-h264-aac.mp4` muss durch den Namen der neuen Videodatei ersetzt werden. Falls das neue Video kein mp4 Video ist, muss der `type` Tag von `video/mp4` zum neuen Videotypen geändert werden. Es ist allerdings empfehlenswert, mp4 als Dateiformat zu verwenden, da mp4 in allen Browsern (auch Safari) unterstützt wird. +
+ + 
+Nun muss noch die Dauer des Videos beim `meta` Element mit dem Tag `itemprop=duration` geändert werden. Das Format ist: `PTminutenMsekundenS`.
+Auch der Name und die Beschreibung der anderen `meta` Tags sollten angepasst werden.
+
+TIP: Es ist empfehlenswert, das Video zu komprimieren, um die Mobilen Daten von Nutzern zu schonen.
 
 
 === Galerie
