@@ -1,0 +1,405 @@
+= Homepage FOSchingsball
+:toc:
+:toc-title: Inhaltsverzeichnis:
+:toc-placement: preamble
+:toc-text-decoration: none
+:toclevels: 16
+
+:asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
+:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:id[https://github.com/tobilinz/homepage-foschingsball]
+
+Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
+
+
+
+
+== Funktionsweise
+
+Alle Daten, die zur Webseite gehören, werden auf einem Server in verschieden Ordnern gespeichert. Wenn jemand die Webseite öffnet, dann erhält die Person diese Dateien und sie werden in Form einer Webseite angezeigt. +
+ +
+Ein GitHub Repository wie dieses hilft dabei, die Webseite zu programmieren, indem Änderungen an Code zwischen Geräten einfacher syncronisiert werden können. Damit fällt es einem Entwicklungsteam einfacher, gemeinsam an der Webseite zu arbeiten. Ein GitHub repository ist allerdings nicht notwendig.
+
+
+
+
+== Hetzner KonsoleH
+
+Die Webseite wird mithilfe von Hetzner bereit gestellt. +
+
+
+=== Login
+
+[cols="1,1"]
+|===
+
+| Webseite 
+| https://konsoleh.hetzner.com
+
+| E-Mail Adresse
+| AktiveFOSBOSNeumarkt.eV@fosbos-neumarkt.de
+
+| Passwort
+| Frau Graf fragen
+
+|===
+
+
+=== Verwendung
+
+Das Menü sieht wie Folgt aus:
+
+image::{asset}konsoleh-menu.jpeg["KonesoleH Menü", width=850]
+
+Falls ein anderes Menü angezeigt wird, dass inhaltlich nicht diesem ähnelt, dann ist die Webseite falsch, bzw. es wurde der falsche Dienst von Hetzner aufgerufen. Hetzner bietet noch viele andere Dienste an, wie Cloud, DNS und Robot. In diesem Fall wird geraten, den Webseitenlink noch einmal zu überprüfen. Das benötigte Tool heißt `KonsoleH`. +
+
+Am wichtigsten ist das Menü "Einstellungen". Im Folgenden werden alle Menüpunkte des Einstellungsmenüs beschrieben.
+
+
+=== Zugangsdetails
+
+==== Logindaten
+
+Am wichtigsten ist das Untermenü "FTP-Hauptbenutzer". Dort können Server-Domain, Loginname, Passwort und noch mehr eingesehen werden. + 
+Die Sektion <<GitHub Actions>> beschreibt, wie der FTP Server verwendet werden kann, um mit GitHub Änderungen automatisch auf die Webseite hoch zu laden.
+
+
+=== Konfiguration
+
+==== Serverkonfiguration
+
+Hier werden die wichtigsten Einstellungen vorgenommen. +
+ +
+Es kann festgelegt werden, welcher Ordner angezeigt wird, wenn https://foschingsball.de aufgerufen wird. (Startverzeichnis) +
+ +
+Außerdem kann hier auch die `.htaccess` Datei bearbeitet werden. Diese zu konfigurieren ist nicht notwendig, aber empfohlen. Sie beinhaltet sämtliche Einstellungen, mit denen die Sicherheit der Webseite beeinflusst werden kann. Zum Beispiel können Header bearbeitet werden. Die `.htaccess` Datei in den `2024` und `resources` Ordnern können als Beispiele herangenommen werden. +
+Ob die Header richtig konfiguriert sind, kann auf https://securityheaders.com überprüft werden.
+
+==== Subdomains
+
+Hier können neue Subdomains hinzugefügt werden, die die Inhalte bestimmter Ordner anzeigen Auf diese Weise kann zum Beispiel die Hauptseite unter `https://foschingsball.de` angezeigt werden`und zusätzlich könnte eine Testseite zum Testen von neuen Funktionen, bevor sie veröffentlicht werden, unter `https://test.foschingsball.de` angezeigt werden. Aktuelle Konfiguration:
+
+[%header, cols="1,1,1"]
+|===
+
+| Ordnername
+| Zielordner
+| Verwendung
+
+| 2024
+| /2024
+| Aktuelle Hauptseite
+
+| resources
+| /resources
+| Hier werden Resourcen gespeichert, die von den verschiedenen Webseiten aller Jahrgänge (2024, 2025, 2026, ...) verwendet werden können, wie Bilder, Videos und mehr. Es ist besser, diese Resourcen NICHT bei jedem Ordner für jeden Jahrgang zu speichern, da sonst die 10GB Speicher schnell voll sein können. Ziel ist, dass alte Resourcen auch in weiter Zukunft noch zum Abrufen verfügbar sein können.
+
+| test
+| /test
+| Testseite, auf der neue Funktionen auf verschiedenen Geräten getestet werden können, bevor diese veröffentlicht werden.
+
+|===
+
+
+=== Extras
+
+==== WebFTP
+
+Hier kann auf die Dateien und Ordner der Webseite zugegriffen werden. Die Inhalte dieser Ordner werden den Nutzern, die die Webseite aufrufen, angezeigt.
+
+==== SSL Manager
+
+Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen sicheren Datenverkehr zwischen Webseite und Nutzer zu gewährleisten.
+
+
+
+
+== VS Code
+
+Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür link:https://code.visualstudio.com[Visual Studio Code]footnote:[https://code.visualstudio.com]. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
+
+
+=== Installation VS Code
+
+Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Download +
+
+
+=== Installation von Erweiterungen
+
+Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
+
+
+
+
+== Quellcodebearbeitung
+
+
+=== Herunterladen des Quellcodes
+
+Zuerst muss dieses Projekt heruntergeladen werden. Dafür muss auf der Hetzner KonsoleH Webseite das WebFTP tool geöffnet werden (<<WebFTP>>). Das Tool sieht wie folgt aus:
+
+image::{asset}webftp.jpeg["KonesoleH Menü", width=850]
+
+Danach muss der Ordner `public_html` geöffnet werden.
+Der Code der Webseite befindet sich im Ordner `2024`. Dieser muss heruntergeladen werden. 
+Auf dem PC wird dann eine `zip` Datei gespeichert. Es ist wichtig, diese zu einem Ordner zu entpacken, da in Visual Studio Code nur Ordner geöffnet werden können.
+Nun kann der Ordner In Visual Studio Code geöffnet werden und der Quellcode der Webseite kann bearbeitet werden. 
+
+
+=== Änderungen hochladen
+
+Nachdem die gewünschten Änderungen vorgenommen wurden, müssen die modifizierten Dateien wieder hochgeladen werden. 
+Hierfür muss zuerst wieder das WebFTP Portal, welches auch zum herunteralden der 'alten' Datein verwendet wurde, geöffnet werden.
+Im `public_html` Ordner muss nun ein neuer Ordner namens `2025` erstellt werden. Darin können die veränderten Dateien hochgeladen werden.
+
+[IMPORTANT] 
+====
+Direkt im 2025 Ordner *MUSS* eine `index.html` Datei sein. Diese wird Nutzern am Ende angezeigt. Wenn sich dort keine `index.html` Dati befindet, dann wird Nutzern keine Webseite angezeigt. Die `index.html` Datei darf auch nicht in unterordnern sein. Sie muss sich direkt im `2025` Ordner befinden.
+====
+
+
+=== Änderungen veröffentlichen
+
+Dieser Schritt muss nur einmal ausgeführt werden.
+Die Änderungen werden Nutzern unter https://foschingsball.de noch nicht angezeigt, da aktuell noch der Ordner `2024` als Startverzeichnis angezeigt wird.
+Das Startverzeichnis kann im Menü <<Serverkonfiguration>> geändert werden. 
+Dafür muss im kleien Fenster mit den Ordnernamen der Ordner `2025` ausgewählt werden. 
+Der Ordner kann nun als Startverzeichnis durch betätigung des Knopfes `Startverzeichnis setzen` geändert werden. Neben dem Ordner sollte nun ein kleines Haus icon erscheinen. Nun ist die neue Webseite unter https://foschingsball.de erreichbar.
+
+
+
+
+== GitHub
+
+Dieser Teil ist optional. GitHub kann allerdings bei der Entwicklung helfen, da man mit diesem Werkzeug besser im Team arbeiten kann. Außerdem lässt sich das herunterladen des Quellcodes von WebFTP und das erneute Hochladen der Änderungen hiermit automatisieren. Da dieser Schritt optional ist, und im Internet viele gute Anleitungen vorhanden sind, folgt hier nur eine kurze Zusammenfassung.
+
+
+=== Repository clonen
+
+Verschiedene Projekte werden in GitHub als Repositories gespeichert. Dieses Repository enthält den Code für die Webseite des FOSchingsballs von 2024. Es soll allerdings archiviert bleiben. Das heißt, dass hier keine Änderungen mehr vorgenommen werden können. Das Repository soll in Zukunkft als Zeitkapsel dienen. Um nun doch veränderungen für kommende Jahre vor zu nehmen, muss es geforkt werden.
+
+
+=== Verbinden mit VS Code
+
+Um die Entwicklung zu erleichtern kann Visual Studio Code auch mit GitHub verbunden werden. Somit können Änderungen direkt vom eigenen Computer aus hochgeladen und synchronisiert werden.
+
+
+=== Einrichtung der GitHub Workflows
+
+Es existieren ein paar GitHub workflows, die das Arbeiten mit der Webseite deutlich vereinfachen. Die Skripte für diese befinden sich unter `.github/workflows/`.
+
+==== Automatisches hochladen von Änderungen auf eine Testseite
+
+Das hierfür zuständige Skript heißt `testdeploy.yml`. Es muss nicht bearbeitet werden. Allerdings benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
+ +
+Die Testseite ist unter `https://test.foschingsball.de/main/` verfügbar. Wenn mehrere Branches erstellt werden, sind zusätzliche Seiten unter `https://test.foschingsball.de/<branch name>/` verfügbar. Unter `test.foschingsball.de` wird eine Übersicht an Testseiten angezeigt. Diese muss allerdings manuell in WebFTP von Hetzner bearbeitet werden, falls neue Branches hinzukommen. +
+ +
+Die Testseite aktualisiert sich jedes mal, wenn neue Änderungen hochgeladen werden.
+
+==== Automatisches hochladen von Änderungen auf die Hauptseite
+
+Das hierfür zuständige Skript heißt `releasedeploy.yml`.
+Hier muss unter
+```yml
+env:
+  YEAR: 2024
+```
+das Jahr auf `2025` korrigiert werden. +
+ +
+Außerdem benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
+ +
+Die Hauptseite aktualisiert sich jedes mal, wenn ein neuer `Release` in {mainpage} erstellt wird.
+
+==== Content-Datei Generator
+
+Die Bilder für die Galerie werden ausschließlich in WebFTP gespeichert (im `public_html/resources/<Jahr>/pictures/` Ordner). Wenn jemand wie Galerie aufruft, werden diese von Hetzner geladen. Damit die Webseite weiß, welche Dateien sie laden soll, existiert in diesen `pictures` Ordnern eine `content.json` Datei mit allen Namen der Dateien, die in den `pictures` Ordnern sind. Wenn neue Bilder hochgeladen werden sollen, müssen die Dateien in diese Ordner hochgeladen werden. Anschließend muss in der `content.json` der Name der neuen Datei hinzugefügt werden. Vor allem, wenn viele Bilder hochgeladen werden, ist das nerfig. Das `generate-content-file.yml` Skript übernimmt diese Arbeit. +
+ +
+Das hierfür zuständige Skript heißt `generate-content-file.yml`. Es muss nicht bearbeitet werden. Allerdings benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
+ +
+Das Skript kann aktiviert werden, indem auf {mainpage} unter `Actions>Generate content file` auf `Run workflow` geclickt wird. Danach muss das Jahr eingetragen werden, für das die Datei aktualisiert werden soll (2023, 2024, 2025). Durch Betätigung des grünen `Run workflow` Knopf wird der Workflow schließlich ausgeführt.
+
+==== GitHub Secrets eintragen
+
+GitHub benötigt für einige Workflows die Zugangsdaten für WebFTP von Hetzner. In den Workflow Skripten sind die Logindaten wie folgt eingetragen:
+```yml
+server: ${{ secrets.FTP_SERVER }}
+username: ${{ secrets.FTP_USERNAME }}
+password: ${{ secrets.FTP_PASSWORD }}
+```
+Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden. Die Secrets müsse nur einmal hinzugefügt werden. Dann können alle Workflows auf die Secrets zugreifen. +
+
+
+
+
+== Anpassen der Webseite für kommende Jahre
+
+=== Countdown
+
+Die Webseite besitzt einen Countdown, der sich aktiviert, wenn weniger als 100 Tage bis zum Event übrig sind und sich nach seinem Ablauf automatisch wieder deaktiviert. +
+ +
+Um den Countdown wieder zu aktivieren, müssen zuerst in `src/index.html` das div mit der ID `counter` und das Skript (`script`) mit der Quelle ...`countDown.js` unkommentiert werden (Siehe <<Kommentare>>). +
+ +
+Danach muss im Skript `src/home/scripts/countDown.js` in der ersten Zeile das Datum aktualisiert werden:
+[source,javascript]
+----
+const date = Date.parse(`2024-02-09T19:00:00.000+01:00`);
+----
+
+Das Datum ist wie folgt aufgebaut: `jahr-monat-tagTstunde:...` Das `T` zwischen `tag` und `stunden` muss da stehen. +
+
+
+=== Video
+
+Das Video kann aktualisiert werden, indem in WebFTP unter `public_html/resources/2024/videos/` ein neues Video hochgeladen wird. Wenn der Ordner Videos nicht existiert, dann kann einfach ein neuer erstellt werden. Danach muss unter `src/index.html` Die Sektion mit der ID `video` bearbeitet werden.
+[source,html]
+----
+<section id="video">
+    <h2>Video</h2>
+    <video class="main-video" controls preload="none" poster="home/video-poster.webp">
+        <source src="https://resources.foschingsball.de/2023/videos/video-2023-h264-aac.mp4"
+                type="video/mp4">
+        <meta content="FOSchingsball 2023" itemprop="name">
+        <meta content="Video, dass den Aufbau und die Feier vom FOSchingsball aus dem Jahr 2023 zeigt."
+              itemprop="description">
+        <meta content="PT4M53S" itemprop="duration">
+    </video>
+</section>
+----
+
+Hier muss zuerst beim `source` Element der `src` Tag bearbeitet werden. Es muss nur `2023` durch `2024` ersetzt werden und `video-2023-h264-aac.mp4` muss durch den Namen der neuen Videodatei ersetzt werden. Falls das neue Video kein mp4 Video ist, muss der `type` Tag von `video/mp4` zum neuen Videotypen geändert werden. Es ist allerdings empfehlenswert, mp4 als Dateiformat zu verwenden, da mp4 in allen Browsern (auch Safari) unterstützt wird. +
+ + 
+Nun muss noch die Dauer des Videos beim `meta` Element mit dem Tag `itemprop=duration` geändert werden. Das Format ist: `PTminutenMsekundenS`.
+Auch der Name und die Beschreibung der anderen `meta` Tags sollten angepasst werden.
+
+TIP: Es ist empfehlenswert, das Video zu komprimieren, um die Mobilen Daten von Nutzern zu schonen.
+
+
+=== Galerie
+
+Zur Galerie können Bilder hinzu gefügt werden, indem die Bilddateien zuerst in WebFTP hochgeladen werden. +
+Bilder aus dem Jahr 2024 müssten zum Beispiel in WebFTP nach `public_html/resources/2024/pictures/` hochgeladen werden. Dann müssen die Dateinamen der hinzugefügten Bilder zu einer `content.json` Datei im selben Ordner hinzugefügt werden. Als Beispiele können die Ordner der Vorjahre herangezogen werden.
+
+TIP: In der Sektion <<Content-Datei Generator>> wird gezeigt, wie dieser Prozess mit GitHub Workflows vereinfacht werden kann.
+
+TIP: Es ist empfehlenswert, die Bilder auf eine Höhe von 600 Pixeln zu begrenzen, um den maximalen Speicherplatz von WebFTP zu schonen. Empfohlenes Programm: Gimp
+
+TIP: Das Dateiformat `webp` ist speichereffizienter und in jedem Browser unterstützt. Es wird empfohlen, alle Bilder in dieses zu konvertieren. Empfohlenes Programm: Gimp
+
+WARNING: Standardmäßig werden nur Bilder der Jahre 2023 bis 2024 geladen. Zum Laden mehrerer Jahre, muss der zweite Parameter der `loadGallery` Funktion in `src/galerie/script.js` von `2024` auf das neue Jahr geändert werden. Für beispielsweise den Wert 2027 werden alle Bilder der Jahre 2023 bis 2027 geladen.
+
+
+=== Veranstaltungsdatum
+
+Zum Anzeigen des Veranstaltungsdatums muss die Sektion mit der ID `datum` unkommentiert werden (Siehe <<Kommentare>>). +
+ + 
+Nun können das dort angegebene Datum und die Uhrzeit angepasst werden.
+
+
+=== Alter
+
+Zum Anzeigen des Mindestalters muss die Sektion mit der ID `alter` unkommentiert werden (Siehe <<Kommentare>>). +
+ + 
+Nun kann das dort angegebene Mindestalter angepasst werden.
+
+
+=== Veranstaltungsort
+
+Zum Anzeigen des Veranstaltungsorts muss die Sektion mit der ID `ort` unkommentiert werden (Siehe <<Kommentare>>). +
+ +
+Der Folgende Teil ist nur notwendig, wenn der Veranstalungsort nicht die kleine Jurahalle ist. +
+ + 
+Zuerst muss die angegebene Adresse (Wert des `data-title`-Tags) aktualisiert werden. Dann muss auf Google Maps die benötigte Adresse gesucht werden und die Ansciht muss auf `Satelitenansicht` gesetzt werden. Nun muss unter `Teilen>Karte einbetten` der dortige HTML Code kopiert werden. Der Code sollte wie Folgt aussehen:
+[source,html]
+----
+<iframe src="https://www.google.com/maps/embed?pb=!laaaaaaaaaaaaaangerLink" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+----
+
+Hier ist nur der Link wichtig (`https://www.google.com/maps/embed?pb=!laaaaaaaaaaaaaangerLink`). Dieser muss anstelle des alten Links, der im `data-src` Tag angegeben ist, eingefügt werden. +
+ +
+Jetzt muss nur noch das Platzhalterbild, das angezeigt wird, während die Karte lädt, geändert werden. Hierfür muss die Webseite mit der aktualisierten Karte geöffnet werden. Am PC müssen dann die DevTools geöffnet werden (oft mit der F12 Taste). Im `Elemente` Tab muss nun das div, in dem der Neue Link eingefügt wurde, ausgewählt werden und es muss ein Screenshot davon erstellt werden (Rechtsclick auf das Element und Screenshot erstellen). Dieses kann nun in ein WebP Bild umgewandelt werden. Nun kann das Bild unter `src/home/map-placeholders/main-map-placeholder.webp` durch das neue ersetzt werden. 
+
+
+=== Ticketinformationen
+
+Zum Anzeigen der Ticketinformationen muss die Sektion mit der ID `tickets` unkommentiert werden (Siehe <<Kommentare>>). +
+ + 
+Nun können das dort angegebenen Daten angepasst werden. +
+Außerdem sollte das div mit der ID `vorverkauf-warning` versteckt werden, indem es zu einem Kommentar umgewandelt wird. Die nachfolgenden divs enthalten Karten und Texte, die beschreiben, wo der Vorverkauf stattfindet. Diese können genauso angepasst werden, wie die Hauptkarte unter <<Veranstaltungsort>>. Manche Karten sind mit der Klasse `sold-out``markiert. Je nachdem, ob an diesen Orten noch Tickets verkauft werden, sollte diese Klasse entfernt oder hinzugefügt werden.
+
+
+=== Team Sektion erstellen
+
+Ein Git-Branch des Projekts heißt `team-section`. Es war ursprünglich geplant, eine Team Sektion zur Webseite hinzuzugügen, allerdings gelang das aus zeitlichen Gründen nicht mehr. Der Code ist noch verfügbar, falls nachfolgende Teams die Team Sektion vollenden wollen.
+
+
+== Erklärung des Quellcodes
+
+=== HTML
+
+==== Kommentare
+
+HTML Elemente können mithilfe von `!--` nach dem ersten Zeichen (`<`) und `--` vor dem letzten Zeichen (`>`) kommentiert werden. +
+Beispiele: 
+
+
+.Unkommentiert:
+[source,html]
+----
+<div>Inhalt</div>
+----
+
+
+.Kommentiert:
+[source,html]
+----
+<!--div>Inhalt</div-->
+----
+
+
+Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht angezeigt. Das ist nützlich, wenn Elemente, die aktuell nicht benötigt werden, aber zu einem späteren Zeitpunkt nützlich werden könnten, versteckt werden sollen. 
+
+=== CSS
+
+=== Javascript
+
+=== SEO
+
+
+== Verwendete Resourcen
+
+[%header, cols="1,1"]
+|===
+
+| Resource
+| Link
+
+| Mauer Hintergrund
+| https://www.pexels.com/de-de/foto/brown-brick-wall-nahaufnahme-fotografie-21380
+
+| Avatar Generator
+| https://personas.draftbit.com
+
+| Discokugel
+| https://www.svgrepo.com/svg/283903/disco-ball-disco
+
+| Generic Avatar
+| https://www.svgrepo.com/svg/213788/avatar-user
+
+| Three Dots horizontal
+| https://www.svgrepo.com/svg/124304/three-dots
+
+| Arrow Left
+| https://www.svgrepo.com/svg/489363/arrow-left-2
+
+| Instagram Logo
+| https://www.svgrepo.com/svg/489007/instagram
+
+| TikTik Logo
+| https://www.svgrepo.com/svg/473806/tiktok
+
+| Mail Icon
+| https://www.svgrepo.com/svg/489040/mail
+
+| Link Icon
+| https://www.svgrepo.com/svg/478989/link-5
+
+|===
