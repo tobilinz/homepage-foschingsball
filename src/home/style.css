@@ -143,6 +143,67 @@
     }
 }
 
+/*-------- BEWERTUNGEN --------*/
+
+.rating-wrapper {
+    height: 100%;
+    width: var(--big-width);
+    margin-inline: auto;
+    -webkit-mask-image: -webkit-linear-gradient(to right, transparent, black 25%, black 75%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    overflow-x: scroll;
+    padding-block: var(--mNormal);
+}
+
+.rating-grid {
+    padding-inline: 10%;
+    display: flex;
+    height: var(--grid-height);
+    width: max-content;
+    gap: var(--mNormal);
+}
+
+.rating {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: var(--mNormal) calc(2 * var(--mNormal));
+    height: 100%;
+    aspect-ratio: 1.25;
+    text-decoration: none;
+    color: var(--text);
+    transition: color var(--transition-time) linear;
+}
+
+.rating:hover {
+    color: var(--text-gray);
+}
+
+.rating::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    border: solid 4px var(--glowbase);
+    filter: var(--glow);
+}
+
+.rating-text {
+    margin-block: auto;
+    text-align: center;
+    line-height: 1.3;
+    font-size: var(--normal);
+}
+
+.rating-source {
+    font-style: italic;
+    margin-inline: auto;
+    font-size: 0.95rem;
+}
+
 /*-------- ORT --------*
 
 .main-map-wrapper {
