@@ -204,7 +204,7 @@
     font-size: 0.95rem;
 }
 
-/*-------- ORT --------*/
+/*-------- ORT --------
 
 .main-map-wrapper {
     margin-inline: auto;
@@ -221,7 +221,7 @@
     height: 100%;
 }
 
-/*-------- TICKETS --------*/
+/*-------- TICKETS --------
 
 .tickets-info {
     margin: var(--mNormal) auto;
