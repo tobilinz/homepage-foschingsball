@@ -236,7 +236,7 @@ Die benötigten Informationen, wie `server`, `username` und `password` sind hier
 
 Die Webseite besitzt einen Countdown, der sich aktiviert, wenn weniger als 100 Tage bis zum Event übrig sind und sich nach seinem Ablauf automatisch wieder deaktiviert. +
  +
-Um den Countdown wieder zu aktivieren, müssen zuerst in `src/index.html` das div mit der id `counter` und das Skript (`script`) mit der Quelle ...`countDown.js` unkommentiert werden (Siehe <<Kommentare>>). +
+Um den Countdown wieder zu aktivieren, müssen zuerst in `src/index.html` das div mit der ID `counter` und das Skript (`script`) mit der Quelle ...`countDown.js` unkommentiert werden (Siehe <<Kommentare>>). +
  +
 Danach muss im Skript `src/home/scripts/countDown.js` in der ersten Zeile das Datum aktualisiert werden:
 [source,javascript]
@@ -249,7 +249,7 @@ Das Datum ist wie folgt aufgebaut: `jahr-monat-tagTstunde:...` Das `T` zwischen 
 
 === Video
 
-Das Video kann aktualisiert werden, indem in WebFTP unter `public_html/resources/2024/videos/` ein neues Video hochgeladen wird. Wenn der Ordner Videos nicht existiert, dann kann einfach ein neuer erstellt werden. Danach muss unter `src/index.html` Die Sektion mit der id `video` bearbeitet werden.
+Das Video kann aktualisiert werden, indem in WebFTP unter `public_html/resources/2024/videos/` ein neues Video hochgeladen wird. Wenn der Ordner Videos nicht existiert, dann kann einfach ein neuer erstellt werden. Danach muss unter `src/index.html` Die Sektion mit der ID `video` bearbeitet werden.
 [source,html]
 ----
 <section id="video">
@@ -275,17 +275,56 @@ TIP: Es ist empfehlenswert, das Video zu komprimieren, um die Mobilen Daten von 
 
 === Galerie
 
+Zur Galerie können Bilder hinzu gefügt werden, indem die Bilddateien zuerst in WebFTP hochgeladen werden. +
+Bilder aus dem Jahr 2024 müssten zum Beispiel in WebFTP nach `public_html/resources/2024/pictures/` hochgeladen werden. Dann müssen die Dateinamen der hinzugefügten Bilder zu einer `content.json` Datei im selben Ordner hinzugefügt werden. Als Beispiele können die Ordner der Vorjahre herangezogen werden.
+
+TIP: In der Sektion <<Content-Datei Generator>> wird gezeigt, wie dieser Prozess mit GitHub Workflows vereinfacht werden kann.
+
+TIP: Es ist empfehlenswert, die Bilder auf eine Höhe von 600 Pixeln zu begrenzen, um den maximalen Speicherplatz von WebFTP zu schonen. Empfohlenes Programm: Gimp
+
+TIP: Das Dateiformat `webp` ist speichereffizienter und in jedem Browser unterstützt. Es wird empfohlen, alle Bilder in dieses zu konvertieren. Empfohlenes Programm: Gimp
+
+WARNING: Standardmäßig werden nur Bilder der Jahre 2023 bis 2024 geladen. Zum Laden mehrerer Jahre, muss der zweite Parameter der `loadGallery` Funktion in `src/galerie/script.js` von `2024` auf das neue Jahr geändert werden. Für beispielsweise den Wert 2027 werden alle Bilder der Jahre 2023 bis 2027 geladen.
+
 
 === Veranstaltungsdatum
+
+Zum Anzeigen des Veranstaltungsdatums muss die Sektion mit der ID `datum` unkommentiert werden (Siehe <<Kommentare>>). +
+ + 
+Nun können das dort angegebene Datum und die Uhrzeit angepasst werden.
 
 
 === Alter
 
+Zum Anzeigen des Mindestalters muss die Sektion mit der ID `alter` unkommentiert werden (Siehe <<Kommentare>>). +
+ + 
+Nun kann das dort angegebene Mindestalter angepasst werden.
+
 
 === Veranstaltungsort
 
+Zum Anzeigen des Veranstaltungsorts muss die Sektion mit der ID `ort` unkommentiert werden (Siehe <<Kommentare>>). +
+ +
+Der Folgende Teil ist nur notwendig, wenn der Veranstalungsort nicht die kleine Jurahalle ist. +
+ + 
+Zuerst muss die angegebene Adresse (Wert des `data-title`-Tags) aktualisiert werden. Dann muss auf Google Maps die benötigte Adresse gesucht werden und die Ansciht muss auf `Satelitenansicht` gesetzt werden. Nun muss unter `Teilen>Karte einbetten` der dortige HTML Code kopiert werden. Der Code sollte wie Folgt aussehen:
+[source,html]
+----
+<iframe src="https://www.google.com/maps/embed?pb=!laaaaaaaaaaaaaangerLink" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+----
+
+Hier ist nur der Link wichtig (`https://www.google.com/maps/embed?pb=!laaaaaaaaaaaaaangerLink`). Dieser muss anstelle des alten Links, der im `data-src` Tag angegeben ist, eingefügt werden. +
+ +
+Jetzt muss nur noch das Platzhalterbild, das angezeigt wird, während die Karte lädt, geändert werden. Hierfür muss die Webseite mit der aktualisierten Karte geöffnet werden. Am PC müssen dann die DevTools geöffnet werden (oft mit der F12 Taste). Im `Elemente` Tab muss nun das div, in dem der Neue Link eingefügt wurde, ausgewählt werden und es muss ein Screenshot davon erstellt werden (Rechtsclick auf das Element und Screenshot erstellen). Dieses kann nun in ein WebP Bild umgewandelt werden. Nun kann das Bild unter `src/home/map-placeholders/main-map-placeholder.webp` durch das neue ersetzt werden. 
+
 
 === Ticketinformationen
+
+Zum Anzeigen der Ticketinformationen muss die Sektion mit der ID `tickets` unkommentiert werden (Siehe <<Kommentare>>). +
+ + 
+Nun können das dort angegebenen Daten angepasst werden. +
+Außerdem sollte das div mit der ID `vorverkauf-warning` versteckt werden, indem es zu einem Kommentar umgewandelt wird. Die nachfolgenden divs enthalten Karten und Texte, die beschreiben, wo der Vorverkauf stattfindet. Diese können genauso angepasst werden, wie die Hauptkarte unter <<Veranstaltungsort>>. Manche Karten sind mit der Klasse `sold-out``markiert. Je nachdem, ob an diesen Orten noch Tickets verkauft werden, sollte diese Klasse entfernt oder hinzugefügt werden.
+
 
 
 === Team Sektion erstellen
