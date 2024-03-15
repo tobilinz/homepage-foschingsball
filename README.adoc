@@ -55,7 +55,9 @@ Falls ein anderes Menü angezeigt wird, dass inhaltlich nicht diesem ähnelt, da
 Am wichtigsten ist das Menü "Einstellungen". Im Folgenden werden alle Menüpunkte des Einstellungsmenüs beschrieben.
 
 
-=== Logindaten 
+=== Zugangsdetails
+
+==== Logindaten
 
 Am wichtigsten ist das Untermenü "FTP-Hauptbenutzer". Dort können Server-Domain, Loginname, Passwort und noch mehr eingesehen werden. + 
 Die Sektion <<GitHub Actions>> beschreibt, wie der FTP Server verwendet werden kann, um mit GitHub Änderungen automatisch auf die Webseite hoch zu laden.
