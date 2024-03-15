@@ -326,8 +326,9 @@ Nun können das dort angegebenen Daten angepasst werden. +
 Außerdem sollte das div mit der ID `vorverkauf-warning` versteckt werden, indem es zu einem Kommentar umgewandelt wird. Die nachfolgenden divs enthalten Karten und Texte, die beschreiben, wo der Vorverkauf stattfindet. Diese können genauso angepasst werden, wie die Hauptkarte unter <<Veranstaltungsort>>. Manche Karten sind mit der Klasse `sold-out``markiert. Je nachdem, ob an diesen Orten noch Tickets verkauft werden, sollte diese Klasse entfernt oder hinzugefügt werden.
 
 
-
 === Team Sektion erstellen
+
+Ein Git-Branch des Projekts heißt `team-section`. Es war ursprünglich geplant, eine Team Sektion zur Webseite hinzuzugügen, allerdings gelang das aus zeitlichen Gründen nicht mehr. Der Code ist noch verfügbar, falls nachfolgende Teams die Team Sektion vollenden wollen.
 
 
 == Erklärung des Quellcodes
