@@ -234,6 +234,18 @@ Die benötigten Informationen, wie `server`, `username` und `password` sind hier
 
 === Countdown
 
+Die Webseite besitzt einen Countdown, der sich aktiviert, wenn weniger als 100 Tage bis zum Event übrig sind und sich nach seinem Ablauf automatisch wieder deaktiviert. +
+ +
+Um den Countdown wieder zu aktivieren, müssen zuerst in `src/index.html` das div mit der id `counter` und das Skript (`script`) mit der Quelle ...`countDown.js` unkommentiert werden (Siehe <<Kommentare>>). +
+ +
+Danach muss im Skript `src/home/scripts/countDown.js` in der ersten Zeile das Datum aktualisiert werden:
+[source,javascript]
+----
+const date = Date.parse(`2024-02-09T19:00:00.000+01:00`);
+----
+
+Das Datum ist wie folgt aufgebaut: `JAHR-MONAT-TAGTSTUNDE:...` Das `T` zwischen `TAG` und `STUNDE` muss da stehen. +
+
 
 === Video
 
@@ -259,6 +271,28 @@ Die benötigten Informationen, wie `server`, `username` und `password` sind hier
 == Erklärung des Quellcodes
 
 === HTML
+
+==== Kommentare
+
+HTML Elemente können mithilfe von `!--` nach dem ersten Zeichen (`<`) und `--` vor dem letzten Zeichen (`>`) kommentiert werden. +
+Beispiele: 
+
+
+.Unkommentiert:
+[source,html]
+----
+<div>Inhalt</div>
+----
+
+
+.Kommentiert:
+[source,html]
+----
+<!--div>Inhalt</div-->
+----
+
+
+Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht angezeigt. Das ist nützlich, wenn Elemente, die aktuell nicht benötigt werden, aber zu einem späteren Zeitpunkt nützlich werden könnten, versteckt werden sollen. 
 
 === CSS
 
