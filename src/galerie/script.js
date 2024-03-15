@@ -13,9 +13,11 @@ let current = null;
 // Big view
 const nav = document.getElementsByTagName('nav')[0];
 const fullImage = document.getElementById('big-image');
+const fullImage2 = document.getElementById('big-image2');
 const fullImageView = document.getElementById('big-view');
 const nextButton = document.getElementById('next');
 const previousButton = document.getElementById('previous');
+const fullImages = document.getElementById('images');
 let currentShownImage = undefined;
 
 function updateButtons(i) {
@@ -28,19 +30,42 @@ function showImage(i) {
   currentShownImage = i;
 }
 
+function showImage2(i) {
+  fullImage2.src = `${endpoint}/${current.year}/pictures/${current.images[i]}`;
+  currentShownImage = i;
+}
+
 function nextImage() {
-  const newImage = currentShownImage + 1;
-  if (newImage >= current.images.length) return;
-  updateButtons(newImage);
-  showImage(newImage);
+  fullImages.classList.add('instant');
+  fullImages.style.transform = 'translateX(50%)';
+  setTimeout(() => {
+    fullImages.classList.remove('instant');
+    const newImage = currentShownImage + 1;
+    if (newImage >= current.images.length) return;
+    fullImages.style.transform = 'translateX(0%)';
+    setTimeout(() => {
+      showImage2(newImage);
+    }, 500);
+    showImage(newImage);
+    updateButtons(newImage);
+}, 50);
 }
 document.getElementById('next').addEventListener('click', nextImage);
 
 function previousImage() {
-  const newImage = currentShownImage - 1;
-  if (newImage < 0) return;
-  updateButtons(newImage);
-  showImage(newImage);
+  fullImages.classList.add('instant');
+  fullImages.style.transform = 'translateX(0%)';
+  setTimeout(() => {
+    fullImages.classList.remove('instant');
+    const newImage = currentShownImage - 1;
+    if (newImage < 0) return;
+    fullImages.style.transform = 'translateX(50%)';
+    setTimeout(() => {
+      showImage(newImage);
+    }, 500);
+    showImage2(newImage);
+    updateButtons(newImage);
+}, 50);
 }
 document.getElementById('previous').addEventListener('click', previousImage);
 

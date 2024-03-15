@@ -13,14 +13,44 @@
     transition: background-color var(--transition-time) linear;
 }
 
-#big-image {
+#image-container {
+    position: relative;
+    margin: auto;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+
+#images {
     position: absolute;
     right: 0;
     top: 0;
-    width: 100%;
+    width: 200%;
+    height: 100%;
+    white-space: nowrap;
+    transition: transform 0.5s ease;
+}
+
+#images.instant {
+    transition-duration: 0s;
+}
+
+#big-image, #big-image2 {
+    position: absolute;
+    right: 0;
+    top: 0;
     height: 100%;
     object-fit: contain;
     z-index: -1;
+}
+
+#big-image {
+    width: 50%;
+}
+
+#big-image2 {
+    width: 150%;
 }
 
 #previous, #next, #close {
