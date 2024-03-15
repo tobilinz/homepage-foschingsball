@@ -167,7 +167,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: var(--mNormal);
+    padding: 2 * var(--mNormal);
     height: 100%;
     aspect-ratio: 1.25;
     text-decoration: none;
