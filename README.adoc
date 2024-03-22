@@ -7,6 +7,7 @@
 
 :asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
 :mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:id[https://github.com/tobilinz/homepage-foschingsball]
+:pagespeed: link:https://pagespeed.web.dev[PageSpeed Insights]footnote:id[https://pagespeed.web.dev]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
@@ -117,7 +118,7 @@ Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen siche
 
 == VS Code
 
-Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür link:https://code.visualstudio.com[Visual Studio Code]footnote:[https://code.visualstudio.com]. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
+Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür link:https://code.visualstudio.com[Visual Studio Code]footnote:id[https://code.visualstudio.com]. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
 
 
 === Installation VS Code
@@ -127,13 +128,12 @@ Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Downl
 
 === Installation von Erweiterungen
 
-Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
+Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:id[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
 
 
 
 
 == Quellcodebearbeitung
-
 
 === Herunterladen des Quellcodes
 
@@ -354,11 +354,11 @@ Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht
 
 
 
-== PageSpeed Insights
+== {pagespeed}
 
-PageSpeed Insights kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern.
+{pagespeed} kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern.
 
-.Die Folgenden Eigenschaften werden Gemessen:
+.Hier sind ein paar der Eigenschaften, die gemessen werden:
 * Leistung
 ** First Contentful Paint
 ** Largest Contentful Paint
@@ -366,10 +366,17 @@ PageSpeed Insights kann testen, ob Webseiten gut für Google und andere Suchmasc
 ** Culumative Layout Shift
 ** Speed Index
 * Barrierefreiheit
+** Text To Speech Tests
 * Best Practices
+** Verwendet HTTPS
+** Vermeided alte APIs
+** Zeigt Bilder korrekt an
 * SEO
+** Korrekter Titel
+** Korrekte Beschreibung
+** Korrekte Schlüsselwörter
+** Gute Links
 
-https://pagespeed.web.dev
 
 == Security Headers 
 https://securityheaders.com
