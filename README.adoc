@@ -7,7 +7,9 @@
 
 :asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
 :mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:mainpage[]
+:code: link:https://code.visualstudio.com[Visual Studio Code]footnote:code[]
 :pagespeed: link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[]
+:headers: link:https://securityheaders.com[Security Headers]footnote:headers[]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
@@ -116,9 +118,9 @@ Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen siche
 
 
 
-== VS Code
+== link:https://code.visualstudio.com[Visual Studio Code]footnote:code[https://code.visualstudio.com]
 
-Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür link:https://code.visualstudio.com[Visual Studio Code]footnote:id[https://code.visualstudio.com]. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
+Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür {code}. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
 
 
 === Installation VS Code
@@ -128,7 +130,7 @@ Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Downl
 
 === Installation von Erweiterungen
 
-Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:id[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
+Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
 
 
 
@@ -378,8 +380,9 @@ Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht
 ** Gute Links
 
 
-== Security Headers 
-https://securityheaders.com
+== link:https://securityheaders.com[Security Headers]footnote:headers[https://securityheaders.com]
+
+{headers} testet, wie der Name schon sagt, ob die Header-Informationen, die an Nutzer gesendet werden, wenn sie die Webseite aufrufen, auf Sicherheitslücken. Die Header können in den `.htaccess`-Dateien, im Menü <<Serverkonfiguration>>, bearbeitet werden.
 
 
 
