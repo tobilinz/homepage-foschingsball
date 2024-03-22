@@ -336,18 +336,10 @@ Ein Git-Branch des Projekts heißt `team-section`. Es war ursprünglich geplant,
 
 
 
-== Erklärung des Quellcodes
-
-=== HTML
-
-In kombination mit CSS wurde ein Grundskelett erstellt, nach dessen Aufbau jede Seite der Webseite erstellt werden kann.
-
-
-==== Kommentare
+== HTML Kommentare
 
 HTML Elemente können mithilfe von `!--` nach dem ersten Zeichen (`<`) und `--` vor dem letzten Zeichen (`>`) kommentiert werden. +
 Beispiele: 
-
 
 .Unkommentiert:
 [source,html]
@@ -359,11 +351,15 @@ Beispiele:
 
 Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht angezeigt. Das ist nützlich, wenn Elemente, die aktuell nicht benötigt werden, aber zu einem späteren Zeitpunkt nützlich werden könnten, versteckt werden sollen. 
 
-=== CSS
 
-=== Javascript
 
-=== SEO
+
+== Pagespeed Insights
+
+== Securityheaders 
+https://securityheaders.com
+
+
 
 
 == Verwendete Resourcen
