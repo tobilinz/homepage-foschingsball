@@ -6,8 +6,8 @@
 :toclevels: 16
 
 :asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
-:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:id[https://github.com/tobilinz/homepage-foschingsball]
-:pagespeed: link:https://pagespeed.web.dev[PageSpeed Insights]footnote:id[https://pagespeed.web.dev]
+:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:mainpage[]
+:pagespeed: link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
@@ -170,7 +170,7 @@ Der Ordner kann nun als Startverzeichnis durch betätigung des Knopfes `Startver
 
 
 
-== GitHub
+== link:https://github.com/tobilinz/homepage-foschingsball[GitHub]footnote:mainpage[https://github.com/tobilinz/homepage-foschingsball]
 
 Dieser Teil ist optional. GitHub kann allerdings bei der Entwicklung helfen, da man mit diesem Werkzeug besser im Team arbeiten kann. Außerdem lässt sich das herunterladen des Quellcodes von WebFTP und das erneute Hochladen der Änderungen hiermit automatisieren. Da dieser Schritt optional ist, und im Internet viele gute Anleitungen vorhanden sind, folgt hier nur eine kurze Zusammenfassung.
 
@@ -354,7 +354,7 @@ Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht
 
 
 
-== {pagespeed}
+== link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[https://pagespeed.web.dev]
 
 {pagespeed} kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern.
 
