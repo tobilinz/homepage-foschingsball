@@ -10,6 +10,7 @@
 :code: link:https://code.visualstudio.com[Visual Studio Code]footnote:code[]
 :pagespeed: link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[]
 :headers: link:https://securityheaders.com[Security Headers]footnote:headers[]
+:liveserver: link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
@@ -128,9 +129,9 @@ Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet we
 Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Download +
 
 
-=== Installation von Erweiterungen
+=== Installation von Erweiterungenfootnote:liveserver[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer]
 
-Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
+Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[] empfohlen.
 
 
 
