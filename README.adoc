@@ -356,7 +356,18 @@ Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht
 
 == PageSpeed Insights
 
-PageSpeed Insights kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern. Die Folgenden Eigenschaften werden Gemessen:
+PageSpeed Insights kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern.
+
+.Die Folgenden Eigenschaften werden Gemessen:
+* Leistung
+** First Contentful Paint
+** Largest Contentful Paint
+** Total Blocking Time
+** Culumative Layout Shift
+** Speed Index
+* Barrierefreiheit
+* Best Practices
+* SEO
 
 https://pagespeed.web.dev
 
