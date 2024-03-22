@@ -354,9 +354,13 @@ Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht
 
 
 
-== Pagespeed Insights
+== PageSpeed Insights
 
-== Securityheaders 
+PageSpeed Insights kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern. Die Folgenden Eigenschaften werden Gemessen:
+
+https://pagespeed.web.dev
+
+== Security Headers 
 https://securityheaders.com
 
 
