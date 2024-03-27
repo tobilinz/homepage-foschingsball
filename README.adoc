@@ -6,9 +6,15 @@
 :toclevels: 16
 
 :asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
-:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:id[https://github.com/tobilinz/homepage-foschingsball]
+:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:mainpage[]
+:code: link:https://code.visualstudio.com[Visual Studio Code]footnote:code[]
+:pagespeed: link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[]
+:headers: link:https://securityheaders.com[Security Headers]footnote:headers[]
+:liveserver: link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
+
+IMPORTANT: Für die folgende Anleitung (außer dem Abschnitt <<Hetzner KonsoleH>>) wird ein Grundverständnis davon, wie Webseiten mit HTML, CSS und Javascript entwickelt werden, vorrausgesetzt.
 
 
 
@@ -113,9 +119,9 @@ Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen siche
 
 
 
-== VS Code
+== link:https://code.visualstudio.com[Visual Studio Code]footnote:code[https://code.visualstudio.com]
 
-Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür link:https://code.visualstudio.com[Visual Studio Code]footnote:[https://code.visualstudio.com]. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
+Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür {code}. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
 
 
 === Installation VS Code
@@ -123,15 +129,14 @@ Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet we
 Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Download +
 
 
-=== Installation von Erweiterungen
+=== Installation von Erweiterungenfootnote:liveserver[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer]
 
-Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer] empfohlen.
+Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[] empfohlen.
 
 
 
 
 == Quellcodebearbeitung
-
 
 === Herunterladen des Quellcodes
 
@@ -168,7 +173,7 @@ Der Ordner kann nun als Startverzeichnis durch betätigung des Knopfes `Startver
 
 
 
-== GitHub
+== link:https://github.com/tobilinz/homepage-foschingsball[GitHub]footnote:mainpage[https://github.com/tobilinz/homepage-foschingsball]
 
 Dieser Teil ist optional. GitHub kann allerdings bei der Entwicklung helfen, da man mit diesem Werkzeug besser im Team arbeiten kann. Außerdem lässt sich das herunterladen des Quellcodes von WebFTP und das erneute Hochladen der Änderungen hiermit automatisieren. Da dieser Schritt optional ist, und im Internet viele gute Anleitungen vorhanden sind, folgt hier nur eine kurze Zusammenfassung.
 
@@ -199,10 +204,12 @@ Die Testseite aktualisiert sich jedes mal, wenn neue Änderungen hochgeladen wer
 
 Das hierfür zuständige Skript heißt `releasedeploy.yml`.
 Hier muss unter
-```yml
+
+[source,yml]
 env:
   YEAR: 2024
-```
+
+
 das Jahr auf `2025` korrigiert werden. +
  +
 Außerdem benötigt GitHub die Zugangsdaten für WebFTP von Hetzner, damit die Änderungen hochgeladen werden können. Eine Anleitung dazu, wie die Anmeldedaten an GitHub weitergegeben werden können, findet sich in der <<GitHub Secrets eintragen>> Sektion. +
@@ -220,11 +227,13 @@ Das Skript kann aktiviert werden, indem auf {mainpage} unter `Actions>Generate c
 ==== GitHub Secrets eintragen
 
 GitHub benötigt für einige Workflows die Zugangsdaten für WebFTP von Hetzner. In den Workflow Skripten sind die Logindaten wie folgt eingetragen:
-```yml
+
+
+[source,yml]
 server: ${{ secrets.FTP_SERVER }}
 username: ${{ secrets.FTP_USERNAME }}
 password: ${{ secrets.FTP_PASSWORD }}
-```
+
 Die benötigten Informationen, wie `server`, `username` und `password` sind hier als `secrets` eingetragen. Diese Zeilen dürfen *NIEMALS* durch die echten Informationen ersetzt werden, da fremde ansonsten auch Änderungen an der Webseite vornehmen können, was zu Problemen führen kann. Stattdessen gibt es bei der {mainpage} unter `Settings>Secrets and Variables>Actions` eine Sektion mit dem Titel `Repository secrets`. Dort können die echten Logindaten eingetragen werden. Dafür einfach auf den grünen `New repository secret` Knopf drücken, unter `Name` den Variablennamen eintragen (`FTP_SERVER`, `FTP_USERNAME` oder `FTP_PASSWORD`) und unter `Secret` die entsprechenden Daten einfügen. Die Daten Lassen sich im <<Logindaten>> Abschnitt in KonsoleH von Hetzner nachlesen. Es können entweder die Daten des FTP-Hauptbenutzers verwendet werden oder es kann ein zusätzlicher FTP-Benutzer hinzugefügt werden. Die Secrets müsse nur einmal hinzugefügt werden. Dann können alle Workflows auf die Secrets zugreifen. +
 
 
@@ -239,10 +248,9 @@ Die Webseite besitzt einen Countdown, der sich aktiviert, wenn weniger als 100 T
 Um den Countdown wieder zu aktivieren, müssen zuerst in `src/index.html` das div mit der ID `counter` und das Skript (`script`) mit der Quelle ...`countDown.js` unkommentiert werden (Siehe <<Kommentare>>). +
  +
 Danach muss im Skript `src/home/scripts/countDown.js` in der ersten Zeile das Datum aktualisiert werden:
+
 [source,javascript]
-----
 const date = Date.parse(`2024-02-09T19:00:00.000+01:00`);
-----
 
 Das Datum ist wie folgt aufgebaut: `jahr-monat-tagTstunde:...` Das `T` zwischen `tag` und `stunden` muss da stehen. +
 
@@ -250,8 +258,8 @@ Das Datum ist wie folgt aufgebaut: `jahr-monat-tagTstunde:...` Das `T` zwischen 
 === Video
 
 Das Video kann aktualisiert werden, indem in WebFTP unter `public_html/resources/2024/videos/` ein neues Video hochgeladen wird. Wenn der Ordner Videos nicht existiert, dann kann einfach ein neuer erstellt werden. Danach muss unter `src/index.html` Die Sektion mit der ID `video` bearbeitet werden.
+
 [source,html]
-----
 <section id="video">
     <h2>Video</h2>
     <video class="main-video" controls preload="none" poster="home/video-poster.webp">
@@ -263,7 +271,6 @@ Das Video kann aktualisiert werden, indem in WebFTP unter `public_html/resources
         <meta content="PT4M53S" itemprop="duration">
     </video>
 </section>
-----
 
 Hier muss zuerst beim `source` Element der `src` Tag bearbeitet werden. Es muss nur `2023` durch `2024` ersetzt werden und `video-2023-h264-aac.mp4` muss durch den Namen der neuen Videodatei ersetzt werden. Falls das neue Video kein mp4 Video ist, muss der `type` Tag von `video/mp4` zum neuen Videotypen geändert werden. Es ist allerdings empfehlenswert, mp4 als Dateiformat zu verwenden, da mp4 in allen Browsern (auch Safari) unterstützt wird. +
  + 
@@ -308,10 +315,9 @@ Zum Anzeigen des Veranstaltungsorts muss die Sektion mit der ID `ort` unkommenti
 Der Folgende Teil ist nur notwendig, wenn der Veranstalungsort nicht die kleine Jurahalle ist. +
  + 
 Zuerst muss die angegebene Adresse (Wert des `data-title`-Tags) aktualisiert werden. Dann muss auf Google Maps die benötigte Adresse gesucht werden und die Ansciht muss auf `Satelitenansicht` gesetzt werden. Nun muss unter `Teilen>Karte einbetten` der dortige HTML Code kopiert werden. Der Code sollte wie Folgt aussehen:
+
 [source,html]
-----
 <iframe src="https://www.google.com/maps/embed?pb=!laaaaaaaaaaaaaangerLink" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-----
 
 Hier ist nur der Link wichtig (`https://www.google.com/maps/embed?pb=!laaaaaaaaaaaaaangerLink`). Dieser muss anstelle des alten Links, der im `data-src` Tag angegeben ist, eingefügt werden. +
  +
@@ -331,37 +337,55 @@ Außerdem sollte das div mit der ID `vorverkauf-warning` versteckt werden, indem
 Ein Git-Branch des Projekts heißt `team-section`. Es war ursprünglich geplant, eine Team Sektion zur Webseite hinzuzugügen, allerdings gelang das aus zeitlichen Gründen nicht mehr. Der Code ist noch verfügbar, falls nachfolgende Teams die Team Sektion vollenden wollen.
 
 
-== Erklärung des Quellcodes
 
-=== HTML
 
-==== Kommentare
+== HTML Kommentare
 
 HTML Elemente können mithilfe von `!--` nach dem ersten Zeichen (`<`) und `--` vor dem letzten Zeichen (`>`) kommentiert werden. +
 Beispiele: 
 
-
 .Unkommentiert:
 [source,html]
-----
 <div>Inhalt</div>
-----
-
 
 .Kommentiert:
 [source,html]
-----
 <!--div>Inhalt</div-->
-----
-
 
 Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht angezeigt. Das ist nützlich, wenn Elemente, die aktuell nicht benötigt werden, aber zu einem späteren Zeitpunkt nützlich werden könnten, versteckt werden sollen. 
 
-=== CSS
 
-=== Javascript
 
-=== SEO
+
+== link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[https://pagespeed.web.dev]
+
+{pagespeed} kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern.
+
+.Hier sind ein paar der Eigenschaften, die gemessen werden:
+* Leistung
+** First Contentful Paint
+** Largest Contentful Paint
+** Total Blocking Time
+** Culumative Layout Shift
+** Speed Index
+* Barrierefreiheit
+** Text To Speech Tests
+* Best Practices
+** Verwendet HTTPS
+** Vermeided alte APIs
+** Zeigt Bilder korrekt an
+* SEO
+** Korrekter Titel
+** Korrekte Beschreibung
+** Korrekte Schlüsselwörter
+** Gute Links
+
+
+== link:https://securityheaders.com[Security Headers]footnote:headers[https://securityheaders.com]
+
+{headers} testet, wie der Name schon sagt, ob die Header-Informationen, die an Nutzer gesendet werden, wenn sie die Webseite aufrufen, auf Sicherheitslücken. Die Header können in den `.htaccess`-Dateien, im Menü <<Serverkonfiguration>>, bearbeitet werden.
+
+
 
 
 == Verwendete Resourcen
