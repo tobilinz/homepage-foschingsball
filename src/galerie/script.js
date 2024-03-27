@@ -96,6 +96,7 @@ function loadGallery(from, to, previewCount) {
       fullImageView.classList.remove('hidden');
       nav.classList.add('hidden');
       showImage(index);
+      showImage2(index);
       updateButtons(index);
     });
     fullGallerySection.lastChild.append(...allImages);
