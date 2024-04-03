@@ -19,7 +19,7 @@ IMPORTANT: Für die folgende Anleitung (außer dem Abschnitt <<Hetzner KonsoleH>
 
 Alle Daten, die zur Webseite gehören, werden auf einem Server in verschieden Ordnern gespeichert. Wenn jemand die Webseite öffnet, dann erhält die Person diese Dateien und sie werden in Form einer Webseite angezeigt. +
  +
-Ein GitHub Repository wie dieses hilft dabei, die Webseite zu programmieren, indem Änderungen an Code zwischen Geräten einfacher syncronisiert werden können. Damit fällt es einem Entwicklungsteam einfacher, gemeinsam an der Webseite zu arbeiten. Ein GitHub repository ist allerdings nicht notwendig.
+Ein GitHub Repository wie dieses hilft dabei, die Webseite zu programmieren, indem Änderungen an Code zwischen Geräten einfacher synchronisiert werden können. Damit fällt es einem Entwicklungsteam einfacher, gemeinsam an der Webseite zu arbeiten. Ein GitHub Repository ist allerdings nicht notwendig.
 
 
 
