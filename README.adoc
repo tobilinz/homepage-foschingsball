@@ -6,11 +6,7 @@
 :toclevels: 16
 
 :asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
-:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]footnote:mainpage[]
-:code: link:https://code.visualstudio.com[Visual Studio Code]footnote:code[]
-:pagespeed: link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[]
-:headers: link:https://securityheaders.com[Security Headers]footnote:headers[]
-:liveserver: link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[]
+:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
@@ -78,7 +74,7 @@ Hier werden die wichtigsten Einstellungen vorgenommen. +
 Es kann festgelegt werden, welcher Ordner angezeigt wird, wenn https://foschingsball.de aufgerufen wird. (Startverzeichnis) +
  +
 Außerdem kann hier auch die `.htaccess` Datei bearbeitet werden. Diese zu konfigurieren ist nicht notwendig, aber empfohlen. Sie beinhaltet sämtliche Einstellungen, mit denen die Sicherheit der Webseite beeinflusst werden kann. Zum Beispiel können Header bearbeitet werden. Die `.htaccess` Datei in den `2024` und `resources` Ordnern können als Beispiele herangenommen werden. +
-Ob die Header richtig konfiguriert sind, kann auf https://securityheaders.com überprüft werden.
+Ob die Header richtig konfiguriert sind, kann mithilfe des Tools <<Security Headers>> überprüft werden.
 
 ==== Subdomains
 
@@ -119,9 +115,9 @@ Hier können SSL Zertifikate erstellt werden. Diese sind wichtig, um einen siche
 
 
 
-== link:https://code.visualstudio.com[Visual Studio Code]footnote:code[https://code.visualstudio.com]
+== Visual Studio Code
 
-Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür {code}. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
+Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet werden. Empfohlen wird hierfür link:https://code.visualstudio.com[Visual Studio Code]. Es gibt online sehr viele Tutorials zu diesem Programm. Falls manche Details dieser Anleitung nicht visuell genug sind, kann nach solchen gesucht werden.
 
 
 === Installation VS Code
@@ -129,9 +125,9 @@ Um den Code der Webseite bearbeiten zu können, muss ein Texteditor verwendet we
 Der Editor kann hier heruntergeladen werden: https://code.visualstudio.com/Download +
 
 
-=== Installation von Erweiterungenfootnote:liveserver[https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer]
+=== Installation von Erweiterungen
 
-Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server]footnote:liveserver[] empfohlen.
+Um die Webentwicklung zu erleichern, wird die Erweiterung link:https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer[Live Server] empfohlen.
 
 
 
@@ -173,9 +169,9 @@ Der Ordner kann nun als Startverzeichnis durch betätigung des Knopfes `Startver
 
 
 
-== link:https://github.com/tobilinz/homepage-foschingsball[GitHub]footnote:mainpage[https://github.com/tobilinz/homepage-foschingsball]
+== GitHub
 
-Dieser Teil ist optional. GitHub kann allerdings bei der Entwicklung helfen, da man mit diesem Werkzeug besser im Team arbeiten kann. Außerdem lässt sich das herunterladen des Quellcodes von WebFTP und das erneute Hochladen der Änderungen hiermit automatisieren. Da dieser Schritt optional ist, und im Internet viele gute Anleitungen vorhanden sind, folgt hier nur eine kurze Zusammenfassung.
+Dieser Teil ist optional. link:https://github.com/tobilinz/homepage-foschingsball[GitHub] kann allerdings bei der Entwicklung helfen, da man mit diesem Werkzeug besser im Team arbeiten kann. Außerdem lässt sich das herunterladen des Quellcodes von WebFTP und das erneute Hochladen der Änderungen hiermit automatisieren. Da dieser Schritt optional ist, und im Internet viele gute Anleitungen vorhanden sind, folgt hier nur eine kurze Zusammenfassung.
 
 
 === Repository clonen
@@ -357,9 +353,9 @@ Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht
 
 
 
-== link:https://pagespeed.web.dev[PageSpeed Insights]footnote:pagespeed[https://pagespeed.web.dev]
+== PageSpeed Insights
 
-{pagespeed} kann testen, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern.
+link:https://pagespeed.web.dev[PageSpeed Insights] testet, ob Webseiten gut für Google und andere Suchmaschienen optimiert sind. Das Werkzeug kann auch dabei helfen, die Webseitenerfahrung für Nutzer zu verbessern.
 
 .Hier sind ein paar der Eigenschaften, die gemessen werden:
 * Leistung
@@ -381,9 +377,9 @@ Elemente, die als Kommentar markiert sind, werden ignoriert und somit auch nicht
 ** Gute Links
 
 
-== link:https://securityheaders.com[Security Headers]footnote:headers[https://securityheaders.com]
+== Security Headers
 
-{headers} testet, wie der Name schon sagt, ob die Header-Informationen, die an Nutzer gesendet werden, wenn sie die Webseite aufrufen, auf Sicherheitslücken. Die Header können in den `.htaccess`-Dateien, im Menü <<Serverkonfiguration>>, bearbeitet werden.
+link:https://securityheaders.com[Security Headers] testet, wie der Name schon sagt, ob die Header-Informationen, die an Nutzer gesendet werden, wenn sie die Webseite aufrufen, auf Sicherheitslücken. Die Header können in den `.htaccess`-Dateien, im Menü <<Serverkonfiguration>>, bearbeitet werden.
 
 
 
