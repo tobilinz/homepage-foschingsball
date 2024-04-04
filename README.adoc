@@ -1,12 +1,4 @@
 = Homepage FOSchingsball
-:toc:
-:toc-title: Inhaltsverzeichnis:
-:toc-placement: preamble
-:toc-text-decoration: none
-:toclevels: 16
-
-:asset: https://raw.githubusercontent.com/tobilinz/homepage-foschingsball/main/.github/readme-assets/
-:mainpage: link:https://github.com/tobilinz/homepage-foschingsball[Hauptseite dieses Repositories]
 
 Quellcode der Homepage für den Faschingsball 2024 der AktiveFOSBOSNeumarkt.EV.
 
