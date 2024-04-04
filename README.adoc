@@ -149,7 +149,7 @@ Nun kann der Ordner In Visual Studio Code geöffnet werden und der Quellcode der
 === Änderungen hochladen
 
 Nachdem die gewünschten Änderungen vorgenommen wurden, müssen die modifizierten Dateien wieder hochgeladen werden. 
-Hierfür muss zuerst wieder das WebFTP Portal, welches auch zum herunteralden der 'alten' Datein verwendet wurde, geöffnet werden.
+Hierfür muss zuerst wieder das WebFTP Portal, welches auch zum herunterladen der 'alten' Dateien verwendet wurde, geöffnet werden.
 Im `public_html` Ordner muss nun ein neuer Ordner namens `2025` erstellt werden. Darin können die veränderten Dateien hochgeladen werden.
 
 [IMPORTANT] 
