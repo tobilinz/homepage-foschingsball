@@ -154,7 +154,7 @@ Im `public_html` Ordner muss nun ein neuer Ordner namens `2025` erstellt werden.
 
 [IMPORTANT] 
 ====
-Direkt im 2025 Ordner *MUSS* eine `index.html` Datei sein. Diese wird Nutzern am Ende angezeigt. Wenn sich dort keine `index.html` Dati befindet, dann wird Nutzern keine Webseite angezeigt. Die `index.html` Datei darf auch nicht in unterordnern sein. Sie muss sich direkt im `2025` Ordner befinden.
+Direkt im 2025 Ordner *MUSS* eine `index.html` Datei sein. Diese wird Nutzern am Ende angezeigt. Wenn sich dort keine `index.html` Dati befindet, dann wird Nutzern keine Webseite angezeigt. Die `index.html` Datei darf auch nicht in Unterordnern sein. Sie muss sich direkt im `2025` Ordner befinden.
 ====
 
 
