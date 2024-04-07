@@ -13,44 +13,40 @@
     transition: background-color var(--transition-time) linear;
 }
 
-#image-container {
-    position: relative;
-    margin: auto;
-    padding: 0px;
-    width: 100%;
-    height: 100%;
-    overflow:hidden;
-}
-
 #images {
     position: absolute;
     right: 0;
     top: 0;
-    width: 200%;
-    height: 100%;
-    white-space: nowrap;
-    transition: transform 0.5s ease;
+    width: 300vw;
+    height: 100vw;
+    display: grid;
+    grid-template-columns: repeat(3, 100vw);
+    z-index: -1;
+    transform: translateZ(0px) translateX(100vw);
 }
 
-#images.instant {
-    transition-duration: 0s;
-}
-
-#big-image, #big-image2 {
-    position: absolute;
-    right: 0;
-    top: 0;
+#images > img {
+    width: 100%;
     height: 100%;
     object-fit: contain;
-    z-index: -1;
 }
 
-#big-image {
-    width: 50%;
+@keyframes slideRight {
+    0% { transform: translateZ(0px) translateX(100vw); }
+    100% { transform: translateZ(0px) translateX(0vw); }
 }
 
-#big-image2 {
-    width: 150%;
+@keyframes slideLeft {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(200vw); }
+}
+
+.slideRight {
+    animation: slideRight 0.25s forwards;
+}
+
+.slideLeft {
+    animation: slideLeft 0.25s forwards;
 }
 
 #previous, #next, #close {

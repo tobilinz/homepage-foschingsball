@@ -59,13 +59,12 @@
 <section id="years"></section>
 
 <section id="big-view" class="hidden">
-    <div id="image-container">
         <div id="images">
+            <img id="previous-big-image" src="" alt="Vorheriges Bild für die Einzelansicht">
             <img id="big-image" src="" alt="Größere Einzelansicht des gerade angetippten Bildes">
-            <img id="big-image2" src="" alt="Größere Einzelansicht des gerade angetippten Bildes">
+            <img id="next-big-image" src="" alt="Nächstes Bild für die Einzelansicht">
         </div>
-    </div>
-    <button id="previous" onclick="previousImage()">
+    <button id="previous">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
                 <path d="m14 7-5 5"/>
@@ -73,7 +72,7 @@
             </g>
         </svg>
     </button>
-    <button id="next" onclick="nextImage()">
+    <button id="next">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5">
                 <path d="m15 12-5 5"/>

@@ -12,67 +12,73 @@ let current = null;
 
 // Big view
 const nav = document.getElementsByTagName('nav')[0];
+const previousFullImage = document.getElementById('previous-big-image');
 const fullImage = document.getElementById('big-image');
-const fullImage2 = document.getElementById('big-image2');
+const nextFullImage = document.getElementById('next-big-image');
 const fullImageView = document.getElementById('big-view');
 const nextButton = document.getElementById('next');
 const previousButton = document.getElementById('previous');
+const closeButton = document.getElementById('close');
 const fullImages = document.getElementById('images');
-let currentShownImage = undefined;
+let currentShownImage = 0;
 
 function updateButtons(i) {
   previousButton.disabled = i <= 0;
   nextButton.disabled = i >= current.images.length - 1
 }
 
-function showImage(i) {
+function showFullImages(i) {
+  fullImageView.classList.remove('hidden');
+  nav.classList.add('hidden');
+  updateFullImages(i)
+}
+
+function updateFullImages(i) {
+  previousFullImage.src = `${endpoint}/${current.year}/pictures/${current.images[i - 1 < 0 ? 0 : i - 1]}`;
   fullImage.src = `${endpoint}/${current.year}/pictures/${current.images[i]}`;
+  nextFullImage.src = `${endpoint}/${current.year}/pictures/${current.images[i + 1 >= current.images.length ? 0 : i + 1]}`;
+  
   currentShownImage = i;
 }
 
-function showImage2(i) {
-  fullImage2.src = `${endpoint}/${current.year}/pictures/${current.images[i]}`;
-  currentShownImage = i;
+function setButtonsDisabled(value) {
+  nextButton.disabled = value;
+  previousButton.disabled = value;
+  closeButton.disabled = value;
 }
 
 function nextImage() {
-  fullImages.classList.add('instant');
-  fullImages.style.transform = 'translateX(50%)';
+  setButtonsDisabled(true);
+  const newImage = currentShownImage + 1;
+  fullImages.classList.add('slideRight');
   setTimeout(() => {
-    fullImages.classList.remove('instant');
-    const newImage = currentShownImage + 1;
-    if (newImage >= current.images.length) return;
-    fullImages.style.transform = 'translateX(0%)';
-    setTimeout(() => {
-      showImage2(newImage);
-    }, 500);
-    showImage(newImage);
-    updateButtons(newImage);
-}, 50);
+    fullImages.classList.remove('slideRight')
+    updateFullImages(newImage);
+    fullImages.style.transform = 'translateZ(0px) translateX(100vw)';
+    setButtonsDisabled(false);
+  }, 250);
+  updateButtons(newImage);
 }
 document.getElementById('next').addEventListener('click', nextImage);
 
 function previousImage() {
-  fullImages.classList.add('instant');
-  fullImages.style.transform = 'translateX(0%)';
+  setButtonsDisabled(true);
+  const newImage = currentShownImage - 1;
+  fullImages.classList.add('slideLeft');
   setTimeout(() => {
-    fullImages.classList.remove('instant');
-    const newImage = currentShownImage - 1;
-    if (newImage < 0) return;
-    fullImages.style.transform = 'translateX(50%)';
-    setTimeout(() => {
-      showImage(newImage);
-    }, 500);
-    showImage2(newImage);
-    updateButtons(newImage);
-}, 50);
+    fullImages.classList.remove('slideLeft')
+    updateFullImages(newImage);
+    fullImages.style.transform = 'translateZ(0px) translateX(100vw)';
+    setButtonsDisabled(false);
+  }, 250)
+  updateButtons(newImage);
 }
 document.getElementById('previous').addEventListener('click', previousImage);
 
 function closeImage() {
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
-  currentShownImage = undefined;
+  currentShownImage = 0;
 }
 document.getElementById('close').addEventListener('click', closeImage);
 
@@ -95,12 +101,11 @@ function loadGallery(from, to, previewCount) {
     Array.from(allImages).forEach((image, index) => image.onclick = () => {
       fullImageView.classList.remove('hidden');
       nav.classList.add('hidden');
-      showImage(index);
-      showImage2(index);
+      showFullImages(index);
       updateButtons(index);
     });
     fullGallerySection.lastChild.append(...allImages);
-      years.append(fullGallerySection);
+    years.append(fullGallerySection);
 
     const start = Math.floor(Math.random() * (imageList.length - previewCount))
     const previewElements = getMediaFromEndpoint(currentEndpoint, imageList, start, previewCount);
