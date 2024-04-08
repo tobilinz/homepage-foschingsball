@@ -78,7 +78,7 @@ document.getElementById('previous').addEventListener('click', previousImage);
 
 function closeImage() {
   document.body.classList.remove('stop-scrolling');
-  window.scrollTo(0, scrollPosition);
+  window.pageYOffset = scrollPosition;
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
   currentShownImage = 0;
@@ -102,7 +102,7 @@ function loadGallery(from, to, previewCount) {
     fullGallerySection.classList.add('hidden');
     const allImages = getMediaFromEndpoint(currentEndpoint, imageList, 0, imageList.length);
     Array.from(allImages).forEach((image, index) => image.onclick = () => {
-      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      scrollPosition = window.pageYOffset;
       document.body.classList.add('stop-scrolling');
       fullImageView.classList.remove('hidden');
       nav.classList.add('hidden');
