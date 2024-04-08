@@ -65,7 +65,7 @@
     transition: background-color var(--transition-time) linear;
     width: var(--mSection);
     height: var(--mSection);
-    border: solid #fff 1px;
+    border: solid 4px var(--glowbase);
     display: flex;
     justify-content: center;
     align-items: center;
