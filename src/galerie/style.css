@@ -63,6 +63,7 @@
     justify-content: center;
     align-items: center;
     margin: 16px;
+    z-index: 1;
 }
 
 #previous:disabled, #next:disabled, #close:disabled {
