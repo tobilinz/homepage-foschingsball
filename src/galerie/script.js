@@ -76,6 +76,7 @@ function previousImage() {
 document.getElementById('previous').addEventListener('click', previousImage);
 
 function closeImage() {
+  document.body.classList.add('noScroll');
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
   currentShownImage = 0;
