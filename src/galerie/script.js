@@ -25,7 +25,8 @@ let scrollPosition = 0;
 
 function updateButtons(i) {
   previousButton.disabled = i <= 0;
-  nextButton.disabled = i >= current.images.length - 1
+  nextButton.disabled = i >= current.images.length - 1;
+  closeButton.disabled = false;
 }
 
 function showFullImages(i) {
