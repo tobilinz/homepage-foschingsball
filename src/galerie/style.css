@@ -2,10 +2,6 @@
     --big-max-width: 1000px;
 }
 
-.noscroll {
-    overflow: hidden;
-}
-
 #big-view {
     position: fixed;
     right: 0;
