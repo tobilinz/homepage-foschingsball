@@ -11,6 +11,7 @@
     z-index: 1;
     background-color: #000d;
     transition: background-color var(--transition-time) linear;
+    padding: 0;
 }
 
 #images {
