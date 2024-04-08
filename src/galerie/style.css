@@ -17,12 +17,12 @@
     position: absolute;
     right: 0;
     top: 0;
-    width: 300vw;
-    height: 100vw;
+    width: 300%;
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 100vw);
+    grid-template-columns: repeat(3, 100%);
     z-index: -1;
-    transform: translateZ(0px) translateX(100vw);
+    transform: translateZ(0px) translateX(100%);
 }
 
 #images > img {
@@ -32,8 +32,8 @@
 }
 
 @keyframes slideRight {
-    0% { transform: translateZ(0px) translateX(100vw); }
-    100% { transform: translateZ(0px) translateX(0vw); }
+    0% { transform: translateZ(0px) translateX(100%); }
+    100% { transform: translateZ(0px) translateX(0%); }
 }
 
 @keyframes slideLeft {
