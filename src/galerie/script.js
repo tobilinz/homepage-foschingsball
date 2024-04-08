@@ -34,9 +34,9 @@ function showFullImages(i) {
 }
 
 function updateFullImages(i) {
-  previousFullImage.src = `${endpoint}/${current.year}/pictures/${current.images[i - 1 < 0 ? 0 : i - 1]}`;
-  fullImage.src = `${endpoint}/${current.year}/pictures/${current.images[i]}`;
-  nextFullImage.src = `${endpoint}/${current.year}/pictures/${current.images[i + 1 >= current.images.length ? 0 : i + 1]}`;
+  previousFullImage.backgroundImage = `url(${endpoint}/${current.year}/pictures/${current.images[i - 1 < 0 ? 0 : i - 1]})`;
+  fullImage.backgroundImage = `url(${endpoint}/${current.year}/pictures/${current.images[i]})`;
+  nextFullImage.backgroundImage = `url(${endpoint}/${current.year}/pictures/${current.images[i + 1 >= current.images.length ? 0 : i + 1]})`;
   
   currentShownImage = i;
 }
