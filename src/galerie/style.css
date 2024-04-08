@@ -26,8 +26,6 @@
 }
 
 #images > img {
-    max-width: 100dvw;
-    max-height: 100dvh;
     height: 100%;
     width: 100%;
     object-fit: contain;
