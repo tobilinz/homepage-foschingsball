@@ -72,16 +72,30 @@
     z-index: 1;
 }
 
-#previous::before, #next::before, #close::before {
+#previousBorder, #nextBorder, #closeBorder {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 10%;
-    height: 10%;
+    width: var(--mSection);
+    height: var(--mSection);
     border: solid 4px var(--glowbase);
     filter: var(--glow);
     border-radius: var(--border-radius);
     z-index: 2;
+    margin: 16px;
+}
+
+#previousBorder {
+    bottom: 0;
+    left: 0;
+}
+
+#nextBorder {
+    bottom: 0;
+    right: 0;
+}
+
+#closeBorder {
+    top: 0;
+    right: 0;
 }
 
 #previous:disabled, #next:disabled, #close:disabled {
