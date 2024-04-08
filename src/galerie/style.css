@@ -81,6 +81,7 @@
     border: solid 4px var(--glowbase);
     filter: var(--glow);
     border-radius: var(--border-radius);
+    z-index: 2;
 }
 
 #previous:disabled, #next:disabled, #close:disabled {
