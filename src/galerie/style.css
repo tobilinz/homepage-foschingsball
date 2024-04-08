@@ -65,13 +65,22 @@
     transition: background-color var(--transition-time) linear;
     width: var(--mSection);
     height: var(--mSection);
-    border: solid 4px var(--glowbase);
-    filter: var(--glow);
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 16px;
     z-index: 1;
+}
+
+#previous::before, #next::before, #close::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: solid 4px var(--glowbase);
+    filter: var(--glow);
+    border-radius: var(--border-radius);
 }
 
 #previous:disabled, #next:disabled, #close:disabled {
