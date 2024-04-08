@@ -28,6 +28,7 @@ function updateButtons(i) {
 }
 
 function showFullImages(i) {
+  document.body.classList.add('noscroll');
   fullImageView.classList.remove('hidden');
   nav.classList.add('hidden');
   updateFullImages(i)
@@ -76,7 +77,7 @@ function previousImage() {
 document.getElementById('previous').addEventListener('click', previousImage);
 
 function closeImage() {
-  document.body.classList.add('noScroll');
+  document.body.classList.remove('noscroll');
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
   currentShownImage = 0;
