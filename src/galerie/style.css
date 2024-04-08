@@ -3,7 +3,7 @@
 }
 
 .stop-scrolling {
- height: 100%;
+ height: auto;
  overflow: hidden;
 }
 
