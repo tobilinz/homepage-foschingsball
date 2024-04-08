@@ -25,12 +25,12 @@
     transform: translateZ(0px) translateX(100dvw);
 }
 
-#images > div {
+#images > img {
     max-width: 100dvw;
-    max-height: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    max-height: 100dvh;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 @keyframes slideRight {
