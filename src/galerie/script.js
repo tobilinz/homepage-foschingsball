@@ -56,9 +56,8 @@ function nextImage() {
     fullImages.classList.remove('slideRight')
     updateFullImages(newImage);
     fullImages.style.transform = 'translateZ(0px) translateX(100vw)';
-    setButtonsDisabled(false);
+    updateButtons(newImage);
   }, 250);
-  updateButtons(newImage);
 }
 document.getElementById('next').addEventListener('click', nextImage);
 
@@ -70,9 +69,8 @@ function previousImage() {
     fullImages.classList.remove('slideLeft')
     updateFullImages(newImage);
     fullImages.style.transform = 'translateZ(0px) translateX(100vw)';
-    setButtonsDisabled(false);
+    updateButtons(newImage);
   }, 250)
-  updateButtons(newImage);
 }
 document.getElementById('previous').addEventListener('click', previousImage);
 
