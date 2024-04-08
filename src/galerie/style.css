@@ -16,12 +16,13 @@
 
 #images {
     position: absolute;
-    right: 100dvw;
+    right: 0;
     top: 0;
     width: 300dvw;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 100dvw);
+    transform: translateZ(0px) translateX(100dvw);
 }
 
 #images > div {
@@ -33,13 +34,13 @@
 }
 
 @keyframes slideRight {
-    0% { transform: translateZ(0px) translateX(0dvw); }
-    100% { transform: translateZ(0px) translateX(-100dvw); }
+    0% { transform: translateZ(0px) translateX(100dvw); }
+    100% { transform: translateZ(0px) translateX(0dvw); }
 }
 
 @keyframes slideLeft {
-    0% { transform: translateX(0dvw); }
-    100% { transform: translateX(100dvw); }
+    0% { transform: translateX(100dvw); }
+    100% { transform: translateX(200dvw); }
 }
 
 .slideRight {
