@@ -21,6 +21,7 @@ const previousButton = document.getElementById('previous');
 const closeButton = document.getElementById('close');
 const fullImages = document.getElementById('images');
 let currentShownImage = 0;
+let scrollPosition = 0;
 
 function updateButtons(i) {
   previousButton.disabled = i <= 0;
@@ -77,6 +78,7 @@ document.getElementById('previous').addEventListener('click', previousImage);
 
 function closeImage() {
   document.body.classList.remove('stop-scrolling');
+  window.scrollTo(0, scrollPosition);
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
   currentShownImage = 0;
@@ -100,6 +102,7 @@ function loadGallery(from, to, previewCount) {
     fullGallerySection.classList.add('hidden');
     const allImages = getMediaFromEndpoint(currentEndpoint, imageList, 0, imageList.length);
     Array.from(allImages).forEach((image, index) => image.onclick = () => {
+      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
       document.body.classList.add('stop-scrolling');
       fullImageView.classList.remove('hidden');
       nav.classList.add('hidden');
