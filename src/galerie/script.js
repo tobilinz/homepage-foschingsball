@@ -21,10 +21,12 @@ const previousButton = document.getElementById('previous');
 const closeButton = document.getElementById('close');
 const fullImages = document.getElementById('images');
 let currentShownImage = 0;
+let scrollPosition = 0;
 
 function updateButtons(i) {
   previousButton.disabled = i <= 0;
-  nextButton.disabled = i >= current.images.length - 1
+  nextButton.disabled = i >= current.images.length - 1;
+  closeButton.disabled = false;
 }
 
 function showFullImages(i) {
@@ -55,9 +57,8 @@ function nextImage() {
     fullImages.classList.remove('slideRight')
     updateFullImages(newImage);
     fullImages.style.transform = 'translateZ(0px) translateX(100vw)';
-    setButtonsDisabled(false);
+    updateButtons(newImage);
   }, 250);
-  updateButtons(newImage);
 }
 document.getElementById('next').addEventListener('click', nextImage);
 
@@ -69,13 +70,18 @@ function previousImage() {
     fullImages.classList.remove('slideLeft')
     updateFullImages(newImage);
     fullImages.style.transform = 'translateZ(0px) translateX(100vw)';
-    setButtonsDisabled(false);
+    updateButtons(newImage);
   }, 250)
-  updateButtons(newImage);
 }
 document.getElementById('previous').addEventListener('click', previousImage);
 
 function closeImage() {
+  document.body.classList.remove('stop-scrolling');
+  window.scrollTo({
+    top: scrollPosition,
+    left: 0,
+    behavior: 'instant',
+  });
   fullImageView.classList.add('hidden');
   nav.classList.remove('hidden');
   currentShownImage = 0;
@@ -99,6 +105,8 @@ function loadGallery(from, to, previewCount) {
     fullGallerySection.classList.add('hidden');
     const allImages = getMediaFromEndpoint(currentEndpoint, imageList, 0, imageList.length);
     Array.from(allImages).forEach((image, index) => image.onclick = () => {
+      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      document.body.classList.add('stop-scrolling');
       fullImageView.classList.remove('hidden');
       nav.classList.add('hidden');
       showFullImages(index);

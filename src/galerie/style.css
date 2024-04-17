@@ -2,43 +2,52 @@
     --big-max-width: 1000px;
 }
 
+.stop-scrolling {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
 #big-view {
     position: fixed;
     right: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100dvw;
+    height: 100dvh;
     z-index: 1;
     background-color: #000d;
     transition: background-color var(--transition-time) linear;
+    padding: 0;
 }
 
 #images {
     position: absolute;
     right: 0;
     top: 0;
-    width: 300vw;
-    height: 100vw;
+    width: 300dvw;
+    height: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 100vw);
-    z-index: -1;
-    transform: translateZ(0px) translateX(100vw);
+    grid-template-columns: repeat(3, 100dvw);
+    transform: translateZ(0px) translateX(100dvw);
 }
 
 #images > img {
-    width: 100%;
+    max-width: 100dvw;
+    max-height: 100dvh;
     height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 
 @keyframes slideRight {
-    0% { transform: translateZ(0px) translateX(100vw); }
-    100% { transform: translateZ(0px) translateX(0vw); }
+    0% { transform: translateZ(0px) translateX(100dvw); }
+    100% { transform: translateZ(0px) translateX(0dvw); }
 }
 
 @keyframes slideLeft {
-    0% { transform: translateX(100vw); }
-    100% { transform: translateX(200vw); }
+    0% { transform: translateX(100dvw); }
+    100% { transform: translateX(200dvw); }
 }
 
 .slideRight {
@@ -56,11 +65,38 @@
     transition: background-color var(--transition-time) linear;
     width: var(--mSection);
     height: var(--mSection);
-    border: solid #fff 1px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 16px;
+    z-index: 1;
+}
+
+#previousBorder, #nextBorder, #closeBorder {
+    position: absolute;
+    width: var(--mSection);
+    height: var(--mSection);
+    border: solid 4px var(--glowbase);
+    filter: var(--glow);
+    border-radius: var(--border-radius);
+    z-index: 2;
+    margin: 16px;
+    pointer-events: none;
+}
+
+#previousBorder {
+    bottom: 0;
+    left: 0;
+}
+
+#nextBorder {
+    bottom: 0;
+    right: 0;
+}
+
+#closeBorder {
+    top: 0;
+    right: 0;
 }
 
 #previous:disabled, #next:disabled, #close:disabled {
